@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support MathMaster's mission to provide accessible mathematics education to all students.">
+    <title>Support Us - MathMaster</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .support-hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.95)), url('images/math-bg.jpg') center/cover fixed;
+            padding: 6rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-equation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            margin-top: -0.2rem;
+            font-size: 0.7rem;
+            line-height: 1;
+        }
+
+        .logo-equation .math-symbol {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.2rem;
+            background: rgba(201, 165, 92, 0.1);
+            border-radius: 3px;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .logo-equation .equals,
+        .logo-equation .plus {
+            font-size: 0.8rem;
+            padding: 0 0.1rem;
+            color: var(--accent-color);
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .logo-equation {
+                font-size: 0.6rem;
+            }
+
+            .logo-equation .math-symbol {
+                font-size: 0.6rem;
+                padding: 0.1rem 0.15rem;
+            }
+
+            .logo-equation .equals,
+            .logo-equation .plus {
+                font-size: 0.7rem;
+            }
+        }
+
+        .donation-options {
+            padding: 4rem 0;
+            background: #f7fafc;
+        }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .donation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .donation-amount {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .impact-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .impact-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .donate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(26, 54, 93, 0.98), rgba(26, 54, 93, 0.95));
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .mobile-menu-overlay.active {
+            transform: translateX(0);
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        .mobile-menu-container {
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-header .logo a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .mobile-menu-close {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #c59d5f;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-close:hover {
+            color: #ffffff;
+        }
+
+        .mobile-nav {
+            flex: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 1rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            background: rgba(197, 157, 95, 0.1);
+            color: #c59d5f;
+            transform: translateX(10px);
+        }
+
+        .mobile-nav .language-selector {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav .language-selector a {
+            color: #c59d5f;
+            border: 1px solid rgba(197, 157, 95, 0.3);
+            text-align: center;
+        }
+
+        .mobile-nav .language-selector a:hover,
+        .mobile-nav .language-selector a.active {
+            background: #c59d5f;
+            color: #ffffff;
+            border-color: #c59d5f;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1002;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            color: #c59d5f;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-container {
+                display: none !important;
+            }
+
+            .premium-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1001;
+            }
+
+            main {
+                margin-top: 80px; /* Add margin to account for fixed header */
+            }
+
+            .support-hero {
+                margin-top: 0;
+            }
+        }
+
+        /* Navigation Styles */
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a.active {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .nav-links a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        /* Mobile nav active state */
+        .mobile-nav a.active {
+            background: rgba(197, 157, 95, 0.1);
+            color: #c59d5f;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+<body>
+    <header class="premium-header">
+        <nav>
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="images/logo.png" alt="MathMaster Logo">
+                    <span>MathMaster</span>
+                </div>
+                <div class="logo-equation">
+                    <span class="math-symbol">MATH</span>
+                    <span class="equals">=</span>
+                    <span class="math-symbol">MATH</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">PHYSICS</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">CHEMISTRY</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="index.html">Welcome</a>
+                    <a href="about.html">About</a>
+                    <a href="programs.html">Programs</a>
+                    <a href="admission.html">Admission</a>
+                    <a href="consulting.html">Consulting</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="support.html" class="active">Support</a>
+                </nav>
+                <div class="language-selector">
+                    <a href="support.html" class="active" data-lang="en">English</a>
+                    <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-container">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <a href="index.html">MathMaster</a>
+                    <div class="logo-equation">
+                        <span class="math-symbol">MATH</span>
+                        <span class="equals">=</span>
+                        <span class="math-symbol">MATH</span>
+                        <span class="plus">+</span>
+                        <span class="math-symbol">PHYSICS</span>
+                        <span class="plus">+</span>
+                        <span class="math-symbol">CHEMISTRY</span>
+                    </div>
+                </div>
+                <div class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Welcome</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="consulting.html">Consulting</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                    <li class="language-selector">
+                        <a href="support.html" class="active" data-lang="en">English</a>
+                        <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section class="support-hero">
+            <div class="container">
+                <h1>Support Our Mission</h1>
+                <p class="hero-description">Help us make quality mathematics education accessible to all students</p>
+            </div>
+        </section>
+
+        <section class="donation-options">
+            <div class="container">
+                <h2>Choose Your Impact</h2>
+                <div class="donation-grid">
+                    <div class="donation-card">
+                        <h3>Monthly Support</h3>
+                        <div class="donation-amount">$10</div>
+                        <p>Provide learning materials for one student</p>
+                        <a href="#" class="donate-button">Donate Monthly</a>
+                    </div>
+                    <div class="donation-card">
+                        <h3>Monthly Support</h3>
+                        <div class="donation-amount">$25</div>
+                        <p>Sponsor tutoring sessions for students in need</p>
+                        <a href="#" class="donate-button">Donate Monthly</a>
+                    </div>
+                    <div class="donation-card">
+                        <h3>One-time Support</h3>
+                        <div class="donation-amount">$50</div>
+                        <p>Help develop new educational resources</p>
+                        <a href="#" class="donate-button">Donate Once</a>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="donate-button">Custom Amount</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact-section">
+            <div class="container">
+                <h2>Your Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Learning Materials</h3>
+                        <p>Provide essential study materials to students who need them most</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Tutoring Access</h3>
+                        <p>Enable more students to access quality mathematics tutoring</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Online Resources</h3>
+                        <p>Support the development of digital learning tools</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Student Success</h3>
+                        <p>Help students achieve their academic goals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 4rem 0; background: #f7fafc; text-align: center;">
+            <div class="container">
+                <h2>Tax Benefits</h2>
+                <p style="max-width: 600px; margin: 1rem auto;">
+                    Your contribution may be tax-deductible in your jurisdiction. You'll receive a receipt for your records.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 10, 3250 Van Horne</p>
+                <p>Montreal, QC H3S 1R8</p>
+                <p><i class="fas fa-phone"></i> +1 514 475-5210</p>
+                <p><i class="fas fa-envelope"></i> info@mathmaster.ca</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./programs.html">Programs</a></li>
+                    <li><a href="./admission.html">Admission</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MathMaster, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="language.js"></script>
+    <script>
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const navContainer = document.querySelector('.nav-container');
+            const header = document.querySelector('.premium-header');
+
+            // Hide desktop menu on mobile
+            if (window.innerWidth <= 768) {
+                navContainer.style.display = 'none';
+            }
+
+            // Ensure menu is hidden by default
+            mobileMenuOverlay.classList.remove('active');
+
+            function toggleMobileMenu() {
+                const isActive = mobileMenuOverlay.classList.contains('active');
+                
+                if (isActive) {
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    header.style.position = 'fixed';
+                } else {
+                    mobileMenuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    header.style.position = 'fixed';
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            mobileMenuClose.addEventListener('click', toggleMobileMenu);
+
+            // Close menu when clicking on navigation links
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Only prevent default if it's not a navigation link
+                    if (!this.getAttribute('href').startsWith('#')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            mobileMenuOverlay.addEventListener('click', (e) => {
+                if (e.target === mobileMenuOverlay) {
+                    toggleMobileMenu();
+                }
+            });
+
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth <= 768) {
+                    navContainer.style.display = 'none';
+                    header.style.position = 'fixed';
+                } else {
+                    navContainer.style.display = 'flex';
+                    mobileMenuOverlay.classList.remove('active');
+                    header.style.position = 'fixed';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

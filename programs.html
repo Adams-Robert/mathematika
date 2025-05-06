@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mathēmatiká - Expert mathematics tutoring and education. Join our community of excellence in Montreal.">
+    <title>Programs - Mathēmatiká</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--light-bg);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Enhanced Visual Hierarchy */
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d4a77;
+            --accent-color: #c59d5f;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --white: #ffffff;
+            --light-bg: #f7fafc;
+            --gray: #718096;
+            --success: #48bb78;
+            --error: #f56565;
+            --warning: #ed8936;
+            --border-color: #e2e8f0;
+        }
+
+        /* Typography Refinements */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.025em;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            margin-top: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-color: var(--primary-color);
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.95));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .why-section {
+            padding: 3rem 0;
+            background: #f7fafc;
+        }
+
+        .why-list {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.5s ease forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .why-list li:nth-child(1) { animation-delay: 0.1s; }
+        .why-list li:nth-child(2) { animation-delay: 0.2s; }
+        .why-list li:nth-child(3) { animation-delay: 0.3s; }
+        .why-list li:nth-child(4) { animation-delay: 0.4s; }
+        .why-list li:nth-child(5) { animation-delay: 0.5s; }
+
+        .newsletter-section {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(26, 54, 93, 0.95), rgba(26, 54, 93, 0.85));
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .newsletter-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-content p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-content form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-content input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                display: none !important;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .newsletter-content form {
+                flex-direction: column;
+            }
+
+            .newsletter-content input,
+            .newsletter-content button {
+                width: 100%;
+            }
+        }
+
+        /* Refined Features Section */
+        .features-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+
+        .team-social a {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .team-social a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .team-initials {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 0;
+            background: var(--light-bg);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Blog Preview */
+        .blog-preview {
+            padding: 2rem 0;
+            background: var(--light-bg);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/Dec.-10-Boost-Student-Engagement-with-Culturally-Responsive-Lessons_web-1024x637.jpg') center/cover fixed;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(26, 54, 93, 0.98), rgba(26, 54, 93, 0.95));
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-menu-overlay.active {
+            transform: translateX(0);
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            overflow-y: auto;
+        }
+
+        .mobile-menu-container {
+            min-height: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-close {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .mobile-nav {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 0.1rem;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 1rem;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            background: rgba(197, 157, 95, 0.1);
+            color: #c59d5f;
+            transform: translateX(10px);
+        }
+
+        .mobile-nav .language-selector {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav .language-selector a {
+            color: #c59d5f;
+            border: 1px solid rgba(197, 157, 95, 0.3);
+            text-align: center;
+        }
+
+        .mobile-nav .language-selector a:hover,
+        .mobile-nav .language-selector a.active {
+            background: #c59d5f;
+            color: #ffffff;
+            border-color: #c59d5f;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2002;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            color: var(--primary-color);
+            min-width: 48px;
+            min-height: 48px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .mobile-menu-btn:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-container {
+                display: none !important;
+            }
+
+            .premium-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1001;
+                background: white;
+            padding: 1rem 0;
+            }
+
+            main {
+                margin-top: 80px;
+            }
+        }
+
+        /* iOS-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .mobile-menu-overlay {
+                height: -webkit-fill-available;
+            }
+            
+            .mobile-menu-container {
+                height: -webkit-fill-available;
+            }
+            
+            .mobile-nav {
+                height: -webkit-fill-available;
+            }
+        }
+
+        /* Header Styles */
+        .premium-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            padding: 1rem 0;
+        }
+
+        .premium-header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .logo-equation {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.2rem;
+            margin-top: 0.2rem;
+            font-size: 0.7rem;
+            line-height: 1;
+        }
+
+        .logo-equation .math-symbol {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.2rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 3px;
+            color: #D4AF37;
+            font-weight: 500;
+        }
+
+        .logo-equation .equals, .logo-equation .plus {
+            font-size: 0.8rem;
+            padding: 0 0.1rem;
+            color: #D4AF37;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .logo-link {
+                margin-right: 1rem;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .logo span {
+                font-size: 1.3rem;
+            }
+
+            .logo-equation {
+                font-size: 0.6rem;
+            }
+
+            .logo-equation .math-symbol {
+                font-size: 0.6rem;
+                padding: 0.1rem 0.15rem;
+            }
+
+            .logo-equation .equals, .logo-equation .plus {
+                font-size: 0.7rem;
+            }
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        .language-selector a {
+            color: #c59d5f;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: block;
+        }
+
+        .language-selector a[data-lang="fr"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            color: var(--text-primary);
+            background: none;
+        }
+
+        .language-selector a.active {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .language-selector a:not([data-lang="fr"]):hover {
+            color: var(--accent-color);
+        }
+
+        .email-signature {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .email-signature .equation {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .email-signature .math-symbol {
+            font-size: 0.9rem;
+            padding: 0.1rem 0.3rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--accent-color);
+        }
+
+        .email-signature .equals, .email-signature .plus {
+            font-size: 1rem;
+            padding: 0 0.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Remove the entire nonprofit-section and its styles */
+        .nonprofit-section,
+        .nonprofit-grid,
+        .pricing-table,
+        .calculator-widget,
+        .pricing-note,
+        .action-buttons,
+        #support-modal,
+        .modal,
+        .modal-content,
+        .support-amounts {
+            display: none;
+        }
+
+        /* Remove stats section styles */
+        .stats,
+        .stats-grid,
+        .stat-item,
+        .stat-item h3,
+        .stat-item h3::after {
+            display: none;
+        }
+
+        /* Remove testimonials section styles */
+        .testimonials,
+        .testimonial-grid,
+        .testimonial-card,
+        .testimonial-content,
+        .testimonial-author,
+        .author-image {
+            display: none;
+        }
+
+        .tutoring-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            color: var(--white);
+        }
+
+        .tutoring-options .option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .tutoring-options .option:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tutoring-options .option i {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        .tutoring-options .option span {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .tutoring-options {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Programs Section Responsive Styles */
+        .programs-section {
+            padding: 6rem 1rem;
+            background: var(--light-bg);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 2rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.05);
+        }
+
+        .program-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 1));
+        }
+
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            color: var(--accent-color);
+        }
+
+        .program-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .program-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .program-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .program-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .program-features i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .programs-section {
+                padding: 4rem 1rem;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1.5rem 0;
+            }
+
+            .program-image {
+                height: 240px;
+            }
+
+            .program-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Program Benefits Section */
+        .program-benefits {
+            padding: 4rem 1rem;
+            background: var(--light-bg);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-item i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .programs-section,
+            .program-benefits {
+                padding: 3rem 1rem;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .program-card {
+                max-width: 100%;
+            }
+
+            .program-content {
+                padding: 1.25rem;
+            }
+
+            .program-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Hero Section Mobile Styles */
+        .hero-programs {
+            position: relative;
+            min-height: 40vh;
+            padding: 4rem 1rem;
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.95)), url('images/service-1.jpg') center/cover fixed;
+            color: var(--white);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 74px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero-programs {
+                min-height: 30vh;
+                padding: 3rem 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        .premium-footer {
+            background: #1a365d;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            color: #f6ad55;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #f6ad55;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-form .cta-button {
+            background: #f6ad55;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form .cta-button:hover {
+            background: #e69c44;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-row {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+
+        /* Hero Navigation Styles */
+        .hero-nav {
+            margin: 2.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--accent-color);
+        }
+
+        .nav-link i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: var(--accent-color);
+        }
+
+        .nav-link.active i {
+            color: white;
+        }
+
+        .nav-link span {
+            display: block;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .nav-link small {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .nav-link {
+                padding: 0.8rem;
+            }
+
+            .nav-link i {
+                font-size: 1.2rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .nav-link span {
+                font-size: 0.9rem;
+            }
+
+            .nav-link small {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-nav {
+                margin: 1.5rem 0;
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header class="premium-header">
+        <nav>
+            <a href="index.html" class="logo-link">
+            <div class="logo">
+                    <img src="images/logo.png" alt="Mathēmatiká Logo">
+                    <span>Mathēmatiká</span>
+            </div>
+                <div class="logo-equation">
+                    <span class="math-symbol">MATH</span>
+                    <span class="equals">=</span>
+                    <span class="math-symbol">MATH</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">PHYSICS</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">CHEMISTRY</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="./index.html">Welcome</a>
+                    <a href="./about.html">About</a>
+                    <a href="./programs.html" class="active">Programs</a>
+                    <a href="./admission.html">Admission</a>
+                    <a href="./consulting.html">Consulting</a>
+                    <a href="./contact.html">Contact</a>
+                </nav>
+                <div class="language-selector">
+                    <a href="index.html" class="active" data-lang="en">English</a>
+                    <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-container">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <a href="index.html">Mathēmatiká</a>
+                    <div class="logo-equation">
+                        <span class="math-symbol">MATH</span>
+                        <span class="equals">=</span>
+                        <span class="math-symbol">MATH</span>
+                        <span class="plus">+</span>
+                        <span class="math-symbol">PHYSICS</span>
+                        <span class="plus">+</span>
+                        <span class="math-symbol">CHEMISTRY</span>
+                    </div>
+                </div>
+                <div class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="./index.html" class="mobile-nav-link">Welcome</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="programs.html" class="mobile-nav-link active">Programs</a></li>
+                    <li><a href="admission.html" class="mobile-nav-link">Admission</a></li>
+                    <li><a href="consulting.html" class="mobile-nav-link">Consulting</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                    <li class="language-selector">
+                        <a href="programs.html" class="active" data-lang="en">English</a>
+                        <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero-programs">
+            <div class="hero-content">
+                <h1>Our Academic Programs</h1>
+                <p>Discover comprehensive mathematics and science education tailored to your learning journey</p>
+                
+                <div class="hero-nav">
+                    <div class="nav-grid">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <small>Welcome</small>
+                        </a>
+                        <a href="programs.html" class="nav-link active">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Programs</span>
+                            <small>Our Courses</small>
+                        </a>
+                        <a href="about.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>About Us</span>
+                            <small>Our Story</small>
+                        </a>
+                        <a href="admission.html" class="nav-link">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Admission</span>
+                            <small>Join Us</small>
+                        </a>
+                        <a href="consulting.html" class="nav-link">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>Consulting</span>
+                            <small>Expert Advice</small>
+                        </a>
+                        <a href="index.html#blog-preview" class="nav-link">
+                            <i class="fas fa-blog"></i>
+                            <span>Blog</span>
+                            <small>Latest Updates</small>
+                        </a>
+                        <a href="admission.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Trial</span>
+                            <small>Free Session</small>
+                        </a>
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                            <small>Get in Touch</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="programs-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Programs</h2>
+                    <p>Choose from our carefully designed programs to achieve academic excellence</p>
+                </div>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/m.png" alt="Advanced Mathematics">
+                        </div>
+                        <div class="program-content">
+                            <div class="program-meta">
+                                <span class="program-level">All Levels</span>
+                                <span class="program-duration">12-16 Weeks</span>
+                                </div>
+                            <h3>Advanced Mathematics</h3>
+                            <p>Master complex mathematical concepts through our comprehensive curriculum, from algebra to calculus.</p>
+                            <ul class="program-features">
+                                <li><i class="fas fa-check-circle"></i> Personalized Learning Path</li>
+                                <li><i class="fas fa-check-circle"></i> Weekly Assessments</li>
+                                <li><i class="fas fa-check-circle"></i> One-on-One Tutoring</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/Career-Exploration_600x341.jpg" alt="Physics Program">
+                        </div>
+                        <div class="program-content">
+                            <div class="program-meta">
+                                <span class="program-level">Intermediate to Advanced</span>
+                                <span class="program-duration">16 Weeks</span>
+                                </div>
+                            <h3>Physics Excellence</h3>
+                            <p>Develop strong understanding of physics principles through practical experiments and theoretical study.</p>
+                            <ul class="program-features">
+                                <li><i class="fas fa-check-circle"></i> Hands-on Experiments</li>
+                                <li><i class="fas fa-check-circle"></i> Problem-Solving Focus</li>
+                                <li><i class="fas fa-check-circle"></i> Lab Sessions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/computer.webp" alt="Chemistry Program">
+                        </div>
+                        <div class="program-content">
+                            <div class="program-meta">
+                                <span class="program-level">Beginner to Advanced</span>
+                                <span class="program-duration">14 Weeks</span>
+                                </div>
+                            <h3>Chemistry Mastery</h3>
+                            <p>Explore the fascinating world of chemistry through interactive learning and practical applications.</p>
+                            <ul class="program-features">
+                                <li><i class="fas fa-check-circle"></i> Laboratory Work</li>
+                                <li><i class="fas fa-check-circle"></i> Molecular Studies</li>
+                                <li><i class="fas fa-check-circle"></i> Research Projects</li>
+                            </ul>
+                                </div>
+                                </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/young-man-writing-notebook-study-7_600x341.jpg" alt="Exam Preparation">
+                            </div>
+                        <div class="program-content">
+                            <div class="program-meta">
+                                <span class="program-level">All Levels</span>
+                                <span class="program-duration">8-12 Weeks</span>
+                        </div>
+                            <h3>Exam Preparation</h3>
+                            <p>Comprehensive preparation for standardized tests and competitive examinations in mathematics and sciences.</p>
+                            <ul class="program-features">
+                                <li><i class="fas fa-check-circle"></i> Practice Tests</li>
+                                <li><i class="fas fa-check-circle"></i> Exam Strategies</li>
+                                <li><i class="fas fa-check-circle"></i> Performance Analysis</li>
+                            </ul>
+                    </div>
+                </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/students-future.jpg" alt="STEM Foundation">
+                        </div>
+                        <div class="program-content">
+                            <div class="program-meta">
+                                <span class="program-level">Beginner</span>
+                                <span class="program-duration">20 Weeks</span>
+                                </div>
+                            <h3>STEM Foundation</h3>
+                            <p>Build a strong foundation in Science, Technology, Engineering, and Mathematics through integrated learning.</p>
+                            <ul class="program-features">
+                                <li><i class="fas fa-check-circle"></i> Integrated Curriculum</li>
+                                <li><i class="fas fa-check-circle"></i> Project-Based Learning</li>
+                                <li><i class="fas fa-check-circle"></i> Practical Applications</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/management-consulting-process-slide1.png" alt="Research Program">
+                        </div>
+                        <div class="program-content">
+                            <div class="program-meta">
+                                <span class="program-level">Advanced</span>
+                                <span class="program-duration">24 Weeks</span>
+                                </div>
+                            <h3>Research Program</h3>
+                            <p>Engage in advanced research projects and develop critical thinking skills in mathematics and sciences.</p>
+                            <ul class="program-features">
+                                <li><i class="fas fa-check-circle"></i> Research Methodology</li>
+                                <li><i class="fas fa-check-circle"></i> Data Analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Scientific Writing</li>
+                            </ul>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+        </section>
+
+        <section class="program-benefits">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Our Programs</h2>
+                    <p>Experience the Mathēmatiká difference in your academic journey</p>
+                        </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from experienced educators with proven track records in mathematics and sciences.</p>
+                                </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Small Class Sizes</h3>
+                        <p>Enjoy personalized attention with our small group sessions and one-on-one tutoring.</p>
+                                </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your improvement with regular assessments and detailed progress reports.</p>
+                                </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Modern Learning Tools</h3>
+                        <p>Access cutting-edge educational technology and interactive learning resources.</p>
+                            </div>
+                        </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Excel in Mathematics and Sciences?</h2>
+                    <p>Join our programs and take the first step towards academic excellence</p>
+                    <div class="cta-buttons">
+                        <a href="./admission.html" class="cta-button primary">Apply Now</a>
+                        <a href="./contact.html" class="cta-button secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="footer-content">
+            <div class="footer-row">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                    <p>Montreal, H3S 1R4</p>
+                    <p>Quebec, Canada</p>
+                    <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
+                    <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li>Mathematics Enrichment</li>
+                        <li>Physics Excellence Program</li>
+                        <li>Chemistry Mastery Course</li>
+                        <li>STEM Foundation Program</li>
+                        <li>Advanced Research Program</li>
+                        <li>Exam Preparation</li>
+                        <li>One-on-One Tutoring</li>
+                    </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                        <li><a href="./about.html">Mathēmatiká at a Glance</a></li>
+                        <li><a href="./programs.html">Programs & Courses</a></li>
+                        <li><a href="./admission.html">Admission</a></li>
+                        <li><a href="./consulting.html">Consulting Services</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                    <h3>NEWSLETTER</h3>
+                <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address">
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca is not affiliated with, endorsed by, or in any way connected to Wolfram Research, Inc. or its Mathematica® software. For more details, please refer to our full disclaimer on the About page.</p>
+            <p>&copy; 2024 Mathēmatiká, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="scroll-progress"></div>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div class="fab">
+        <i class="fas fa-plus"></i>
+        <div class="fab-menu">
+            <a href="contact.html" class="fab-item"><i class="fas fa-phone"></i> Call Now</a>
+            <a href="programs.html" class="fab-item"><i class="fas fa-calendar"></i> Book Session</a>
+            <a href="contact.html" class="fab-item"><i class="fas fa-message"></i> Quick Chat</a>
+        </div>
+    </div>
+
+    <script>
+        // Ensure mobile menu starts closed
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => preloader.remove(), 500);
+        });
+
+        // Floating Action Button
+        const fab = document.querySelector('.fab');
+        const fabMenu = document.querySelector('.fab-menu');
+        
+        fab.addEventListener('click', () => {
+            fabMenu.classList.toggle('active');
+            fab.querySelector('i').classList.toggle('fa-plus');
+            fab.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Enhanced Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('stat-item')) {
+                        animateValue(entry.target.querySelector('h3'));
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll, .stat-item').forEach((element) => {
+            observer.observe(element);
+        });
+
+        // Enhanced Progress Counter Animation
+        function animateValue(element) {
+            if (element.dataset.animated) return;
+            
+            element.dataset.animated = true;
+            const value = parseInt(element.textContent);
+            const duration = 2000;
+            const start = 0;
+            const increment = value / (duration / 16);
+            let current = start;
+
+            const updateValue = () => {
+                current += increment;
+                if (current < value) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateValue);
+                } else {
+                    element.textContent = value;
+                }
+            };
+
+            requestAnimationFrame(updateValue);
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            // Ensure menu starts closed
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+
+            function toggleMobileMenu() {
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+            }
+
+            function handleNavigation(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                toggleMobileMenu();
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 100);
+            }
+
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', handleNavigation);
+            });
+
+            mobileMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    toggleMobileMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Read More functionality
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.previousElementSibling;
+                content.classList.toggle('expanded');
+                button.classList.toggle('expanded');
+                button.innerHTML = content.classList.contains('expanded') 
+                    ? 'Read Less <i class="fas fa-chevron-up"></i>' 
+                    : 'Read More <i class="fas fa-chevron-down"></i>';
+            });
+        });
+
+        function showEmailSetup() {
+            const guide = document.getElementById('emailSetupGuide');
+            guide.style.display = guide.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function calculateCost() {
+            const sessionType = document.getElementById('sessionType').value;
+            const sessionCount = parseInt(document.getElementById('sessionCount').value) || 0;
+            let total = 0;
+
+            switch(sessionType) {
+                case 'trial':
+                    total = 30; // Fixed price for trial pack
+                    break;
+                case 'standard':
+                    total = sessionCount * 15;
+                    break;
+                case 'group':
+                    total = sessionCount * 10;
+                    break;
+            }
+
+            document.getElementById('totalCost').textContent = `Total: $${total}`;
+        }
+
+        // Support Modal Functionality
+        const modal = document.getElementById('support-modal');
+        const closeBtn = document.querySelector('.close-modal');
+        const supportAmounts = document.querySelectorAll('.support-amount');
+
+        // Function to open modal
+        function openSupportModal() {
+            modal.style.display = 'block';
+        }
+
+        // Function to close modal
+        function closeSupportModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking close button
+        closeBtn.addEventListener('click', closeSupportModal);
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeSupportModal();
+            }
+        });
+
+        // Handle support amount selection
+        supportAmounts.forEach(button => {
+            button.addEventListener('click', () => {
+                const amount = button.dataset.amount;
+                if (amount === 'custom') {
+                    const customAmount = prompt('Enter custom amount:');
+                    if (customAmount && !isNaN(customAmount)) {
+                        processSupport(parseFloat(customAmount));
+                    }
+                } else {
+                    processSupport(parseFloat(amount));
+                }
+            });
+        });
+
+        // Function to process support (placeholder)
+        function processSupport(amount) {
+            alert(`Thank you for your support of $${amount}! This is a placeholder - actual payment processing would be implemented here.`);
+            closeSupportModal();
+        }
+    </script>
+    <script src="language.js"></script>
+</body>
+</html> 

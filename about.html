@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Mathēmatiká's mission, values, and dedicated team of STEM educators.">
+    <title>About Us - Mathēmatiká</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Mobile Menu Styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(26, 54, 93, 0.98), rgba(26, 54, 93, 0.95));
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-menu-overlay.active {
+            transform: translateX(0);
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            overflow-y: auto;
+        }
+
+        .mobile-menu-container {
+            min-height: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-close {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .mobile-nav {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 0.1rem;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 1rem;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            background: rgba(197, 157, 95, 0.1);
+            color: #c59d5f;
+            transform: translateX(10px);
+        }
+
+        .mobile-nav .language-selector {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav .language-selector a {
+            color: #c59d5f;
+            border: 1px solid rgba(197, 157, 95, 0.3);
+            text-align: center;
+        }
+
+        .mobile-nav .language-selector a:hover,
+        .mobile-nav .language-selector a.active {
+            background: #c59d5f;
+            color: #ffffff;
+            border-color: #c59d5f;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2002;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            color: var(--primary-color);
+            min-width: 48px;
+            min-height: 48px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .mobile-menu-btn:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-container {
+                display: none !important;
+            }
+
+            .premium-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1001;
+                background: white;
+                padding: 1rem 0;
+            }
+
+            main {
+                margin-top: 80px;
+            }
+        }
+
+        /* iOS-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .mobile-menu-overlay {
+                height: -webkit-fill-available;
+            }
+            
+            .mobile-menu-container {
+                height: -webkit-fill-available;
+            }
+            
+            .mobile-nav {
+                height: -webkit-fill-available;
+            }
+        }
+
+        /* Hero Navigation Styles */
+        .hero-nav {
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 70px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--accent-color);
+        }
+
+        .nav-link i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .nav-link.active i {
+            color: white;
+        }
+
+        .nav-link .text-content {
+            text-align: left;
+        }
+
+        .nav-link span {
+            display: block;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .nav-link small {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                padding: 0 1rem;
+            }
+
+            .nav-link {
+                padding: 0.8rem 1.5rem;
+                min-height: 60px;
+                gap: 0.8rem;
+            }
+
+            .nav-link i {
+                font-size: 1.2rem;
+            }
+
+            .nav-link span {
+                font-size: 0.9rem;
+                margin-bottom: 0.1rem;
+            }
+
+            .nav-link small {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-nav {
+                margin: 1.5rem 0;
+                padding: 1rem 0;
+            }
+
+            .nav-grid {
+                gap: 0.6rem;
+                padding: 0 0.8rem;
+            }
+
+            .nav-link {
+                min-height: 50px;
+                padding: 0.8rem 1.2rem;
+                gap: 0.8rem;
+            }
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.95)), url('./images/math-bg.jpg') center/cover fixed;
+            padding: 6rem 0;
+            text-align: center;
+            color: white;
+            margin-top: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .mission-section {
+            padding: 4rem 0;
+            background: #f7fafc;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .values-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .values-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .values-list li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .stats-section {
+            display: none;
+        }
+
+        .stats-grid {
+            display: none;
+        }
+
+        .stat-card {
+            display: none;
+        }
+
+        .stat-number {
+            display: none;
+        }
+
+        .stat-label {
+            display: none;
+        }
+
+        .values-section {
+            padding: 4rem 0;
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.95)), url('images/math-bg.jpg') center/cover no-repeat;
+            color: white;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            align-items: center;
+        }
+
+        .values-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+
+        .values-image {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .values-image img {
+                width: 100%;
+            height: 350px;
+            max-width: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+            display: block;
+                margin: 0 auto;
+            }
+
+        .value-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .team-section {
+            padding: 6rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+                text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+                flex-direction: column;
+            align-items: center;
+                text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #1a365d, #c59d5f);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .team-info {
+            width: 100%;
+        }
+
+        .team-info h3 {
+            color: #1a365d;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .team-info p {
+            color: #4a5568;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .team-email {
+            color: #c59d5f;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(197, 157, 95, 0.3);
+            border-radius: 4px;
+        }
+
+        .team-email:hover {
+            color: #1a365d;
+            background: rgba(197, 157, 95, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .team-section {
+                padding: 4rem 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .team-card {
+                padding: 1.5rem;
+            }
+
+            .team-info h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .why-section {
+            padding: 5rem 0;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-top: -2rem;
+            position: relative;
+        }
+
+        .why-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .why-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .why-item p {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Logo Styles */
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .logo-equation {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.2rem;
+            margin-top: 0.2rem;
+            font-size: 0.7rem;
+            line-height: 1;
+        }
+
+        .logo-equation .math-symbol {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.2rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 3px;
+            color: #D4AF37;
+            font-weight: 500;
+        }
+
+        .logo-equation .equals, .logo-equation .plus {
+            font-size: 0.8rem;
+            padding: 0 0.1rem;
+            color: #D4AF37;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .logo-link {
+                margin-right: 1rem;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .logo span {
+                font-size: 1.3rem;
+            }
+
+            .logo-equation {
+                font-size: 0.6rem;
+            }
+
+            .logo-equation .math-symbol {
+                font-size: 0.6rem;
+                padding: 0.1rem 0.15rem;
+            }
+
+            .logo-equation .equals, .logo-equation .plus {
+                font-size: 0.7rem;
+            }
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #1a365d;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c59d5f;
+            background: rgba(197, 157, 95, 0.1);
+        }
+
+        .nav-links a.active {
+            color: #c59d5f;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #c59d5f;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-left: 1rem;
+        }
+
+        .language-selector a {
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: #1a365d;
+            border: 1px solid rgba(197, 157, 95, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .language-selector a.active {
+            background: #c59d5f;
+            color: #ffffff;
+            border-color: #c59d5f;
+        }
+
+        .language-selector a:hover:not([style*="cursor: not-allowed"]) {
+            background: #c59d5f;
+            color: #ffffff;
+            border-color: #c59d5f;
+        }
+
+        /* Mobile nav active state */
+        .mobile-nav a.active {
+            background: rgba(197, 157, 95, 0.1);
+            color: #c59d5f;
+            transform: translateX(10px);
+        }
+
+        /* Header Styles */
+        .premium-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            padding: 1rem 0;
+        }
+
+        .premium-header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .premium-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1001;
+                background: white;
+                padding: 1rem 0;
+            }
+
+            .nav-container {
+                display: none !important;
+            }
+
+            main {
+                margin-top: 80px;
+            }
+        }
+
+        /* Adjust main content to account for fixed header */
+        main {
+            margin-top: 80px;
+        }
+
+        /* Ensure proper spacing for all sections */
+        section {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        /* Adjust hero section to account for fixed header */
+        .hero {
+            margin-top: 0;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Ensure proper z-indexing */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Adjust mobile menu button position */
+        .mobile-menu-btn {
+            position: fixed;
+            right: 1rem;
+            top: 1.8rem;
+            z-index: 1002;
+        }
+
+        .premium-footer {
+            background: #1a365d;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            color: #f6ad55;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #f6ad55;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-form .cta-button {
+            background: #f6ad55;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form .cta-button:hover {
+            background: #e69c44;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-row {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="premium-header">
+        <nav>
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Mathēmatiká Logo">
+                    <span>Mathēmatiká</span>
+                </div>
+                <div class="logo-equation">
+                    <span class="math-symbol">MATH</span>
+                    <span class="equals">=</span>
+                    <span class="math-symbol">MATH</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">PHYSICS</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">CHEMISTRY</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="./index.html">Welcome</a>
+                    <a href="./about.html" class="active">About</a>
+                    <a href="./programs.html">Programs</a>
+                    <a href="./admission.html">Admission</a>
+                    <a href="./consulting.html">Consulting</a>
+                    <a href="./contact.html">Contact</a>
+                </nav>
+                <div class="language-selector">
+                    <a href="about.html" class="active" data-lang="en">English</a>
+                    <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-container">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <a href="index.html">Mathēmatiká</a>
+                    <div class="logo-equation">
+                        <span class="math-symbol">MATH</span>
+                        <span class="equals">=</span>
+                        <span class="math-symbol">MATH</span>
+                        <span class="plus">+</span>
+                        <span class="math-symbol">PHYSICS</span>
+                        <span class="plus">+</span>
+                        <span class="math-symbol">CHEMISTRY</span>
+            </div>
+            </div>
+                <div class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+            </div>
+            </div>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="./index.html" class="mobile-nav-link">Welcome</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
+                    <li><a href="admission.html" class="mobile-nav-link">Admission</a></li>
+                    <li><a href="consulting.html" class="mobile-nav-link">Consulting</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                    <li class="language-selector">
+                        <a href="about.html" class="active" data-lang="en">English</a>
+                        <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>About Mathēmatiká</h1>
+                <p>Excellence in Mathematics, Physics, and Chemistry Education</p>
+                
+                <div class="hero-nav">
+                    <div class="nav-grid">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <small>Welcome</small>
+                        </a>
+                        <a href="programs.html" class="nav-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Programs</span>
+                            <small>Our Courses</small>
+                        </a>
+                        <a href="about.html" class="nav-link active">
+                            <i class="fas fa-users"></i>
+                            <span>About Us</span>
+                            <small>Our Story</small>
+                        </a>
+                        <a href="admission.html" class="nav-link">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Admission</span>
+                            <small>Join Us</small>
+                        </a>
+                        <a href="consulting.html" class="nav-link">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>Consulting</span>
+                            <small>Expert Advice</small>
+                        </a>
+                        <a href="index.html#blog-preview" class="nav-link">
+                            <i class="fas fa-blog"></i>
+                            <span>Blog</span>
+                            <small>Latest Updates</small>
+                        </a>
+                        <a href="admission.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Trial</span>
+                            <small>Free Session</small>
+                        </a>
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                            <small>Get in Touch</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="container">
+                <h2>Why Mathēmatiká?</h2>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <i class="fas fa-bullseye"></i>
+            </div>
+                        <p>To make STEM education simple, clear — breaking down complex concepts into understandable pieces</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <i class="fas fa-book-open"></i>
+                    </div>
+                        <p>To help students see the beauty and creativity behind Math, Physics, and Chemistry</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p>To provide high-quality education at low cost —learning should never be a luxury</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <p>To bring together expert tutors, modern tools, and a student-centered approach</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <p>To create a nonprofit community that uplifts, educates, and inspires — starting in Montreal, growing everywhere</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-lightbulb"></i>
+            </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower every learner with deep understanding in Mathematics, Physics, and Chemistry through affordable, technology-enhanced education. As a nonprofit initiative, we provide high-quality academic support to communities that need it most—cultivating critical thinking, creativity, and confidence in a digital world.</p>
+            </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become a leading force in inclusive STEM education—where innovation, academic excellence, and community values unite to transform how science and mathematics are learned and lived across the globe.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>At Mathēmatiká, we are guided by an unwavering commitment to:</p>
+                    <ul class="values-list">
+                        <li>Excellence in teaching and learning</li>
+                        <li>Innovation through technology and creativity</li>
+                        <li>Integrity in every interaction</li>
+                        <li>Equity and accessibility for all learners</li>
+                        <li>Student success, curiosity, and lifelong learning</li>
+                </ul>
+                    <p>We believe that STEM education builds the next generation of problem-solvers, innovators, and changemakers.</p>
+            </div>
+        </div>
+        </section>
+
+        <section class="values-section">
+            <div class="values-grid">
+                <div class="values-content">
+                    <h2>Our Core Values</h2>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-graduation-cap"></i>
+            </div>
+                            <div class="value-text">
+                                <h3>Academic Excellence</h3>
+                                <p>We maintain the highest standards of educational quality in all our programs.</p>
+            </div>
+            </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+        </div>
+                            <div class="value-text">
+                                <h3>Student-Centered Approach</h3>
+                                <p>Our teaching adapts to every student's learning style, level, and pace.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Continuous Innovation</h3>
+                                <p>We embrace technology and creativity to enhance the learning experience.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Community Engagement</h3>
+                                <p>We build lasting relationships with students, families, and the broader community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Leadership Team</h2>
+                    <p>Meet the dedicated professionals shaping the future of STEM education at Mathēmatiká.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Meraj Hosseini, Ph.D.</h3>
+                            <p>Founder | Mathematics Department Head</p>
+                            <a href="mailto:meraj.hosseini@mathematika.ca" class="team-email">meraj.hosseini@mathematika.ca</a>
+            </div>
+        </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Majeed Shahabi, Ph.D.</h3>
+                            <p>Co-Founder | Physics Department Head</p>
+                            <a href="mailto:majeed.shahabi@mathematika.ca" class="team-email">majeed.shahabi@mathematika.ca</a>
+                </div>
+                </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Nooshin Sabet, Ph.D.</h3>
+                            <p>College Curriculum Specialist | Mathematics</p>
+                            <a href="mailto:nooshin.sabet@mathematika.ca" class="team-email">nooshin.sabet@mathematika.ca</a>
+                </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Shahab Shahabi, Ph.D.</h3>
+                            <p>College Curriculum Specialist | Mathematics</p>
+                            <a href="mailto:shahab.shahabi@mathematika.ca" class="team-email">shahab.shahabi@mathematika.ca</a>
+            </div>
+        </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Shahab Shaabani, Ph.D.</h3>
+                            <p>College Instructor | Mathematics Expert</p>
+                            <a href="mailto:shahab.shaabani@mathematika.ca" class="team-email">shahab.shaabani@mathematika.ca</a>
+                    </div>
+                </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Hossein Shahabi, M.Sc.</h3>
+                            <p>Chemistry Lab Coordinator</p>
+                            <a href="mailto:hossein.shahabi@mathematika.ca" class="team-email">hossein.shahabi@mathematika.ca</a>
+                </div>
+            </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Malik Balogoun, Ph.D.</h3>
+                            <p>Experimental Physics Instructor</p>
+                            <a href="mailto:malik.balogoun@mathematika.ca" class="team-email">malik.balogoun@mathematika.ca</a>
+                    </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Peyman Navaei, M.Sc.</h3>
+                            <p>Physics Instructor</p>
+                            <a href="mailto:peyman.navaei@mathematika.ca" class="team-email">peyman.navaei@mathematika.ca</a>
+                    </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-info">
+                            <h3>Mahbubur Rahman, Ph.D.</h3>
+                            <p>Chemistry Expert | University Instructor</p>
+                            <a href="mailto:mahbubur.rahman@mathematika.ca" class="team-email">mahbubur.rahman@mathematika.ca</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+
+        <section class="disclaimer-section" style="padding: 4rem 0; background: var(--light-bg);">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <div class="section-header">
+                    <h2>Disclaimer</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--text-secondary);">
+                        Mathematika.ca is an independent educational platform and is not affiliated with, endorsed by, or sponsored by Wolfram Research, Inc., the creators of the Mathematica® software.
+                    </p>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--text-secondary);">
+                        The use of the name "Mathematika" reflects a general reference to the subject of mathematics and does not imply any association with registered trademarks or proprietary products.
+                    </p>
+                    <p style="line-height: 1.6; color: var(--text-secondary);">
+                        All trademarks, product names, and company names mentioned on this website are the property of their respective owners.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="footer-content">
+            <div class="footer-row">
+            <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Montreal, H3S 1R4</p>
+                    <p>Quebec, Canada</p>
+                    <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
+                    <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
+            </div>
+            <div class="footer-section">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li>Mathematics Enrichment</li>
+                        <li>Physics Excellence Program</li>
+                        <li>Chemistry Mastery Course</li>
+                        <li>STEM Foundation Program</li>
+                        <li>Advanced Research Program</li>
+                        <li>Exam Preparation</li>
+                        <li>One-on-One Tutoring</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./about.html">Mathēmatiká at a Glance</a></li>
+                        <li><a href="./programs.html">Programs & Courses</a></li>
+                        <li><a href="./admission.html">Admission</a></li>
+                        <li><a href="./consulting.html">Consulting Services</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>NEWSLETTER</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address">
+                        <button type="submit" class="cta-button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca is not affiliated with, endorsed by, or in any way connected to Wolfram Research, Inc. or its Mathematica® software. For more details, please refer to our full disclaimer on the About page.</p>
+            <p>&copy; 2024 Mathēmatiká, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="scroll-progress"></div>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+                            </div>
+
+    <script src="language.js"></script>
+    <script>
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            // Ensure menu starts closed
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+
+            function toggleMobileMenu() {
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+            }
+
+            function handleNavigation(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                toggleMobileMenu();
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 100);
+            }
+
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', handleNavigation);
+            });
+
+            mobileMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    toggleMobileMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

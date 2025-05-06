@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MathMaster - Expert mathematics tutoring and education. Join our community of excellence in Montreal.">
+    <title>MathMaster - Expert Mathematics Education</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Copy all styles from index.html */
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--light-bg);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Enhanced Visual Hierarchy */
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d4a77;
+            --accent-color: #c59d5f;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --white: #ffffff;
+            --light-bg: #f7fafc;
+            --gray: #718096;
+            --success: #48bb78;
+            --error: #f56565;
+            --warning: #ed8936;
+            --border-color: #e2e8f0;
+        }
+
+        /* Copy all other styles from index.html */
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header class="premium-header">
+        <nav>
+            <a href="index_fr.html" class="logo-link">
+                <div class="logo">
+                    <img src="images/logo.png" alt="MathMaster Logo">
+                    <span>MathMaster</span>
+                </div>
+                <div class="logo-equation">
+                    <span class="math-symbol">MATH</span>
+                    <span class="equals">=</span>
+                    <span class="math-symbol">MATH</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">PHYSIQUE</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">CHIMIE</span>
+                </div>
+            </a>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="./index_fr.html" class="active">Accueil</a></li>
+                    <li><a href="./about_fr.html">À propos</a></li>
+                    <li><a href="./programs_fr.html">Programmes</a></li>
+                    <li><a href="./admission_fr.html">Admission</a></li>
+                    <li><a href="./consulting_fr.html">Consultation</a></li>
+                    <li class="two-line"><a href="./contact_fr.html">Nous<br>Contacter</a></li>
+                    <li class="two-line"><a href="./support_fr.html">Soutenir</a></li>
+                </ul>
+                <div class="language-selector">
+                    <a href="index.html" data-lang="en">English</a>
+                    <a href="index_fr.html" class="active" data-lang="fr">Français</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>MathMaster</h1>
+                <div class="equation-display">
+                    <span class="math-symbol">MATH</span>
+                    <span class="equals">=</span>
+                    <span class="math-symbol">MATH</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">PHYSIQUE</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">CHIMIE</span>
+                </div>
+                <p class="hero-description">Expert education in STEM subjects for all levels</p>
+                <div class="cta-buttons">
+                    <a href="programs_fr.html" class="cta-button primary">Découvrir les programmes</a>
+                    <a href="contact_fr.html" class="cta-button secondary">Nous contacter</a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pourquoi choisir MathMaster?</h2>
+                    <p>Découvrez l'excellence en éducation mathématique grâce à notre approche complète.</p>
+                </div>
+                <!-- Features content -->
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll">
+                        <h3>1000+</h3>
+                        <p>Étudiants formés</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <h3>95%</h3>
+                        <p>Taux de réussite</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <h3>15+</h3>
+                        <p>Tuteurs experts</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <h3>8+</h3>
+                        <p>Années d'expérience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nonprofit-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>🎓 Offre à but non lucratif – Temps limité</h2>
+                    <p>
+                        MathMaster fonctionne actuellement comme un <strong>projet communautaire à but non lucratif</strong> pour aider les étudiants
+                        à accéder à un tutorat de haute qualité à un prix symbolique. Il s'agit d'une opportunité temporaire
+                        pendant que nous explorons des options de financement durables.
+                    </p>
+                    <p>
+                        Toutes les séances sont animées par une équipe de docteurs, passionnés par l'enseignement. Nous sommes là pour aider, pas pour en tirer profit.
+                    </p>
+                </div>
+
+                <div class="nonprofit-grid">
+                    <div class="nonprofit-image">
+                        <img src="images/Dec.-10-Boost-Student-Engagement-with-Culturally-Responsive-Lessons_web-1024x637.jpg" alt="Étudiants en apprentissage">
+                    </div>
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Formule</th>
+                                <th>Détails</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Séance d'introduction</td>
+                                <td>Consultation de 30 minutes + tutorat</td>
+                                <td><strong>Gratuit</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Pack d'essai</td>
+                                <td>3 séances privées d'une heure</td>
+                                <td><strong>30 $ au total</strong> (10 $/h)</td>
+                            </tr>
+                            <tr>
+                                <td>Séance standard</td>
+                                <td>Aide personnalisée en tête-à-tête</td>
+                                <td><strong>15 $/heure</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Cours en groupe</td>
+                                <td>3 à 5 élèves par classe</td>
+                                <td><strong>10 $/élève</strong> (bientôt)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="calculator-widget">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem;">Calculez votre coût</h3>
+                    <div class="calculator-form">
+                        <select id="sessionType" onchange="calculateCost()">
+                            <option value="">Sélectionnez le type de séance</option>
+                            <option value="trial">Pack d'essai (3 séances)</option>
+                            <option value="standard">Séances standard</option>
+                            <option value="group">Cours en groupe</option>
+                        </select>
+                        <input type="number" id="sessionCount" placeholder="Nombre de séances" min="1" onchange="calculateCost()">
+                        <div class="total-cost" id="totalCost">Total : 0 $</div>
+                    </div>
+                </div>
+
+                <p class="pricing-note">
+                    💬 <em>Nous faisons cela comme un service public pour le moment. Si nous recevons du soutien et du financement, nous continuerons en tant qu'organisme à but non lucratif. Sinon, ces prix pourront changer ultérieurement.</em>
+                </p>
+
+                <p class="pricing-note">
+                    🙏 <em>Si vous souhaitez aider MathMaster à continuer en tant qu'organisme à but non lucratif, n'hésitez pas à partager avec d'autres ou à nous soutenir à l'avenir. Chaque geste compte.</em>
+                </p>
+
+                <div class="action-buttons">
+                    <a href="contact_fr.html" class="book-button">
+                        <i class="fas fa-calendar-check"></i>
+                        Réserver une séance
+                    </a>
+                    <a href="programs_fr.html" class="book-button" style="background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color);">
+                        <i class="fas fa-info-circle"></i>
+                        En savoir plus
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>Ce que disent nos étudiants</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-content">
+                            "MathMaster m'a aidé à obtenir un A+ en calcul. Les tuteurs sont compétents et patients, rendant les concepts complexes faciles à comprendre."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/student-1.jpg" alt="Étudiant" class="author-image">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Élève du secondaire</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-content">
+                            "L'approche personnalisée et les horaires flexibles m'ont permis d'améliorer mes compétences en mathématiques tout en gérant mon emploi du temps chargé."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/student-2.jpg" alt="Étudiant" class="author-image">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Étudiant universitaire</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-content">
+                            "Grâce à MathMaster, la confiance de ma fille en mathématiques a considérablement augmenté. Les tuteurs excellent à développer à la fois les compétences et la confiance en soi."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/parent-1.jpg" alt="Parent" class="author-image">
+                            <div>
+                                <h4>Emily Thompson</h4>
+                                <p>Parent</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-preview">
+            <div class="container">
+                <h2>Derniers conseils et ressources mathématiques</h2>
+                <div class="blog-grid">
+                    <div class="blog-card animate-on-scroll">
+                        <div class="blog-image">
+                            <img src="images/blog-1.jpg" alt="Conseils d'étude en mathématiques">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">28 mars 2024</div>
+                            <h3>10 techniques d'étude efficaces en mathématiques</h3>
+                            <p>Découvrez des stratégies éprouvées pour améliorer votre apprentissage et votre rétention en mathématiques.</p>
+                            <a href="#" class="read-more">Lire la suite →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card animate-on-scroll">
+                        <div class="blog-image">
+                            <img src="images/blog-2.jpg" alt="Les mathématiques dans la vie quotidienne">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">25 mars 2024</div>
+                            <h3>Les mathématiques dans la vie quotidienne</h3>
+                            <p>Découvrez comment les concepts mathématiques s'appliquent aux situations réelles et à la résolution de problèmes.</p>
+                            <a href="#" class="read-more">Lire la suite →</a>
+                        </div>
+                    </div>
+                    <div class="blog-card animate-on-scroll">
+                        <div class="blog-image">
+                            <img src="images/blog-3.jpg" alt="Préparation aux examens">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">22 mars 2024</div>
+                            <h3>Guide de préparation aux examens</h3>
+                            <p>Conseils et stratégies essentiels pour réussir vos examens de mathématiques.</p>
+                            <a href="#" class="read-more">Lire la suite →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-practice">
+            <div class="container">
+                <h2>Exercice rapide de mathématiques</h2>
+                <div class="practice-container">
+                    <div class="practice-problem">
+                        <h3>Défi du jour</h3>
+                        <div class="problem-text" id="mathProblem">
+                            Résoudre : 2x + 5 = 13
+                        </div>
+                        <input type="text" class="problem-input" placeholder="Votre réponse">
+                        <button class="cta-button" onclick="checkAnswer()">Vérifier la réponse</button>
+                    </div>
+
+                    <div class="calculator">
+                        <!-- Les boutons de la calculatrice seront ajoutés par JavaScript -->
+                    </div>
+
+                    <div class="formula-visualizer">
+                        <h3>Visualiseur de formules</h3>
+                        <select class="formula-select">
+                            <option value="quadratic">Formule quadratique</option>
+                            <option value="pythagorean">Théorème de Pythagore</option>
+                            <option value="circle">Aire du cercle</option>
+                        </select>
+                        <div class="formula-display" id="formulaDisplay">
+                            <!-- La formule sera affichée ici -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Prêt à exceller en mathématiques ?</h2>
+                    <p>Rejoignez MathMaster aujourd'hui et transformez votre parcours mathématique avec des conseils d'experts et des méthodes éprouvées.</p>
+                    <a href="contact_fr.html" class="cta-button">Commencez aujourd'hui</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contactez-nous</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 10, 3250 Van Horne</p>
+                <p>Montréal, QC H3S 1R8</p>
+                <p>Canada</p>
+                <p><i class="fas fa-phone"></i> +1 514 977-0459</p>
+                <p><i class="fas fa-phone"></i> +1 514 475-5210</p>
+                <p><i class="fas fa-envelope"></i> info@mathmaster.ca</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="./about_fr.html">MathMaster en bref</a></li>
+                    <li><a href="./programs_fr.html">Programmes / Cours</a></li>
+                    <li><a href="./admission_fr.html">Admission</a></li>
+                    <li><a href="./consulting_fr.html">Solution de consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Entrez votre email">
+                    <button type="submit" class="cta-button">S'abonner</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MathMaster, Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateCost() {
+            const sessionType = document.getElementById('sessionType').value;
+            const sessionCount = parseInt(document.getElementById('sessionCount').value) || 0;
+            let total = 0;
+
+            switch(sessionType) {
+                case 'trial':
+                    total = 30;
+                    break;
+                case 'standard':
+                    total = sessionCount * 15;
+                    break;
+                case 'group':
+                    total = sessionCount * 10;
+                    break;
+            }
+
+            document.getElementById('totalCost').textContent = `Total : ${total} $`;
+        }
+    </script>
+    <script src="language.js"></script>
+</body>
+</html> 
