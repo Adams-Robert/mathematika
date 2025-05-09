@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mathēmatiká - Expert mathematics tutoring and education. Join our community of excellence in Montreal.">
     <title>Programs - Mathēmatiká</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -945,16 +944,19 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            min-height: 350px;
+            position: relative;
         }
 
         .program-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--accent-color);
         }
 
         .program-image {
             width: 100%;
-            height: 280px;
+            height: 250px;
             overflow: hidden;
             position: relative;
         }
@@ -976,14 +978,18 @@
             display: flex;
             flex-direction: column;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 1));
+            gap: 1.2rem;
         }
 
-        .program-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
+        .program-level {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(197, 157, 95, 0.1);
             color: var(--accent-color);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
 
         .program-card h3 {
@@ -991,6 +997,8 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            line-height: 1.3;
+            min-height: 60px;
         }
 
         .program-card p {
@@ -998,22 +1006,24 @@
             margin-bottom: 1.5rem;
             line-height: 1.6;
             flex-grow: 1;
+            font-size: 1rem;
         }
 
         .program-features {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem 0;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
-            padding-top: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .program-features li {
+        .program-features span {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
+            gap: 0.5rem;
+            font-size: 0.95rem;
             color: var(--text-primary);
         }
 
@@ -1022,23 +1032,99 @@
             font-size: 1.1rem;
         }
 
-        @media (max-width: 768px) {
-            .programs-section {
-                padding: 4rem 1rem;
-            }
+        .program-modules {
+            margin-top: 1.5rem;
+        }
 
+        .program-modules h4 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-modules ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .program-modules li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .program-modules li:before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .program-cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+
+        .program-cta:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .tech-highlights {
+            background: rgba(197, 157, 95, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .tech-highlights h4 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-highlights p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-highlights i {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
             .programs-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 1.5rem 0;
+                padding: 1rem;
+            }
+
+            .program-card {
+                min-height: auto;
             }
 
             .program-image {
-                height: 240px;
+                height: 200px;
             }
 
             .program-content {
                 padding: 1.5rem;
+            }
+
+            .program-card h3 {
+                min-height: auto;
             }
         }
 
@@ -1348,6 +1434,76 @@
                 padding: 1rem 0;
             }
         }
+
+        .program-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .learn-more:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .learn-more i {
+            transition: transform 0.3s ease;
+        }
+
+        .learn-more:hover i {
+            transform: translateX(5px);
+        }
+
+        .program-cta {
+            flex: 1;
+            justify-content: center;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .program-actions {
+                flex-direction: column;
+            }
+        }
+
+        .program-details {
+            margin-top: 1rem;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .read-more-btn:focus {
+            outline: 2px solid var(--accent-color);
+        }
     </style>
 </head>
 <body>
@@ -1358,7 +1514,19 @@
     <header class="premium-header">
         <nav>
             <a href="index.html" class="logo-link">
-            <img src="images/lastlogo.png" alt="Mathēmatiká Logo" style="height: 60px; width: auto; display: block; margin: 0 auto;">
+            <div class="logo">
+                    <img src="images/logo.png" alt="Mathēmatiká Logo">
+                    <span>Mathēmatiká</span>
+            </div>
+                <div class="logo-equation">
+                    <span class="math-symbol">MATH</span>
+                    <span class="equals">=</span>
+                    <span class="math-symbol">MATH</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">PHYSICS</span>
+                    <span class="plus">+</span>
+                    <span class="math-symbol">CHEMISTRY</span>
+                </div>
             </a>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -1477,121 +1645,313 @@
                     <p>Choose from our carefully designed programs to achieve academic excellence</p>
                 </div>
                 <div class="programs-grid">
+                    <!-- Advanced Mathematics -->
                     <div class="program-card">
                         <div class="program-image">
-                            <img src="images/m.png" alt="Advanced Mathematics">
+                            <img src="images/Math2.jpg" alt="Advanced Mathematics">
                         </div>
                         <div class="program-content">
-                            <div class="program-meta">
-                                <span class="program-level">All Levels</span>
-                                <span class="program-duration">12-16 Weeks</span>
-                                </div>
+                            <span class="program-level">All Levels</span>
                             <h3>Advanced Mathematics</h3>
                             <p>Master complex mathematical concepts through our comprehensive curriculum, from algebra to calculus.</p>
-                            <ul class="program-features">
-                                <li><i class="fas fa-check-circle"></i> Personalized Learning Path</li>
-                                <li><i class="fas fa-check-circle"></i> Weekly Assessments</li>
-                                <li><i class="fas fa-check-circle"></i> One-on-One Tutoring</li>
-                            </ul>
+                            <div class="program-features">
+                                <span><i class="fas fa-square-root-alt"></i> Advanced Topics</span>
+                                <span><i class="fas fa-user-graduate"></i> Expert Guidance</span>
+                                <span><i class="fas fa-chart-line"></i> Progress Tracking</span>
+                            </div>
+                            <div class="program-modules">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>Personalized Learning Path</li>
+                                    <li>Weekly Assessments</li>
+                                    <li>One-on-One Tutoring</li>
+                                    <li>Problem-Solving Workshops</li>
+                                    <li>Advanced Topic Coverage</li>
+                                    <li>Practice Materials</li>
+                                    <li>Progress Tracking</li>
+                                </ul>
+                            </div>
+                            <div class="program-actions">
+                                <a href="programs/advanced-mathematics.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                <a href="admission.html" class="program-cta">Enroll Now</a>
+                            </div>
                         </div>
                     </div>
-
+                    <!-- Physics Excellence -->
                     <div class="program-card">
                         <div class="program-image">
                             <img src="images/Career-Exploration_600x341.jpg" alt="Physics Program">
                         </div>
                         <div class="program-content">
-                            <div class="program-meta">
-                                <span class="program-level">Intermediate to Advanced</span>
-                                <span class="program-duration">16 Weeks</span>
-                                </div>
+                            <span class="program-level">Intermediate to Advanced</span>
                             <h3>Physics Excellence</h3>
-                            <p>Develop strong understanding of physics principles through practical experiments and theoretical study.</p>
-                            <ul class="program-features">
-                                <li><i class="fas fa-check-circle"></i> Hands-on Experiments</li>
-                                <li><i class="fas fa-check-circle"></i> Problem-Solving Focus</li>
-                                <li><i class="fas fa-check-circle"></i> Lab Sessions</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="images/computer.webp" alt="Chemistry Program">
-                        </div>
-                        <div class="program-content">
-                            <div class="program-meta">
-                                <span class="program-level">Beginner to Advanced</span>
-                                <span class="program-duration">14 Weeks</span>
-                                </div>
-                            <h3>Chemistry Mastery</h3>
-                            <p>Explore the fascinating world of chemistry through interactive learning and practical applications.</p>
-                            <ul class="program-features">
-                                <li><i class="fas fa-check-circle"></i> Laboratory Work</li>
-                                <li><i class="fas fa-check-circle"></i> Molecular Studies</li>
-                                <li><i class="fas fa-check-circle"></i> Research Projects</li>
-                            </ul>
-                                </div>
-                                </div>
-
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="images/young-man-writing-notebook-study-7_600x341.jpg" alt="Exam Preparation">
+                            <div class="program-preview">
+                                Develop strong understanding of physics principles through practical experiments and theoretical study.
                             </div>
-                        <div class="program-content">
-                            <div class="program-meta">
-                                <span class="program-level">All Levels</span>
-                                <span class="program-duration">8-12 Weeks</span>
+                            <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                            <div class="program-details" style="display:none;">
+                                <p>Develop strong understanding of physics principles through practical experiments and theoretical study.</p>
+                                <div class="program-features">
+                                    <span><i class="fas fa-atom"></i> Practical Labs</span>
+                                    <span><i class="fas fa-microscope"></i> Experiments</span>
+                                    <span><i class="fas fa-brain"></i> Theory & Practice</span>
+                                </div>
+                                <div class="program-modules">
+                                    <h4>Program Highlights:</h4>
+                                    <ul>
+                                        <li>Hands-on Experiments</li>
+                                        <li>Problem-Solving Focus</li>
+                                        <li>Lab Sessions</li>
+                                        <li>Theoretical Foundations</li>
+                                        <li>Real-world Applications</li>
+                                        <li>Advanced Equipment Usage</li>
+                                        <li>Research Projects</li>
+                                    </ul>
+                                </div>
+                                <div class="program-actions">
+                                    <a href="programs/physics-excellence.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="admission.html" class="program-cta">Enroll Now</a>
+                                </div>
+                            </div>
                         </div>
-                            <h3>Exam Preparation</h3>
-                            <p>Comprehensive preparation for standardized tests and competitive examinations in mathematics and sciences.</p>
-                            <ul class="program-features">
-                                <li><i class="fas fa-check-circle"></i> Practice Tests</li>
-                                <li><i class="fas fa-check-circle"></i> Exam Strategies</li>
-                                <li><i class="fas fa-check-circle"></i> Performance Analysis</li>
-                            </ul>
                     </div>
-                </div>
-
+                    <!-- Chemistry Mastery -->
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/example-of-molecule.png" alt="Chemistry Program">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-level">Beginner to Advanced</span>
+                            <h3>Chemistry Mastery</h3>
+                            <div class="program-preview">
+                                Explore the fascinating world of chemistry through interactive learning and practical applications.
+                            </div>
+                            <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                            <div class="program-details" style="display:none;">
+                                <p>Explore the fascinating world of chemistry through interactive learning and practical applications.</p>
+                                <div class="program-features">
+                                    <span><i class="fas fa-flask"></i> Lab Work</span>
+                                    <span><i class="fas fa-atom"></i> Molecular Studies</span>
+                                    <span><i class="fas fa-vial"></i> Experiments</span>
+                                </div>
+                                <div class="program-modules">
+                                    <h4>Course Components:</h4>
+                                    <ul>
+                                        <li>Laboratory Work</li>
+                                        <li>Molecular Studies</li>
+                                        <li>Research Projects</li>
+                                        <li>Chemical Analysis</li>
+                                        <li>Safety Protocols</li>
+                                        <li>Practical Applications</li>
+                                        <li>Advanced Techniques</li>
+                                    </ul>
+                                </div>
+                                <div class="program-actions">
+                                    <a href="programs/chemistry-mastery.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="admission.html" class="program-cta">Enroll Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- STEM Foundation -->
                     <div class="program-card">
                         <div class="program-image">
                             <img src="images/students-future.jpg" alt="STEM Foundation">
                         </div>
                         <div class="program-content">
-                            <div class="program-meta">
-                                <span class="program-level">Beginner</span>
-                                <span class="program-duration">20 Weeks</span>
-                                </div>
+                            <span class="program-level">Beginner</span>
                             <h3>STEM Foundation</h3>
-                            <p>Build a strong foundation in Science, Technology, Engineering, and Mathematics through integrated learning.</p>
-                            <ul class="program-features">
-                                <li><i class="fas fa-check-circle"></i> Integrated Curriculum</li>
-                                <li><i class="fas fa-check-circle"></i> Project-Based Learning</li>
-                                <li><i class="fas fa-check-circle"></i> Practical Applications</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="program-card">
-                        <div class="program-image">
-                            <img src="images/management-consulting-process-slide1.png" alt="Research Program">
-                        </div>
-                        <div class="program-content">
-                            <div class="program-meta">
-                                <span class="program-level">Advanced</span>
-                                <span class="program-duration">24 Weeks</span>
+                            <div class="program-preview">
+                                Build a strong foundation in Science, Technology, Engineering, and Mathematics through integrated learning and hands-on projects.
+                            </div>
+                            <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                            <div class="program-details" style="display:none;">
+                                <p>Build a strong foundation in Science, Technology, Engineering, and Mathematics through integrated learning and hands-on projects.</p>
+                                <div class="program-features">
+                                    <span><i class="fas fa-atom"></i> Science</span>
+                                    <span><i class="fas fa-microchip"></i> Technology</span>
+                                    <span><i class="fas fa-cogs"></i> Engineering</span>
                                 </div>
-                            <h3>Research Program</h3>
-                            <p>Engage in advanced research projects and develop critical thinking skills in mathematics and sciences.</p>
-                            <ul class="program-features">
-                                <li><i class="fas fa-check-circle"></i> Research Methodology</li>
-                                <li><i class="fas fa-check-circle"></i> Data Analysis</li>
-                                <li><i class="fas fa-check-circle"></i> Scientific Writing</li>
-                            </ul>
+                                <div class="program-modules">
+                                    <h4>Core Components:</h4>
+                                    <ul>
+                                        <li>Integrated Curriculum</li>
+                                        <li>Project-Based Learning</li>
+                                        <li>Hands-on Experiments</li>
+                                        <li>Critical Thinking Skills</li>
+                                        <li>Problem-Solving Practice</li>
+                                        <li>Team Collaboration</li>
+                                        <li>Real-world Applications</li>
+                                    </ul>
                                 </div>
+                                <div class="program-actions">
+                                    <a href="programs/stem-foundation.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="admission.html" class="program-cta">Enroll Now</a>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <!-- Exam Preparation -->
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/young-man-writing-notebook-study-7_600x341.jpg" alt="Exam Preparation">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-level">All Levels</span>
+                            <h3>Exam Preparation</h3>
+                            <div class="program-preview">
+                                Comprehensive preparation for standardized tests and competitive examinations in mathematics and sciences.
+                            </div>
+                            <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                            <div class="program-details" style="display:none;">
+                                <p>Comprehensive preparation for standardized tests and competitive examinations in mathematics and sciences. Master test-taking strategies and boost your confidence.</p>
+                                <div class="program-features">
+                                    <span><i class="fas fa-tasks"></i> Strategic Prep</span>
+                                    <span><i class="fas fa-chart-line"></i> Progress Tracking</span>
+                                    <span><i class="fas fa-trophy"></i> Success Focus</span>
+                                </div>
+                                <div class="program-modules">
+                                    <h4>Program Features:</h4>
+                                    <ul>
+                                        <li>Customized Study Plans</li>
+                                        <li>Practice Tests & Analysis</li>
+                                        <li>Time Management Skills</li>
+                                        <li>Question Type Mastery</li>
+                                        <li>Performance Analytics</li>
+                                        <li>Mock Examinations</li>
+                                        <li>Stress Management Tips</li>
+                                    </ul>
+                                </div>
+                                <div class="program-actions">
+                                    <a href="programs/exam-preparation.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="admission.html" class="program-cta">Enroll Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Math Contest Preparation -->
+                    <div class="program-card animate-on-scroll">
+                        <div class="program-image">
+                            <img src="images/mathcontest.jpg" alt="Math Contest Preparation">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-level">Advanced</span>
+                            <h3>Math Contest Preparation</h3>
+                            <div class="program-preview">
+                                Master the art of competitive mathematics with our specialized program for Canadian and International math competitions.
+                            </div>
+                            <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                            <div class="program-details" style="display:none;">
+                                <p>Master the art of competitive mathematics with our specialized program designed for Canadian and International math competitions. Develop advanced problem-solving skills and strategic thinking under the guidance of experienced contest coaches.</p>
+                                <div class="program-features">
+                                    <span><i class="fas fa-trophy"></i> Canadian & International</span>
+                                    <span><i class="fas fa-clock"></i> Flexible Schedule</span>
+                                    <span><i class="fas fa-users"></i> Small Groups</span>
+                                </div>
+                                <div class="program-modules">
+                                    <h4>Program Highlights</h4>
+                                    <ul>
+                                        <li>Canadian Mathematics Competition (CMC) Preparation</li>
+                                        <li>International Mathematics Olympiad (IMO) Training</li>
+                                        <li>Problem-Solving Strategies & Techniques</li>
+                                        <li>Mock Contests & Performance Analysis</li>
+                                        <li>Advanced Mathematical Concepts</li>
+                                        <li>Time Management & Test-Taking Skills</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-highlights">
+                                    <h4>Competition Focus</h4>
+                                    <p><i class="fas fa-check-circle"></i>Canadian Mathematics Competition (CMC)</p>
+                                    <p><i class="fas fa-check-circle"></i>International Mathematics Olympiad (IMO)</p>
+                                    <p><i class="fas fa-check-circle"></i>Canadian Open Mathematics Challenge (COMC)</p>
+                                    <p><i class="fas fa-check-circle"></i>Canadian Mathematical Olympiad (CMO)</p>
+                                    <p><i class="fas fa-check-circle"></i>International Mathematical Olympiad (IMO)</p>
+                                </div>
+                                <div class="program-actions">
+                                    <a href="programs/math-contest.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="admission.html" class="program-cta">Enroll Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Meditative Study -->
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/medit.jpg" alt="Meditative Study">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-level">All Levels</span>
+                            <h3>Meditative Study – The Inner Language of the Universe</h3>
+                            <div class="program-preview">
+                                Transform your learning experience forever with deep focus and mindful awareness.
+                            </div>
+                            <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                            <div class="program-details" style="display:none;">
+                                <p>Transform your learning experience forever. Discover a revolutionary approach that combines deep focus, mindful awareness, and intuitive understanding to unlock your true learning potential.</p>
+                                <div class="program-features">
+                                    <span><i class="fas fa-brain"></i> Mind-Expanding</span>
+                                    <span><i class="fas fa-clock"></i> Self-paced</span>
+                                    <span><i class="fas fa-infinity"></i> Lifelong Skills</span>
+                                </div>
+                                <div class="program-modules">
+                                    <h4>Experience Includes:</h4>
+                                    <ul>
+                                        <li>Revolutionary Learning Techniques</li>
+                                        <li>Enhanced Focus & Concentration</li>
+                                        <li>Deeper Understanding</li>
+                                        <li>Improved Memory & Retention</li>
+                                        <li>Stress Reduction Methods</li>
+                                        <li>Mindful Problem-Solving</li>
+                                        <li>Lasting Learning Transformation</li>
+                                    </ul>
+                                </div>
+                                <div class="program-actions">
+                                    <a href="programs/meditative-study.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="admission.html" class="program-cta">Enroll Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TechnoLearn VR -->
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="images/tech.jpg" alt="TechnoLearn VR">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-level">All Levels</span>
+                            <h3>TechnoLearn VR – Future of Learning</h3>
+                            <div class="program-preview">
+                                Step into the future of education with cutting-edge VR/AR technology.
+                            </div>
+                            <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                            <div class="program-details" style="display:none;">
+                                <p>Step into the future of education with cutting-edge VR/AR technology. Write formulas in mid-air, dissect 3D molecular structures, and explore mathematical concepts in an immersive virtual space.</p>
+                                <div class="program-features">
+                                    <span><i class="fas fa-vr-cardboard"></i> VR/AR Enabled</span>
+                                    <span><i class="fas fa-atom"></i> 3D Visualization</span>
+                                    <span><i class="fas fa-hand-pointer"></i> Interactive</span>
+                                </div>
+                                <div class="program-modules">
+                                    <h4>Revolutionary Features:</h4>
+                                    <ul>
+                                        <li>Virtual Formula Writing & Manipulation</li>
+                                        <li>3D Molecular Structure Exploration</li>
+                                        <li>Interactive Mathematical Visualizations</li>
+                                        <li>Virtual Chemistry Lab Experiments</li>
+                                        <li>Real-time Physics Simulations</li>
+                                        <li>Collaborative Virtual Workspace</li>
+                                        <li>AI-Powered Learning Assistant</li>
+                                    </ul>
+                                </div>
+                                <div class="program-actions">
+                                    <a href="programs/technolearn-vr.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                                    <a href="admission.html" class="program-cta">Enroll Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="program-benefits">
@@ -1849,15 +2209,17 @@
             });
         });
 
-        // Read More functionality
+        // Read More functionality (updated for new structure)
         document.querySelectorAll('.read-more-btn').forEach(button => {
             button.addEventListener('click', () => {
-                const content = button.previousElementSibling;
-                content.classList.toggle('expanded');
-                button.classList.toggle('expanded');
-                button.innerHTML = content.classList.contains('expanded') 
-                    ? 'Read Less <i class="fas fa-chevron-up"></i>' 
-                    : 'Read More <i class="fas fa-chevron-down"></i>';
+                const details = button.parentElement.querySelector('.program-details');
+                if (details.style.display === 'none' || details.style.display === '') {
+                    details.style.display = 'block';
+                    button.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+                } else {
+                    details.style.display = 'none';
+                    button.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                }
             });
         });
 
