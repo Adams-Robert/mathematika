@@ -3,116 +3,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez comment les mathématiques s'appliquent dans notre vie quotidienne et comment elles nous aident à résoudre des problèmes pratiques.">
-    <title>Les Mathématiques dans la Vie Quotidienne - Mathēmatiká</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
-    
+    <title>Mathematics in Everyday Life - MathMaster</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Blog Post Styles */
-        .blog-post {
-            max-width: 800px;
-            margin: 120px auto 4rem;
-            padding: 0 2rem;
+        /* Enhanced Header Styles */
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #4299e1;
+            --accent-color: #f6ad55;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --white: #ffffff;
+            --light-bg: #f8fafc;
+            --gray: #718096;
+            --border-color: #e2e8f0;
+            --success-color: #48bb78;
+            --info-color: #4299e1;
+            --warning-color: #f6ad55;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: rgba(255, 255, 255, 0.98);
+            --content-bg: #f0f7ff;
+            --card-border: rgba(66, 153, 225, 0.1);
+            --card-shadow: rgba(66, 153, 225, 0.05);
         }
 
-        .blog-header {
+        .premium-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .premium-header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .logo-equation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            margin-top: -0.2rem;
+            font-size: 0.7rem;
+            line-height: 1;
+        }
+
+        .logo-equation .math-symbol {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.2rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 3px;
+            color: #D4AF37;
+            font-weight: 500;
+        }
+
+        .logo-equation .equals,
+        .logo-equation .plus {
+            font-size: 0.8rem;
+            padding: 0 0.1rem;
+            color: #D4AF37;
+            font-weight: 300;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        .language-selector a {
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
             text-align: center;
-            margin-bottom: 3rem;
+            display: block;
+        }
+
+        .language-selector a[data-lang="fr"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            color: var(--text-primary);
+            background: none;
+        }
+
+        .language-selector a.active {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .language-selector a:not([data-lang="fr"]):hover {
+            color: var(--accent-color);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(26, 54, 93, 0.98), rgba(26, 54, 93, 0.95));
+            backdrop-filter: blur(10px);
+            z-index: 1002;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-menu-overlay.active {
+            transform: translateX(0);
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            overflow-y: auto;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            color: var(--primary-color);
+            min-width: 48px;
+            min-height: 48px;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-menu-btn:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Blog Post Styles */
+        .blog-hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('images/blog-2.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            max-width: 800px;
         }
 
         .blog-meta {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .blog-title {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .blog-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
         .blog-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-primary);
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            background: var(--content-bg);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(66, 153, 225, 0.08);
         }
 
         .blog-content h2 {
             color: var(--primary-color);
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1rem;
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
         }
 
         .blog-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
             margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
-        .blog-content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
+        .concept-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 12px var(--card-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .blog-content li {
-            margin-bottom: 0.8rem;
-        }
-
-        .blog-image {
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin: 2rem 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .concept-card:hover::before {
+            opacity: 1;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(66, 153, 225, 0.1);
+        }
+
+        .concept-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+        }
+
+        .concept-card h3 i {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            opacity: 0.9;
+            background: rgba(66, 153, 225, 0.1);
+            padding: 0.8rem;
+            border-radius: 12px;
+        }
+
+        .concept-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, rgba(66, 153, 225, 0.05), rgba(246, 173, 85, 0.05));
+            padding: 1.8rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .insight-box:hover {
+            transform: translateX(4px);
+            background: linear-gradient(135deg, rgba(66, 153, 225, 0.08), rgba(246, 173, 85, 0.08));
+        }
+
+        .insight-box p {
+            margin: 0;
+            color: var(--text-primary);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        .insight-box p:before {
+            content: "Key Insight: ";
+            font-weight: 600;
+            color: var(--accent-color);
         }
 
         .example-box {
             background: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border-left: 4px solid var(--accent-color);
+            padding: 1.8rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid var(--card-border);
         }
 
-        .example-box h3 {
+        .example-box h4 {
             color: var(--primary-color);
             margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
-        .example-box p:last-child {
-            margin-bottom: 0;
+        .example-box p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        /* Footer Styles */
+        .premium-footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            color: #f6ad55;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #f6ad55;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-form .cta-button {
+            background: #f6ad55;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form .cta-button:hover {
+            background: #e69c44;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            .blog-post {
-                margin: 100px auto 3rem;
-                padding: 0 1.5rem;
+            .nav-container {
+                display: none !important;
             }
 
-            .blog-title {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .blog-hero h1 {
                 font-size: 2rem;
             }
 
             .blog-content {
-                font-size: 1rem;
+                padding: 2rem 1rem;
+                margin: 2rem auto;
+                border-radius: 16px;
             }
+
+            .concept-card {
+                padding: 2rem;
+            }
+
+            .concepts-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-row {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .footer-section {
+                min-width: 100%;
+            }
+
+            .logo-equation {
+                font-size: 0.6rem;
+            }
+
+            .logo-equation .math-symbol {
+                font-size: 0.6rem;
+                padding: 0.1rem 0.15rem;
+            }
+
+            .logo-equation .equals,
+            .logo-equation .plus {
+                font-size: 0.7rem;
+            }
+        }
+
+        main {
+            margin-top: 74px;
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
-    <!-- Header (same as index_fr.html) -->
     <header class="premium-header">
         <nav>
             <a href="index_fr.html" class="logo-link">
-                <img src="images/lastlogo.png" alt="Mathēmatiká Logo" style="height: 60px; width: auto; display: block; margin: 0 auto;">
+                <img src="images/lastlogo.png" alt="Logo" style="height: 60px; width: auto;">
             </a>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -135,164 +561,243 @@
         </nav>
     </header>
 
-    <!-- Blog Post Content -->
-    <article class="blog-post">
-        <header class="blog-header">
-            <div class="blog-meta">25 Mars 2024</div>
-            <h1 class="blog-title">Les Mathématiques dans la Vie Quotidienne</h1>
-            <p class="blog-subtitle">Découvrez comment les concepts mathématiques s'appliquent aux situations réelles et à la résolution de problèmes quotidiens.</p>
-        </header>
-
-        <div class="blog-content">
-            <img src="images/blog-2.jpg" alt="Mathématiques dans la vie quotidienne" class="blog-image">
-
-            <p>Les mathématiques sont souvent perçues comme une matière abstraite, réservée aux salles de classe. Pourtant, elles sont omniprésentes dans notre vie quotidienne, nous aidant à prendre des décisions et à résoudre des problèmes pratiques. Explorons ensemble comment les mathématiques s'appliquent dans différents aspects de notre vie.</p>
-
-            <h2>1. Gestion Financière</h2>
-            <p>La gestion de l'argent est l'une des applications les plus évidentes des mathématiques dans notre vie quotidienne. Que ce soit pour établir un budget, calculer des intérêts ou planifier des investissements, les compétences mathématiques sont essentielles.</p>
-
-            <div class="example-box">
-                <h3>Exemple Pratique : Calcul d'Intérêts</h3>
-                <p>Si vous épargnez 1000$ avec un taux d'intérêt annuel de 3%, vous pouvez calculer vos gains sur 5 ans. La formule des intérêts composés vous permet de voir que votre argent atteindra environ 1159$ après cette période.</p>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-container">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <a href="index_fr.html">
+                        <img src="images/lastlogo.png" alt="Logo" style="height: 60px; width: auto;">
+                    </a>
+                </div>
+                <div class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </div>
             </div>
-
-            <h2>2. Cuisine et Recettes</h2>
-            <p>La cuisine est un excellent exemple d'application pratique des mathématiques. Les conversions de mesures, l'ajustement des proportions et le timing sont tous des aspects mathématiques de la cuisine.</p>
-
-            <div class="example-box">
-                <h3>Application Culinaire</h3>
-                <p>Pour adapter une recette de 4 personnes à 6 personnes, vous devez multiplier chaque ingrédient par 1,5. Par exemple, 200g de farine deviennent 300g.</p>
-            </div>
-
-            <h2>3. Aménagement et Décoration</h2>
-            <p>L'aménagement d'un espace nécessite des calculs de surface, de proportion et de dimension. Que ce soit pour peindre une pièce ou disposer des meubles, les mathématiques sont indispensables.</p>
-
-            <h2>4. Transport et Déplacements</h2>
-            <p>Le calcul d'itinéraires, l'estimation du temps de trajet et la consommation de carburant font appel à des concepts mathématiques comme la vitesse, la distance et le temps.</p>
-
-            <div class="example-box">
-                <h3>Calcul de Trajet</h3>
-                <p>Si vous roulez à une vitesse moyenne de 60 km/h et que votre destination est à 150 km, vous pouvez calculer que le trajet prendra environ 2,5 heures.</p>
-            </div>
-
-            <h2>5. Sports et Activités Physiques</h2>
-            <p>Les statistiques sportives, le calcul des scores et même la trajectoire d'une balle sont tous basés sur des principes mathématiques.</p>
-
-            <h2>6. Technologies Quotidiennes</h2>
-            <p>Les smartphones, ordinateurs et autres appareils électroniques fonctionnent grâce à des algorithmes mathématiques complexes.</p>
-
-            <h2>7. Art et Design</h2>
-            <p>La perspective en dessin, les proportions en photographie et les motifs en design utilisent des concepts mathématiques comme la géométrie et les ratios.</p>
-
-            <div class="example-box">
-                <h3>Le Nombre d'Or</h3>
-                <p>Ce ratio mathématique (environ 1,618) est considéré comme particulièrement esthétique et se retrouve dans de nombreuses œuvres d'art et designs.</p>
-            </div>
-
-            <h2>8. Santé et Bien-être</h2>
-            <p>Le calcul des calories, l'indice de masse corporelle (IMC) et les dosages de médicaments sont tous basés sur des calculs mathématiques.</p>
-
-            <h2>9. Jardinage et Bricolage</h2>
-            <p>L'espacement des plantes, le calcul des matériaux nécessaires et la construction de structures simples nécessitent des compétences mathématiques de base.</p>
-
-            <h2>10. Probabilités et Prise de Décision</h2>
-            <p>Les mathématiques nous aident à évaluer les risques et à prendre des décisions éclairées dans de nombreuses situations quotidiennes.</p>
-
-            <div class="example-box">
-                <h3>Conclusion Pratique</h3>
-                <p>Les mathématiques ne sont pas seulement une matière scolaire, mais un outil pratique qui nous aide à naviguer dans la vie quotidienne. Plus nous sommes conscients de leur présence, plus nous pouvons les utiliser efficacement.</p>
-            </div>
-
-            <p>En reconnaissant la présence des mathématiques dans notre vie quotidienne, nous pouvons mieux apprécier leur importance et leur utilité. Cela peut aussi nous motiver à améliorer nos compétences mathématiques, sachant qu'elles ont des applications concrètes et pratiques dans notre vie de tous les jours.</p>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="./index_fr.html" class="mobile-nav-link">Accueil</a></li>
+                    <li><a href="./programs_fr.html" class="mobile-nav-link">Programmes</a></li>
+                    <li><a href="./about_fr.html" class="mobile-nav-link">À Propos</a></li>
+                    <li><a href="./admission_fr.html" class="mobile-nav-link">Admission</a></li>
+                    <li><a href="./consulting_fr.html" class="mobile-nav-link">Consultation</a></li>
+                    <li><a href="./contact_fr.html" class="mobile-nav-link">Contact</a></li>
+                    <li class="language-selector">
+                        <a href="./blog-math-everyday.html">English</a>
+                        <a href="./blog-math-everyday_fr.html" class="active">Français</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </article>
+    </div>
 
-    <!-- Footer (same as index_fr.html) -->
+    <main>
+        <section class="blog-hero">
+            <div class="hero-content">
+                <h1>La puissance de la pensée mathématique</h1>
+                <div class="blog-meta">22 mars 2024 | Par l'équipe MathMaster</div>
+            </div>
+        </section>
+
+        <article class="blog-content">
+            <p>Les mathématiques sont bien plus que des chiffres et des calculs — c'est un outil puissant qui façonne notre façon de penser et de percevoir le monde. En s'engageant dans des concepts mathématiques, nous développons à la fois le raisonnement logique et la capacité à résoudre des problèmes de manière créative, améliorant ainsi notre aptitude à relever les défis dans tous les aspects de la vie.</p>
+
+            <div class="concept-card">
+                <h3><i class="fas fa-brain"></i> Les fondements de la pensée mathématique</h3>
+                <p>Les mathématiques constituent la base de la pensée scientifique et de l'enquête rationnelle. Grâce au raisonnement mathématique, nous apprenons à construire des arguments étape par étape, à vérifier les hypothèses et à tirer des conclusions fiables — des compétences qui vont bien au-delà des problèmes mathématiques.</p>
+                <div class="insight-box">
+                    <p>Lorsque vous comprenez le raisonnement mathématique, vous développez une capacité naturelle à remettre en question les hypothèses, à rechercher des preuves et à construire des arguments logiques dans n'importe quel domaine.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3><i class="fas fa-question-circle"></i> L'art de l'investigation</h3>
+                <p>Les mathématiques nous enseignent la précieuse compétence de poser et de répondre à nos propres questions. Ce processus d'enquête autonome développe l'indépendance intellectuelle et la curiosité, nous encourageant à explorer et à comprendre les concepts en profondeur plutôt que d'accepter des explications superficielles.</p>
+                <div class="insight-box">
+                    <p>En apprenant à formuler et à explorer vos propres questions, vous développez des compétences analytiques plus solides et devenez un penseur plus indépendant.</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3><i class="fas fa-mind"></i> Pleine conscience mathématique</h3>
+                <p>La nature analytique des mathématiques nous aide à examiner nos propres processus de pensée, en prenant conscience de nos conditionnements mentaux et de nos hypothèses. Cet aspect métacognitif de la pensée mathématique peut conduire à une plus grande clarté mentale et à une liberté dans la prise de décision.</p>
+                <div class="insight-box">
+                    <p>La pensée mathématique vous aide à reconnaître les schémas dans votre propre raisonnement, vous permettant de vous libérer des schémas de pensée limitants et de faire des choix plus conscients.</p>
+                </div>
+            </div>
+
+            <h2>Applications pratiques dans la vie quotidienne</h2>
+
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3><i class="fas fa-shopping-cart"></i> Achats et budget</h3>
+                    <p>Les mathématiques jouent un rôle crucial dans la gestion des finances personnelles et la prise de décisions d'achat intelligentes. Du calcul des remises à la comparaison des prix unitaires, les compétences mathématiques de base vous aident à économiser de l'argent et à établir un budget efficace.</p>
+                    <div class="example-box">
+                        <h4>Exemple concret</h4>
+                        <p>Lors de vos achats, comparer les prix unitaires permet de trouver la meilleure offre. Si un paquet de 500g coûte 4,99$ et un paquet de 750g coûte 6,99$, diviser le prix par le poids (4,99/500 = 0,00998$/g contre 6,99/750 = 0,00932$/g) montre que le plus grand paquet est plus économique.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h3><i class="fas fa-utensils"></i> Cuisine et pâtisserie</h3>
+                    <p>La cuisine implique de nombreux concepts mathématiques, de la mesure des ingrédients à l'ajustement des portions de recettes. Comprendre les ratios et les proportions est essentiel pour réussir en cuisine et en pâtisserie.</p>
+                    <div class="example-box">
+                        <h4>Exemple concret</h4>
+                        <p>Pour adapter une recette prévue pour 4 personnes à 6 personnes, il faut multiplier chaque ingrédient par 1,5 (6÷4 = 1,5). Si la recette demande 2 tasses de farine, il en faudra 3 (2 × 1,5 = 3) pour la plus grande portion.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h3><i class="fas fa-home"></i> Amélioration de la maison</h3>
+                    <p>Les projets de rénovation et de décoration nécessitent des compétences géométriques et arithmétiques. Du calcul de la couverture de peinture à la mesure de l'ajustement des meubles, les mathématiques contribuent à la réussite des améliorations domiciliaires.</p>
+                    <div class="example-box">
+                        <h4>Exemple concret</h4>
+                        <p>Pour calculer la quantité de peinture nécessaire pour une pièce, multipliez la hauteur par la largeur de chaque mur pour obtenir la surface, soustrayez les fenêtres et les portes, puis divisez par la couverture de peinture par gallon. Pour une pièce de 12' × 15' avec des plafonds de 8' et une couverture de 350 pi² par gallon : (2×12×8 + 2×15×8) - 20 = 432 pi², soit environ 1,25 gallon nécessaire.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h3><i class="fas fa-wallet"></i> Finances personnelles</h3>
+                    <p>Comprendre les taux d'intérêt, les investissements et les prêts nécessite des connaissances mathématiques. Ces compétences aident à prendre des décisions financières éclairées et à planifier l'avenir.</p>
+                    <div class="example-box">
+                        <h4>Exemple concret</h4>
+                        <p>Avec l'intérêt composé, un investissement de 1 000 $ à 5 % d'intérêt annuel atteindra 1 276,28 $ après 5 ans (en utilisant la formule A = P(1 + r)^t, où P est le principal, r le taux d'intérêt et t le temps en années).</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h3><i class="fas fa-running"></i> Sports et condition physique</h3>
+                    <p>Les mathématiques sont essentielles dans le sport, du calcul des statistiques au suivi des progrès physiques. Comprendre les chiffres aide les athlètes et les amateurs à mieux apprécier le jeu.</p>
+                    <div class="example-box">
+                        <h4>Exemple concret</h4>
+                        <p>Un coureur qui suit son rythme utilise la division : si vous courez 5 kilomètres en 25 minutes, votre rythme est de 25÷5 = 5 minutes par kilomètre. Pour atteindre un objectif de temps précis, vous pouvez calculer le rythme requis : pour courir 10 km en 50 minutes, il faut un rythme de 50÷10 = 5 minutes par kilomètre.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h3><i class="fas fa-clock"></i> Gestion du temps</h3>
+                    <p>La planification quotidienne et la gestion du temps reposent sur des concepts mathématiques. Comprendre les intervalles de temps et planifier aide à optimiser les routines quotidiennes.</p>
+                    <div class="example-box">
+                        <h4>Exemple concret</h4>
+                        <p>Planifier votre routine matinale : si vous devez arriver au travail à 9h00, que le trajet prend 30 minutes, la préparation 45 minutes et le petit-déjeuner 20 minutes, il faut se lever à 7h25 (9h00 - 1h35 = 7h25).</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>Les mathématiques ne sont pas seulement une matière à étudier — c'est une façon de penser qui enrichit notre vie quotidienne. En développant des compétences mathématiques, nous améliorons notre capacité à résoudre des problèmes, à prendre des décisions et à comprendre le monde qui nous entoure.</p>
+
+            <p>Pour plus d'idées sur la pensée mathématique et ses applications, explorez nos programmes spécialisés et nos services de tutorat individuel.</p>
+        </article>
+    </main>
+
     <footer class="premium-footer">
         <div class="footer-content">
             <div class="footer-row">
                 <div class="footer-section">
                     <h3>Contactez-nous</h3>
-                    <p>Montreal, H3S 1R4</p>
-                    <p>Quebec, Canada</p>
+                    <p>Montréal, H3S 1R4</p>
+                    <p>Québec, Canada</p>
                     <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
                     <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathmaster.ca">info@mathmaster.ca</a></p>
                 </div>
                 <div class="footer-section">
-                    <h3>Nos Programmes</h3>
+                    <h3>Nos programmes</h3>
                     <ul>
-                        <li>Enrichissement en Mathématiques</li>
-                        <li>Programme d'Excellence en Physique</li>
-                        <li>Cours de Maîtrise en Chimie</li>
-                        <li>Programme de Base STEM</li>
-                        <li>Programme de Recherche Avancée</li>
-                        <li>Préparation aux Examens</li>
-                        <li>Tutorat Individuel</li>
+                        <li>Enrichissement en mathématiques</li>
+                        <li>Programme d'excellence en physique</li>
+                        <li>Cours de maîtrise en chimie</li>
+                        <li>Programme fondation STEM</li>
+                        <li>Programme de recherche avancée</li>
+                        <li>Préparation aux examens</li>
+                        <li>Tutorat individuel</li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Liens Rapides</h3>
+                    <h3>Liens rapides</h3>
                     <ul>
-                        <li><a href="./about.html">Mathēmatiká en Bref</a></li>
-                        <li><a href="./programs_fr.html">Programmes & Cours</a></li>
-                        <li><a href="./admission_fr.html">Admission</a></li>
-                        <li><a href="./consulting.html">Services de Consultation</a></li>
-                        <li><a href="./contact_fr.html">Contactez-nous</a></li>
+                        <li><a href="./about.html">Mathēmatiká en bref</a></li>
+                        <li><a href="./programs.html">Programmes & Cours</a></li>
+                        <li><a href="./admission.html">Admission</a></li>
+                        <li><a href="./consulting.html">Services de consultation</a></li>
+                        <li><a href="./contact.html">Contactez-nous</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>NEWSLETTER</h3>
+                    <h3>INFOLETTRE</h3>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Entrez votre adresse email">
+                        <input type="email" placeholder="Entrez votre adresse courriel">
                         <button type="submit" class="cta-button">S'abonner</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca n'est pas affilié, approuvé ou lié de quelque manière que ce soit à Wolfram Research, Inc. ou à son logiciel Mathematica®. Pour plus de détails, veuillez consulter notre clause de non-responsabilité complète sur la page À propos.</p>
-            <p>&copy; 2024 Mathēmatiká. Tous droits réservés.</p>
+            <p>&copy; 2024 MathMaster, Tous droits réservés.</p>
         </div>
     </footer>
 
-    <div class="scroll-progress"></div>
-
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
     <script src="language.js"></script>
     <script>
-        // Back to Top & Scroll Progress
-        const backToTop = document.querySelector('.back-to-top');
-        const scrollProgress = document.querySelector('.scroll-progress');
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        window.addEventListener('scroll', () => {
-            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
+            // Ensure menu starts closed
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
 
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
+            function toggleMobileMenu() {
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
             }
-        });
 
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            function handleNavigation(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                toggleMobileMenu();
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 100);
+            }
+
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMobileMenu();
             });
-        });
 
-        // Mobile Menu
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navContainer = document.querySelector('.nav-container');
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navContainer.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', handleNavigation);
+            });
+
+            mobileMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    toggleMobileMenu();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
         });
     </script>
 </body>
