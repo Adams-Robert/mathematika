@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Effective Math Study Techniques - MathMaster</title>
+    <meta name="description" content="Discover effective math study techniques to improve your learning and understanding.">
+    <title>10 Effective Math Study Techniques - Mathēmatiká</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Enhanced Header Styles */
@@ -55,8 +58,7 @@
         .logo-link {
             text-decoration: none;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             margin-right: 2rem;
         }
 
@@ -125,6 +127,7 @@
             font-weight: 500;
             transition: color 0.3s ease;
             padding: 0.5rem 1rem;
+            font-size: 1rem;
         }
 
         .nav-links a:hover,
@@ -132,35 +135,28 @@
             color: var(--accent-color);
         }
 
-        .language-selector {
+        .language-switcher {
             display: flex;
-            gap: 1rem;
-            padding: 0.5rem;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
         }
 
-        .language-selector a {
-            color: var(--accent-color);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            display: block;
-        }
-
-        .language-selector a[data-lang="fr"] {
-            opacity: 0.5;
-            cursor: not-allowed;
+        .language-switcher a {
             color: var(--text-primary);
-            background: none;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        .language-selector a.active {
+        .language-switcher a.active {
             color: var(--accent-color);
-            font-weight: 600;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
-            color: var(--accent-color);
+        .language-switcher .separator {
+            color: var(--text-secondary);
+            opacity: 0.5;
         }
 
         /* Mobile Menu Styles */
@@ -220,226 +216,97 @@
         }
 
         /* Blog Post Styles */
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-family: var(--font-primary);
-        }
-
-        .blog-hero {
-            position: relative;
-            height: 400px;
-            background: linear-gradient(rgba(44, 82, 130, 0.7), rgba(44, 82, 130, 0.8)), url('images/home.jpg') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-        }
-
-        .blog-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .blog-post {
             max-width: 800px;
+            margin: 120px auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .blog-meta {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .blog-content {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 3rem 2rem;
-            background: var(--content-bg);
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(66, 153, 225, 0.08);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
         }
 
         .blog-content h2 {
             color: var(--primary-color);
-            font-size: 2rem;
-            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
         }
 
         .blog-content p {
-            color: var(--text-secondary);
-            line-height: 1.8;
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            font-family: var(--font-primary);
         }
 
-        .technique-card {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 16px;
-            margin-bottom: 2rem;
-            border: 1px solid var(--card-border);
-            box-shadow: 0 4px 12px var(--card-shadow);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .technique-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .technique-card:hover::before {
-            opacity: 1;
-        }
-
-        .technique-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(66, 153, 225, 0.1);
-        }
-
-        .technique-card h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .technique-card h3 i {
-            color: var(--secondary-color);
-            font-size: 1.3rem;
-            opacity: 0.9;
-            background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(246, 173, 85, 0.1));
-            padding: 0.8rem;
-            border-radius: 12px;
-        }
-
-        .benefit-box {
-            background: linear-gradient(135deg, rgba(66, 153, 225, 0.05), rgba(246, 173, 85, 0.05));
-            padding: 1.8rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--accent-color);
-            transition: all 0.3s ease;
-        }
-
-        .benefit-box::before {
-            content: '🌌';
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-
-        .benefit-box:hover {
-            transform: translateX(4px);
-            background: linear-gradient(135deg, rgba(66, 153, 225, 0.08), rgba(246, 173, 85, 0.08));
-        }
-
-        .benefit-box p {
-            margin: 0;
-            color: var(--text-primary);
-            font-style: italic;
-            font-size: 1.05rem;
-            font-family: var(--font-primary);
-        }
-
-        .benefit-box p:before {
-            content: "Key Benefit: ";
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-
-        .implementation-box {
-            background: var(--light-bg);
-            padding: 1.8rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            border: 1px solid var(--card-border);
-        }
-
-        .implementation-box::before {
-            content: '✨';
-            position: absolute;
-            left: 1rem;
-            top: 1.8rem;
-            font-size: 1.2rem;
-        }
-
-        .implementation-box h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            font-family: var(--font-heading);
-        }
-
-        .implementation-box ul {
-            margin: 0;
+        .blog-content ul {
+            margin-bottom: 1.5rem;
             padding-left: 1.5rem;
         }
 
-        .implementation-box li {
-            color: var(--text-secondary);
-            line-height: 1.7;
+        .blog-content li {
             margin-bottom: 0.8rem;
-            font-family: var(--font-primary);
         }
 
-        .implementation-box li::before {
-            content: '⭐';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
+        .blog-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 2rem 0;
         }
 
-        .techniques-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin: 3rem 0;
+        .tip-box {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .tip-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tip-box p:last-child {
+            margin-bottom: 0;
         }
 
         @media (max-width: 768px) {
-            .nav-container {
-                display: none !important;
+            .blog-post {
+                margin: 100px auto 3rem;
+                padding: 0 1.5rem;
             }
 
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .blog-hero h1 {
+            .blog-title {
                 font-size: 2rem;
             }
 
             .blog-content {
-                padding: 2rem 1rem;
-                margin: 2rem auto;
-                border-radius: 16px;
-            }
-
-            .technique-card {
-                padding: 2rem;
-            }
-
-            .techniques-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+                font-size: 1rem;
             }
         }
 
@@ -756,39 +623,24 @@
     <header class="premium-header">
         <nav>
             <a href="index.html" class="logo-link">
-                <div class="logo">
-                    <img src="images/logo.png" alt="MathMaster Logo">
-                    <span>MathMaster</span>
-                </div>
-                <div class="logo-equation">
-                    <span class="math-symbol">MATH</span>
-                    <span class="equals">=</span>
-                    <span class="math-symbol">MATH</span>
-                    <span class="plus">+</span>
-                    <span class="math-symbol">PHYSICS</span>
-                    <span class="plus">+</span>
-                    <span class="math-symbol">CHEMISTRY</span>
-                </div>
+                <img src="images/lastlogo.png" alt="Mathēmatiká Logo" style="height: 60px; width: auto; display: block; margin: 0 auto;">
             </a>
-            <button class="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" role="button" tabindex="0">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                    <rect y="6" width="28" height="3" rx="1.5" fill="#1a365d"/>
-                    <rect y="13" width="28" height="3" rx="1.5" fill="#1a365d"/>
-                    <rect y="20" width="28" height="3" rx="1.5" fill="#1a365d"/>
-                </svg>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
             </button>
             <div class="nav-container">
                 <nav class="nav-links">
-                    <a href="./index.html" class="active">Welcome</a>
-                    <a href="./about.html">About</a>
+                    <a href="./index.html">Home</a>
                     <a href="./programs.html">Programs</a>
+                    <a href="./about.html">About</a>
                     <a href="./admission.html">Admission</a>
                     <a href="./consulting.html">Consulting</a>
                     <a href="./contact.html">Contact</a>
                 </nav>
-                <div class="language-selector">
-                    <a href="#" class="active" data-lang="en">English</a>
-                    <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                <div class="language-switcher">
+                    <a href="./blog-math-study-tips.html" class="active">EN</a>
+                    <span class="separator">|</span>
+                    <a href="./blog-math-study-tips_fr.html">FR</a>
                 </div>
             </div>
         </nav>
@@ -799,7 +651,7 @@
         <div class="mobile-menu-container">
             <div class="mobile-menu-header">
                 <div class="logo">
-                    <a href="index.html">MathMaster</a>
+                    <a href="index.html">Mathēmatiká</a>
                     <div class="logo-equation">
                         <span class="math-symbol">MATH</span>
                         <span class="equals">=</span>
@@ -816,15 +668,15 @@
             </div>
             <nav class="mobile-nav">
                 <ul>
-                    <li><a href="./index.html" class="mobile-nav-link">Welcome</a></li>
-                    <li><a href="./about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="./index.html" class="mobile-nav-link">Home</a></li>
                     <li><a href="./programs.html" class="mobile-nav-link">Programs</a></li>
+                    <li><a href="./about.html" class="mobile-nav-link">About</a></li>
                     <li><a href="./admission.html" class="mobile-nav-link">Admission</a></li>
                     <li><a href="./consulting.html" class="mobile-nav-link">Consulting</a></li>
                     <li><a href="./contact.html" class="mobile-nav-link">Contact</a></li>
                     <li class="language-selector">
-                        <a href="#" class="active" data-lang="en">English</a>
-                        <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                        <a href="./blog-math-study-tips.html" class="active">EN</a>
+                        <a href="./blog-math-study-tips_fr.html">FR</a>
                     </li>
                 </ul>
             </nav>
@@ -835,178 +687,75 @@
         <section class="blog-hero">
             <div class="hero-content">
                 <h1>10 Effective Math Study Techniques</h1>
-                <div class="blog-meta">March 22, 2024 | By MathMaster Team</div>
+                <div class="blog-meta">March 28, 2024 | By Mathēmatiká Team</div>
             </div>
         </section>
 
-        <article class="blog-content">
-            <p>Mastering mathematics requires more than just memorization—it demands a strategic approach to learning. These proven study techniques will help you develop a deeper understanding of mathematical concepts and improve your problem-solving skills.</p>
+        <article class="blog-post">
+            <header class="blog-header">
+                <div class="blog-meta">March 28, 2024</div>
+                <h1 class="blog-title">10 Effective Math Study Techniques</h1>
+                <p class="blog-subtitle">Discover proven strategies to improve your mathematics learning and retention.</p>
+            </header>
 
-            <div class="techniques-grid">
-                <div class="technique-card">
-                    <h3><i class="fas fa-om"></i> Active Recall Practice</h3>
-                    <p>Instead of passively reading through problems, actively solve them without referring to solutions. This strengthens your problem-solving abilities and helps identify areas where you need more practice.</p>
-                    <div class="benefit-box">
-                        <p>Strengthens long-term memory and improves problem-solving speed.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Create flashcards with mathematical concepts</li>
-                            <li>Practice recalling formulas and their applications</li>
-                            <li>Solve problems without looking at solutions first</li>
-                        </ul>
-                    </div>
+            <div class="blog-content">
+                <img src="images/home.jpg" alt="Math Study Tips" class="blog-image">
+
+                <p>Mathematics can seem intimidating to many students, but with the right study techniques, you can develop a deeper understanding and greater confidence in the subject. Here are ten effective techniques to improve your math learning.</p>
+
+                <h2>1. Understand Rather Than Memorize</h2>
+                <p>The key to success in mathematics isn't memorization, but understanding fundamental concepts. Take time to understand why each step in a problem is necessary and how different concepts are connected.</p>
+
+                <div class="tip-box">
+                    <h3>Practical Tip</h3>
+                    <p>Try explaining a mathematical concept to someone else. If you can explain it clearly, you've truly understood it.</p>
                 </div>
 
-                <div class="technique-card">
-                    <h3><i class="fas fa-yin-yang"></i> Conceptual Understanding</h3>
-                    <p>Focus on understanding why mathematical concepts work rather than memorizing formulas. This approach helps you apply knowledge to new and complex problems more effectively.</p>
-                    <div class="benefit-box">
-                        <p>Enables flexible application of concepts to various problem types.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Ask "why" questions about each concept</li>
-                            <li>Explain concepts to others</li>
-                            <li>Create visual representations of concepts</li>
-                        </ul>
-                    </div>
+                <h2>2. Practice Regularly</h2>
+                <p>Mathematics requires regular practice. Solve different types of problems and don't limit yourself to the simplest exercises. Regular practice strengthens your understanding and develops mathematical intuition.</p>
+
+                <h2>3. Take Structured Notes</h2>
+                <p>Develop a clear and organized note-taking system. Include examples, definitions, and solution steps. Well-structured notes are an excellent revision tool.</p>
+
+                <h2>4. Use Visual Resources</h2>
+                <p>Diagrams, graphs, and charts can greatly help in understanding mathematical concepts. Create your own visual representations to better visualize problems.</p>
+
+                <h2>5. Solve Problems Step by Step</h2>
+                <p>Develop a methodical approach to problem-solving. Break down complex problems into simpler steps and check your work at each stage.</p>
+
+                <div class="tip-box">
+                    <h3>Problem-Solving Method</h3>
+                    <ul>
+                        <li>Read the problem carefully</li>
+                        <li>Identify important information</li>
+                        <li>Plan your approach</li>
+                        <li>Solve step by step</li>
+                        <li>Check your answer</li>
+                    </ul>
                 </div>
 
-                <div class="technique-card">
-                    <h3><i class="fas fa-infinity"></i> Spaced Repetition</h3>
-                    <p>Review concepts at increasing intervals to strengthen long-term retention. This method helps maintain knowledge while focusing on areas that need more attention.</p>
-                    <div class="benefit-box">
-                        <p>Improves long-term retention and reduces study time.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Use spaced repetition software</li>
-                            <li>Create a review schedule</li>
-                            <li>Focus more on challenging concepts</li>
-                        </ul>
-                    </div>
+                <h2>6. Study in Groups</h2>
+                <p>Group work can offer new perspectives and help identify your weak points. Explaining concepts to others also reinforces your own understanding.</p>
+
+                <h2>7. Use Technology</h2>
+                <p>Take advantage of available technological tools: graphing calculators, math software, and educational apps can enrich your learning.</p>
+
+                <h2>8. Review Regularly</h2>
+                <p>Don't let material accumulate. Review previous concepts regularly as mathematics is cumulative - new concepts often build on previous ones.</p>
+
+                <h2>9. Identify and Correct Mistakes</h2>
+                <p>Analyze your errors to understand where and why you made them. Mistakes are valuable learning opportunities.</p>
+
+                <h2>10. Maintain a Positive Attitude</h2>
+                <p>Cultivate a growth mindset. Difficulties in mathematics are normal and can be overcome with perseverance and the right strategies.</p>
+
+                <div class="tip-box">
+                    <h3>Important Reminder</h3>
+                    <p>Everyone learns differently. Experiment with these techniques and adapt them to your personal learning style.</p>
                 </div>
 
-                <div class="technique-card">
-                    <h3><i class="fas fa-hands-helping"></i> Group Study Sessions</h3>
-                    <p>Participate in study groups to share knowledge, discuss problem-solving approaches, and learn from peers' perspectives.</p>
-                    <div class="benefit-box">
-                        <p>Provides multiple perspectives and collaborative learning.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Form small study groups</li>
-                            <li>Take turns explaining concepts</li>
-                            <li>Solve problems together</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <h3><i class="fas fa-pray"></i> Interleaved Practice</h3>
-                    <p>Mix different types of problems and concepts during study sessions rather than focusing on one topic at a time.</p>
-                    <div class="benefit-box">
-                        <p>Improves problem-solving flexibility and concept integration.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Mix different problem types</li>
-                            <li>Alternate between related concepts</li>
-                            <li>Create mixed practice sets</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <h3><i class="fas fa-eye"></i> Visual Learning</h3>
-                    <p>Create diagrams, graphs, and visual representations of mathematical concepts to enhance understanding and memory.</p>
-                    <div class="benefit-box">
-                        <p>Makes abstract concepts more concrete and memorable.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Draw concept maps</li>
-                            <li>Create visual problem-solving steps</li>
-                            <li>Use color coding for different concepts</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <h3><i class="fas fa-book-open"></i> Problem-Solving Journal</h3>
-                    <p>Keep a detailed journal of your problem-solving process, including mistakes and insights.</p>
-                    <div class="benefit-box">
-                        <p>Helps identify patterns in mistakes and track progress.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Document problem-solving steps</li>
-                            <li>Note common mistakes</li>
-                            <li>Record insights and breakthroughs</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <h3><i class="fas fa-hourglass-half"></i> Time Management</h3>
-                    <p>Break study sessions into focused intervals with regular breaks to maintain concentration and prevent burnout.</p>
-                    <div class="benefit-box">
-                        <p>Improves focus and prevents mental fatigue.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Use the Pomodoro technique</li>
-                            <li>Set specific study goals</li>
-                            <li>Take regular breaks</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <h3><i class="fas fa-question"></i> Self-Questioning</h3>
-                    <p>Regularly ask yourself questions about the material to deepen understanding and identify knowledge gaps.</p>
-                    <div class="benefit-box">
-                        <p>Promotes deeper understanding and critical thinking.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Create practice questions</li>
-                            <li>Explain concepts in your own words</li>
-                            <li>Identify connections between topics</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="technique-card">
-                    <h3><i class="fas fa-spa"></i> Regular Review</h3>
-                    <p>Consistently review previous material to maintain knowledge and build connections between concepts.</p>
-                    <div class="benefit-box">
-                        <p>Strengthens retention and builds conceptual connections.</p>
-                    </div>
-                    <div class="implementation-box">
-                        <h4>How to Implement:</h4>
-                        <ul>
-                            <li>Schedule regular review sessions</li>
-                            <li>Create summary sheets</li>
-                            <li>Test yourself on previous material</li>
-                        </ul>
-                    </div>
-                </div>
+                <p>By consistently applying these techniques, you'll develop a better understanding of mathematics and improve your performance. Remember that mastering mathematics is a gradual process that takes time and practice.</p>
             </div>
-
-            <p>By implementing these study techniques consistently, you'll develop a strong foundation in mathematics and improve your problem-solving skills. Remember that effective learning is a combination of understanding concepts, regular practice, and strategic review.</p>
-
-            <p>For personalized guidance and additional support, consider our specialized study programs and one-on-one tutoring services.</p>
         </article>
     </main>
 
@@ -1014,108 +763,87 @@
         <div class="footer-content">
             <div class="footer-row">
                 <div class="footer-section">
-                    <h3>About MathMaster</h3>
-                    <p>Empowering students with mathematical excellence through innovative teaching methods and personalized learning experiences.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Montreal, H3S 1R4</p>
+                    <p>Quebec, Canada</p>
+                    <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
+                    <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li>Mathematics Enrichment</li>
+                        <li>Physics Excellence Program</li>
+                        <li>Chemistry Mastery Course</li>
+                        <li>STEM Foundation Program</li>
+                        <li>Advanced Research Program</li>
+                        <li>Exam Preparation</li>
+                        <li>One-on-One Tutoring</li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="tutoring.html">Tutoring</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="./about.html">About Mathēmatiká</a></li>
+                        <li><a href="./programs.html">Programs & Courses</a></li>
+                        <li><a href="./admission.html">Admission</a></li>
+                        <li><a href="./consulting.html">Consulting Services</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Montreal, Quebec, Canada</p>
-                    <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
-                    <p><i class="fas fa-envelope"></i> info@mathmaster.ca</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and study tips.</p>
+                    <h3>NEWSLETTER</h3>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email">
+                        <input type="email" placeholder="Enter your email address">
                         <button type="submit" class="cta-button">Subscribe</button>
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 MathMaster. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca is not affiliated with, endorsed by, or in any way connected to Wolfram Research, Inc. or its Mathematica® software. For more details, please refer to our full disclaimer on the About page.</p>
+            <p>&copy; 2024 Mathēmatiká. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <div class="scroll-progress"></div>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script src="language.js"></script>
     <script>
-        // Mobile Menu Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-            const mobileMenuClose = document.querySelector('.mobile-menu-close');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        // Back to Top & Scroll Progress
+        const backToTop = document.querySelector('.back-to-top');
+        const scrollProgress = document.querySelector('.scroll-progress');
 
-            // Ensure menu starts closed
-            mobileMenuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
+        window.addEventListener('scroll', () => {
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
 
-            function toggleMobileMenu() {
-                mobileMenuOverlay.classList.toggle('active');
-                document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
             }
+        });
 
-            function handleNavigation(e) {
-                e.preventDefault();
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                
-                toggleMobileMenu();
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 100);
-            }
-
-            mobileMenuBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMobileMenu();
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
+        });
 
-            mobileMenuClose.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMobileMenu();
-            });
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navContainer = document.querySelector('.nav-container');
 
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', handleNavigation);
-            });
-
-            mobileMenuOverlay.addEventListener('click', function(e) {
-                if (e.target === mobileMenuOverlay) {
-                    toggleMobileMenu();
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
-                    toggleMobileMenu();
-                }
-            });
-
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    mobileMenuOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
+        mobileMenuBtn.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
     </script>
 </body>

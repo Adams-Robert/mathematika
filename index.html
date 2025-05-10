@@ -776,35 +776,29 @@
             color: var(--accent-color);
         }
 
-        .language-selector {
+        .language-switcher {
             display: flex;
-            gap: 1rem;
-            padding: 0.5rem;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--border-color);
         }
 
-        .language-selector a {
-            color: #c59d5f;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            display: block;
-        }
-
-        .language-selector a[data-lang="fr"] {
-            opacity: 0.5;
-            cursor: not-allowed;
+        .language-switcher a {
             color: var(--text-primary);
-            background: none;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .language-selector a.active {
+        .language-switcher a.active {
             color: var(--accent-color);
             font-weight: 600;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
-            color: var(--accent-color);
+        .language-switcher .separator {
+            color: var(--border-color);
         }
 
         .email-signature {
@@ -1260,9 +1254,10 @@
                     <a href="./consulting.html">Consulting</a>
                     <a href="./contact.html">Contact</a>
                 </nav>
-                <div class="language-selector">
-                    <a href="index.html" class="active" data-lang="en">English</a>
-                    <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                <div class="language-switcher">
+                    <a href="index.html" class="active">EN</a>
+                    <span class="separator">|</span>
+                    <a href="index_fr.html">FR</a>
                 </div>
             </div>
         </nav>
@@ -1289,9 +1284,10 @@
                     <li><a href="admission.html" class="mobile-nav-link">Admission</a></li>
                     <li><a href="consulting.html" class="mobile-nav-link">Consulting</a></li>
                     <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-                    <li class="language-selector">
-                        <a href="index.html" class="active" data-lang="en">English</a>
-                        <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
+                    <li class="language-switcher">
+                        <a href="index.html" class="active">EN</a>
+                        <span class="separator">|</span>
+                        <a href="index_fr.html">FR</a>
                     </li>
                 </ul>
             </nav>
@@ -1743,6 +1739,25 @@
             alert(`Thank you for your support of $${amount}! This is a placeholder - actual payment processing would be implemented here.`);
             closeSupportModal();
         }
+
+        // Initialize language switcher
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (languageSwitcher) {
+                const links = languageSwitcher.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const lang = this.textContent.toLowerCase();
+                        const currentPage = window.location.pathname.split('/').pop();
+                        const targetPage = getLanguagePage(currentPage, lang);
+                        if (targetPage) {
+                            window.location.href = targetPage;
+                        }
+                    });
+                });
+            }
+        });
     </script>
     <script src="language.js"></script>
 </body>
