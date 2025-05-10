@@ -802,9 +802,10 @@
         }
 
         .language-selector a[data-lang="fr"] {
-            cursor: pointer !important;
-            opacity: 1 !important;
-            pointer-events: auto !important;
+            opacity: 0.5;
+            cursor: not-allowed;
+            color: var(--text-primary);
+            background: none;
         }
 
         .language-selector a.active {
@@ -1529,7 +1530,7 @@
                 </nav>
                 <div class="language-selector">
                     <a href="index.html" class="active" data-lang="en">English</a>
-                    <a href="programs_fr.html" data-lang="fr">Français</a>
+                    <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
                 </div>
             </div>
         </nav>
@@ -1558,7 +1559,7 @@
                     <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
                     <li class="language-selector">
                         <a href="programs.html" class="active" data-lang="en">English</a>
-                        <a href="programs_fr.html" data-lang="fr">Français</a>
+                        <a href="#" data-lang="fr" style="opacity: 0.5; cursor: not-allowed;" title="Coming Soon">Français</a>
                     </li>
                 </ul>
             </nav>
