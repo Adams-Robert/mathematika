@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mathēmatiká - Expert mathematics tutoring and education. Join our community of excellence in Montreal.">
+    <meta name="description" content="Mathēmatiká - Tutorat et éducation en mathématiques, physique et chimie. Rejoignez notre communauté d'excellence à Montréal.">
     <title>Admission - Mathēmatiká</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     
@@ -808,12 +808,19 @@
             display: block;
         }
 
+        .language-selector a[data-lang="en"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            color: var(--text-primary);
+            background: none;
+        }
+
         .language-selector a.active {
             color: var(--accent-color);
             font-weight: 600;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
+        .language-selector a:not([data-lang="en"]):hover {
             color: var(--accent-color);
         }
 
@@ -1561,9 +1568,9 @@
     <header class="premium-header">
         <nav>
             <a href="index.html" class="logo-link">
-            <img src="images/lastlogo.png" alt="Mathēmatiká Logo" style="height: 60px; width: auto; display: block; margin: 0 auto;">
+                <img src="images/lastlogo.png" alt="Logo Mathēmatiká" style="height: 60px; width: auto; display: block; margin: 0 auto;">
             </a>
-            <button class="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" role="button" tabindex="0">
+            <button class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false" role="button" tabindex="0">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <rect y="6" width="28" height="3" rx="1.5" fill="#1a365d"/>
                     <rect y="13" width="28" height="3" rx="1.5" fill="#1a365d"/>
@@ -1572,16 +1579,16 @@
             </button>
             <div class="nav-container">
                 <nav class="nav-links">
-                    <a href="./index.html">Welcome</a>
-                    <a href="./about.html">About</a>
-                    <a href="./programs.html">Programs</a>
-                    <a href="./admission.html" class="active">Admission</a>
-                    <a href="./consulting.html">Consulting</a>
+                    <a href="./index.html">Accueil</a>
+                    <a href="./about_fr.html">À Propos</a>
+                    <a href="./programs.html">Programmes</a>
+                    <a href="./admission_fr.html" class="active">Admission</a>
+                    <a href="./consulting.html">Consultation</a>
                     <a href="./contact.html">Contact</a>
                 </nav>
                 <div class="language-selector">
-                    <a href="admission.html" class="active" data-lang="en">English</a>
-                    <a href="admission_fr.html" data-lang="fr">Français</a>
+                    <a href="admission.html">English</a>
+                    <a href="admission_fr.html" class="active">Français</a>
                 </div>
             </div>
         </nav>
@@ -1598,79 +1605,79 @@
                         <span class="equals">=</span>
                         <span class="math-symbol">MATH</span>
                         <span class="plus">+</span>
-                        <span class="math-symbol">PHYSICS</span>
+                        <span class="math-symbol">PHYSIQUE</span>
                         <span class="plus">+</span>
-                        <span class="math-symbol">CHEMISTRY</span>
-            </div>
+                        <span class="math-symbol">CHIMIE</span>
                     </div>
+                </div>
                 <div class="mobile-menu-close">
                     <i class="fas fa-times"></i>
-                    </div>
-                    </div>
+                </div>
+            </div>
             <nav class="mobile-nav">
                 <ul>
-                    <li><a href="index.html" class="mobile-nav-link">Welcome</a></li>
-                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                    <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
-                    <li><a href="admission.html" class="mobile-nav-link active">Admission</a></li>
-                    <li><a href="consulting.html" class="mobile-nav-link">Consulting</a></li>
+                    <li><a href="index.html" class="mobile-nav-link">Accueil</a></li>
+                    <li><a href="about_fr.html" class="mobile-nav-link">À Propos</a></li>
+                    <li><a href="programs.html" class="mobile-nav-link">Programmes</a></li>
+                    <li><a href="admission_fr.html" class="mobile-nav-link active">Admission</a></li>
+                    <li><a href="consulting.html" class="mobile-nav-link">Consultation</a></li>
                     <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
                     <li class="language-selector">
-                        <a href="admission.html" class="active" data-lang="en">English</a>
-                        <a href="admission_fr.html" data-lang="fr">Français</a>
+                        <a href="admission.html">English</a>
+                        <a href="admission_fr.html" class="active">Français</a>
                     </li>
                 </ul>
             </nav>
-                    </div>
-                </div>
+        </div>
+    </div>
 
     <main>
         <section class="hero-admission">
             <div class="hero-content">
-                <h1>Admission Process</h1>
-                <p>Join our community of learners and excel in Mathematics, Physics, and Chemistry</p>
+                <h1>Processus d'admission</h1>
+                <p>Rejoignez notre communauté d'apprenants et excellez en mathématiques, physique et chimie</p>
                 
                 <div class="hero-nav">
                     <div class="nav-grid">
                         <a href="index.html" class="nav-link">
                             <i class="fas fa-home"></i>
-                            <span>Home</span>
-                            <small>Welcome</small>
+                            <span>Accueil</span>
+                            <small>Bienvenue</small>
                         </a>
                         <a href="programs.html" class="nav-link">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>Programs</span>
-                            <small>Our Courses</small>
+                            <span>Programmes</span>
+                            <small>Nos Cours</small>
                         </a>
-                        <a href="about.html" class="nav-link">
+                        <a href="about_fr.html" class="nav-link">
                             <i class="fas fa-users"></i>
-                            <span>About Us</span>
-                            <small>Our Story</small>
+                            <span>À Propos</span>
+                            <small>Notre Histoire</small>
                         </a>
-                        <a href="admission.html" class="nav-link active">
+                        <a href="admission_fr.html" class="nav-link active">
                             <i class="fas fa-user-plus"></i>
                             <span>Admission</span>
-                            <small>Join Us</small>
+                            <small>Rejoignez-nous</small>
                         </a>
                         <a href="consulting.html" class="nav-link">
                             <i class="fas fa-chalkboard-teacher"></i>
-                            <span>Consulting</span>
-                            <small>Expert Advice</small>
+                            <span>Consultation</span>
+                            <small>Conseils d'Experts</small>
                         </a>
                         <a href="index.html#blog-preview" class="nav-link">
                             <i class="fas fa-blog"></i>
                             <span>Blog</span>
-                            <small>Latest Updates</small>
+                            <small>Dernières Nouvelles</small>
                         </a>
-                        <a href="admission.html" class="nav-link">
+                        <a href="admission_fr.html" class="nav-link">
                             <i class="fas fa-calendar-check"></i>
-                            <span>Book Trial</span>
-                            <small>Free Session</small>
+                            <span>Réserver un Essai</span>
+                            <small>Session Gratuite</small>
                         </a>
                         <a href="contact.html" class="nav-link">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
-                            <small>Get in Touch</small>
+                            <small>Nous Contacter</small>
                         </a>
                     </div>
                 </div>
@@ -1681,88 +1688,88 @@
             <div class="container">
                 <div class="form-container">
                     <div class="form-header">
-                        <h2>Admission Form</h2>
-                        <p>To register for our programs, please complete and submit the information below. Our team will contact you shortly.</p>
+                        <h2>Formulaire d'admission</h2>
+                        <p>Pour vous inscrire à nos programmes, veuillez remplir et soumettre les informations ci-dessous. Notre équipe vous contactera sous peu.</p>
                     </div>
 
                     <form class="admission-form">
                     <div class="form-group">
-                            <h3>Student Information</h3>
+                            <h3>Informations sur l'étudiant</h3>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <label for="firstName">First Name</label>
+                                    <label for="firstName">Prénom</label>
                                     <input type="text" id="firstName" name="firstName" required>
                     </div>
                                 <div class="form-field">
-                                    <label for="lastName">Last Name</label>
+                                    <label for="lastName">Nom</label>
                                     <input type="text" id="lastName" name="lastName" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <label for="email">Email</label>
+                                    <label for="email">E-mail</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                                 <div class="form-field">
-                                    <label for="phone">Phone</label>
+                                    <label for="phone">Téléphone</label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                             </div>
                             <div class="form-field">
-                                <label for="grade">Current Grade Level</label>
+                                <label for="grade">Niveau scolaire actuel</label>
                                 <select id="grade" name="grade" required>
-                                    <option value="">Select Grade</option>
-                                    <option value="6">Grade 6</option>
-                                    <option value="7">Grade 7</option>
-                                    <option value="8">Grade 8</option>
-                                    <option value="9">Grade 9</option>
-                                    <option value="10">Grade 10</option>
-                                    <option value="11">Grade 11</option>
-                                    <option value="12">Grade 12</option>
-                                    <option value="university">University</option>
+                                    <option value="">Sélectionnez le niveau</option>
+                                    <option value="6">6e année</option>
+                                    <option value="7">5e secondaire</option>
+                                    <option value="8">4e secondaire</option>
+                                    <option value="9">3e secondaire</option>
+                                    <option value="10">2e secondaire</option>
+                                    <option value="11">1re secondaire</option>
+                                    <option value="12">Cégep</option>
+                                    <option value="university">Université</option>
                                 </select>
                             </div>
                         </div>
 
                     <div class="form-group">
-                            <h3>Program Selection</h3>
+                            <h3>Sélection du programme</h3>
                             <div class="form-field">
-                                <label for="program">Select Program</label>
+                                <label for="program">Choisissez le programme</label>
                         <select id="program" name="program" required>
-                                    <option value="">Select Program</option>
-                                    <option value="math">Mathematics Enrichment</option>
-                                    <option value="physics">Physics Enrichment</option>
-                                    <option value="chemistry">Chemistry Enrichment</option>
-                                    <option value="combined">Combined Program</option>
+                                    <option value="">Sélectionnez le programme</option>
+                                    <option value="math">Enrichissement en Mathématiques</option>
+                                    <option value="physics">Enrichissement en Physique</option>
+                                    <option value="chemistry">Enrichissement en Chimie</option>
+                                    <option value="combined">Programme Combiné</option>
                         </select>
                     </div>
                             <div class="form-field">
-                                <label for="schedule">Preferred Schedule</label>
+                                <label for="schedule">Horaire préféré</label>
                                 <select id="schedule" name="schedule" required>
-                                    <option value="">Select Schedule</option>
-                                    <option value="morning">Morning Sessions</option>
-                                    <option value="afternoon">Afternoon Sessions</option>
-                                    <option value="evening">Evening Sessions</option>
-                                    <option value="weekend">Weekend Sessions</option>
+                                    <option value="">Sélectionnez l'horaire</option>
+                                    <option value="morning">Séances du matin</option>
+                                    <option value="afternoon">Séances de l'après-midi</option>
+                                    <option value="evening">Séances du soir</option>
+                                    <option value="weekend">Séances du week-end</option>
                                 </select>
                             </div>
                         </div>
 
                     <div class="form-group">
-                            <h3>Additional Information</h3>
+                            <h3>Informations supplémentaires</h3>
                             <div class="form-field">
-                                <label for="message">Questions or Comments</label>
+                                <label for="message">Questions ou commentaires</label>
                                 <textarea id="message" name="message" rows="4"></textarea>
                     </div>
                         </div>
 
                         <div class="form-notice">
-                            <p><i class="fas fa-info-circle"></i> The number of allowed session changes or cancellations for each course is one session out of eight.</p>
-                            <p><i class="fas fa-info-circle"></i> Students are responsible for submitting assignments within the specified timeframe.</p>
-                            <p><i class="fas fa-info-circle"></i> Makeup classes will be scheduled in case of teacher absence.</p>
+                            <p><i class="fas fa-info-circle"></i> Le nombre de changements ou d'annulations de séance autorisés pour chaque cours est d'une séance sur huit.</p>
+                            <p><i class="fas fa-info-circle"></i> Les étudiants sont responsables de soumettre les devoirs dans le délai spécifié.</p>
+                            <p><i class="fas fa-info-circle"></i> Les cours de remplacement seront programmés en cas d'absence de l'enseignant.</p>
                         </div>
 
-                        <button type="submit" class="submit-button">Submit Application</button>
+                        <button type="submit" class="submit-button">Soumettre la demande</button>
                 </form>
                 </div>
             </div>
@@ -1771,8 +1778,8 @@
         <section class="contact-info">
             <div class="container">
                 <div class="contact-content">
-                    <h2>Questions?</h2>
-                    <p>Our admission team is here to help! Feel free to reach out to us.</p>
+                    <h2>Des questions ?</h2>
+                    <p>Notre équipe d'admission est là pour vous aider ! N'hésitez pas à nous contacter.</p>
                     <div class="contact-details">
                         <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
                         <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
@@ -1787,47 +1794,47 @@
         <div class="footer-content">
             <div class="footer-row">
             <div class="footer-section">
-                <h3>Contact Us</h3>
-                    <p>Montreal, H3S 1R4</p>
-                    <p>Quebec, Canada</p>
+                <h3>Contactez-nous</h3>
+                    <p>Montréal, H3S 1R4</p>
+                    <p>Québec, Canada</p>
                     <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
                     <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
                 </div>
                 <div class="footer-section">
-                    <h3>Our Programs</h3>
+                    <h3>Nos Programmes</h3>
                     <ul>
-                        <li>Mathematics Enrichment</li>
-                        <li>Physics Excellence Program</li>
-                        <li>Chemistry Mastery Course</li>
-                        <li>STEM Foundation Program</li>
-                        <li>Advanced Research Program</li>
-                        <li>Exam Preparation</li>
-                        <li>One-on-One Tutoring</li>
+                        <li>Enrichissement en Mathématiques</li>
+                        <li>Programme d'Excellence en Physique</li>
+                        <li>Cours de Maîtrise en Chimie</li>
+                        <li>Programme Fondation STEM</li>
+                        <li>Programme de Recherche Avancée</li>
+                        <li>Préparation aux Examens</li>
+                        <li>Tutorat Individuel</li>
                     </ul>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3>Liens Rapides</h3>
                 <ul>
-                        <li><a href="./about.html">Mathēmatiká at a Glance</a></li>
-                        <li><a href="./programs.html">Programs & Courses</a></li>
-                        <li><a href="./admission.html">Admission</a></li>
-                        <li><a href="./consulting.html">Consulting Services</a></li>
-                        <li><a href="./contact.html">Contact Us</a></li>
+                        <li><a href="./about_fr.html">Mathēmatiká en Bref</a></li>
+                        <li><a href="./programs.html">Programmes & Cours</a></li>
+                        <li><a href="./admission_fr.html">Admission</a></li>
+                        <li><a href="./consulting.html">Services de Consultation</a></li>
+                        <li><a href="./contact.html">Contactez-nous</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                    <h3>NEWSLETTER</h3>
+                    <h3>BULLETIN D'INFORMATION</h3>
                 <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email address">
-                    <button type="submit" class="cta-button">Subscribe</button>
+                        <input type="email" placeholder="Entrez votre adresse e-mail">
+                    <button type="submit" class="cta-button">S'abonner</button>
                 </form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca is not affiliated with, endorsed by, or in any way connected to Wolfram Research, Inc. or its Mathematica® software. For more details, please refer to our full disclaimer on the About page.</p>
-            <p>&copy; 2024 Mathēmatiká, All Rights Reserved.</p>
+            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca n'est pas affilié à, approuvé par ou connecté de quelque manière que ce soit à Wolfram Research, Inc. ou à son logiciel Mathematica®. Pour plus de détails, veuillez consulter notre avertissement complet sur la page À propos.</p>
+            <p>&copy; 2024 Mathēmatiká, Tous Droits Réservés.</p>
         </div>
     </footer>
 
@@ -1840,9 +1847,9 @@
     <div class="fab">
         <i class="fas fa-plus"></i>
         <div class="fab-menu">
-            <a href="#" class="fab-item"><i class="fas fa-phone"></i> Call Now</a>
-            <a href="#" class="fab-item"><i class="fas fa-calendar"></i> Book Session</a>
-            <a href="#" class="fab-item"><i class="fas fa-message"></i> Quick Chat</a>
+            <a href="#" class="fab-item"><i class="fas fa-phone"></i> Appeler maintenant</a>
+            <a href="#" class="fab-item"><i class="fas fa-calendar"></i> Réserver une séance</a>
+            <a href="#" class="fab-item"><i class="fas fa-message"></i> Chat rapide</a>
         </div>
     </div>
 

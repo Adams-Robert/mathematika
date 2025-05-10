@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulting Services - Mathēmatiká</title>
+    <title>Services de Consultation - Mathēmatiká</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -692,6 +692,13 @@
             display: block;
         }
 
+        .language-selector a[data-lang="fr"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            color: var(--text-primary);
+            background: none;
+        }
+
         .language-selector a.active {
             color: var(--accent-color);
             font-weight: 600;
@@ -958,9 +965,9 @@
     <header class="premium-header">
         <nav>
             <a href="index.html" class="logo-link">
-            <img src="images/lastlogo.png" alt="Mathēmatiká Logo" style="height: 60px; width: auto; display: block; margin: 0 auto;">
+                <img src="images/lastlogo.png" alt="Logo Mathēmatiká" style="height: 60px; width: auto; display: block; margin: 0 auto;">
             </a>
-            <button class="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" role="button" tabindex="0">
+            <button class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false" role="button" tabindex="0">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <rect y="6" width="28" height="3" rx="1.5" fill="#1a365d"/>
                     <rect y="13" width="28" height="3" rx="1.5" fill="#1a365d"/>
@@ -969,16 +976,16 @@
             </button>
             <div class="nav-container">
                 <nav class="nav-links">
-                    <a href="./index.html">Welcome</a>
-                    <a href="./about.html">About</a>
-                    <a href="./programs.html">Programs</a>
-                    <a href="./admission.html">Admission</a>
-                    <a href="./consulting.html" class="active">Consulting</a>
+                    <a href="./index.html">Accueil</a>
+                    <a href="./about_fr.html">À Propos</a>
+                    <a href="./programs.html">Programmes</a>
+                    <a href="./admission_fr.html">Admission</a>
+                    <a href="./consulting_fr.html" class="active">Consultation</a>
                     <a href="./contact.html">Contact</a>
                 </nav>
                 <div class="language-selector">
-                    <a href="consulting.html" class="active" data-lang="en">English</a>
-                    <a href="consulting_fr.html" data-lang="fr">Français</a>
+                    <a href="consulting.html">English</a>
+                    <a href="consulting_fr.html" class="active">Français</a>
                 </div>
             </div>
         </nav>
@@ -995,9 +1002,9 @@
                         <span class="equals">=</span>
                         <span class="math-symbol">MATH</span>
                         <span class="plus">+</span>
-                        <span class="math-symbol">PHYSICS</span>
+                        <span class="math-symbol">PHYSIQUE</span>
                         <span class="plus">+</span>
-                        <span class="math-symbol">CHEMISTRY</span>
+                        <span class="math-symbol">CHIMIE</span>
                     </div>
                 </div>
                 <div class="mobile-menu-close">
@@ -1006,15 +1013,15 @@
             </div>
             <nav class="mobile-nav">
                 <ul>
-                    <li><a href="index.html" class="mobile-nav-link">Welcome</a></li>
-                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                    <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
-                    <li><a href="admission.html" class="mobile-nav-link">Admission</a></li>
-                    <li><a href="consulting.html" class="mobile-nav-link active">Consulting</a></li>
+                    <li><a href="index.html" class="mobile-nav-link">Accueil</a></li>
+                    <li><a href="about_fr.html" class="mobile-nav-link">À Propos</a></li>
+                    <li><a href="programs.html" class="mobile-nav-link">Programmes</a></li>
+                    <li><a href="admission_fr.html" class="mobile-nav-link">Admission</a></li>
+                    <li><a href="consulting_fr.html" class="mobile-nav-link active">Consultation</a></li>
                     <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
                     <li class="language-selector">
-                        <a href="consulting.html" class="active" data-lang="en">English</a>
-                        <a href="consulting_fr.html" data-lang="fr">Français</a>
+                        <a href="consulting.html">English</a>
+                        <a href="consulting_fr.html" class="active">Français</a>
                     </li>
                 </ul>
             </nav>
@@ -1024,50 +1031,50 @@
     <main>
         <section class="hero-consulting">
             <div class="hero-content">
-                <h1>Consulting Solution</h1>
-                <p>Expert guidance for academic success in Mathematics, Physics, and Chemistry</p>
+                <h1>Solution de Consultation</h1>
+                <p>Conseils d'experts pour la réussite académique en mathématiques, physique et chimie</p>
                 
                 <div class="hero-nav">
                     <div class="nav-grid">
                         <a href="index.html" class="nav-link">
                             <i class="fas fa-home"></i>
-                            <span>Home</span>
-                            <small>Welcome</small>
+                            <span>Accueil</span>
+                            <small>Bienvenue</small>
                         </a>
                         <a href="programs.html" class="nav-link">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>Programs</span>
-                            <small>Our Courses</small>
+                            <span>Programmes</span>
+                            <small>Nos Cours</small>
                         </a>
-                        <a href="about.html" class="nav-link">
+                        <a href="about_fr.html" class="nav-link">
                             <i class="fas fa-users"></i>
-                            <span>About Us</span>
-                            <small>Our Story</small>
+                            <span>À Propos</span>
+                            <small>Notre Histoire</small>
                         </a>
-                        <a href="admission.html" class="nav-link">
+                        <a href="admission_fr.html" class="nav-link">
                             <i class="fas fa-user-plus"></i>
                             <span>Admission</span>
-                            <small>Join Us</small>
+                            <small>Rejoignez-nous</small>
                         </a>
-                        <a href="consulting.html" class="nav-link active">
+                        <a href="consulting_fr.html" class="nav-link active">
                             <i class="fas fa-chalkboard-teacher"></i>
-                            <span>Consulting</span>
-                            <small>Expert Advice</small>
+                            <span>Consultation</span>
+                            <small>Conseils d'Experts</small>
                         </a>
                         <a href="index.html#blog-preview" class="nav-link">
                             <i class="fas fa-blog"></i>
                             <span>Blog</span>
-                            <small>Latest Updates</small>
+                            <small>Dernières Nouvelles</small>
                         </a>
-                        <a href="admission.html" class="nav-link">
+                        <a href="admission_fr.html" class="nav-link">
                             <i class="fas fa-calendar-check"></i>
-                            <span>Book Trial</span>
-                            <small>Free Session</small>
+                            <span>Réserver un Essai</span>
+                            <small>Session Gratuite</small>
                         </a>
                         <a href="contact.html" class="nav-link">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
-                            <small>Get in Touch</small>
+                            <small>Nous Contacter</small>
                         </a>
                     </div>
                 </div>
@@ -1076,95 +1083,95 @@
 
         <section class="consulting-section">
             <div class="section-header">
-                <h2 data-translate="why_choose">Why Choose Our Consulting Services?</h2>
-                <p data-translate="consulting_subtitle">Educational and psychological consultation can play a crucial role in the future success and well-being of both parents and students.</p>
+                <h2>Pourquoi choisir nos services de consultation ?</h2>
+                <p>La consultation éducative et psychologique peut jouer un rôle crucial dans la réussite future et le bien-être des parents et des élèves.</p>
             </div>
             <div class="consulting-grid">
                 <div class="consulting-card">
                     <div class="consulting-image">
-                        <img src="images/consulting.webp" alt="Early Identification">
+                        <img src="images/consulting.webp" alt="Identification précoce">
                     </div>
                     <div class="consulting-content">
-                        <h3 data-translate="early_identification">Early Identification</h3>
+                        <h3>Identification précoce</h3>
                         <ul>
-                            <li data-translate="identify_learning">Identify learning difficulties early</li>
-                            <li data-translate="detect_psychological">Detect psychological issues</li>
-                            <li data-translate="provide_intervention">Provide timely intervention</li>
-                            <li data-translate="offer_support">Offer effective support</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                <div class="consulting-card">
-                    <div class="consulting-image">
-                        <img src="images/pro.jpg" alt="Customized Support">
-                    </div>
-                    <div class="consulting-content">
-                        <h3 data-translate="customized_support">Customized Support</h3>
-                        <ul>
-                            <li data-translate="personalized_strategies">Personalized strategies</li>
-                            <li data-translate="tailored_interventions">Tailored interventions</li>
-                            <li data-translate="individualized_approach">Individualized approach</li>
-                            <li data-translate="optimized_learning">Optimized learning outcomes</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                <div class="consulting-card">
-                    <div class="consulting-image">
-                        <img src="images/parent-1.jpg" alt="Parental Guidance">
-                    </div>
-                    <div class="consulting-content">
-                        <h3 data-translate="parental_guidance">Parental Guidance</h3>
-                        <ul>
-                            <li data-translate="enhance_communication">Enhance parent-child communication</li>
-                            <li data-translate="strengthen_relationships">Strengthen relationships</li>
-                            <li data-translate="create_environment">Create supportive environment</li>
-                            <li data-translate="provide_strategies">Provide effective parenting strategies</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                <div class="consulting-card">
-                    <div class="consulting-image">
-                        <img src="images/student-1.jpg" alt="Emotional Well-being">
-                </div>
-                    <div class="consulting-content">
-                        <h3 data-translate="emotional_wellbeing">Emotional Well-being</h3>
-                        <ul>
-                            <li data-translate="address_challenges">Address emotional challenges</li>
-                            <li data-translate="promote_resilience">Promote resilience</li>
-                            <li data-translate="develop_strategies">Develop coping strategies</li>
-                            <li data-translate="manage_stress">Manage stress and anxiety</li>
+                            <li>Identifier les difficultés d'apprentissage tôt</li>
+                            <li>Détecter les problèmes psychologiques</li>
+                            <li>Fournir une intervention rapide</li>
+                            <li>Offrir un soutien efficace</li>
                         </ul>
-            </div>
+                    </div>
                 </div>
 
                 <div class="consulting-card">
                     <div class="consulting-image">
-                        <img src="images/student.jpg" alt="Career Guidance">
+                        <img src="images/pro.jpg" alt="Soutien personnalisé">
                     </div>
                     <div class="consulting-content">
-                        <h3 data-translate="career_guidance">Career Guidance</h3>
+                        <h3>Soutien personnalisé</h3>
                         <ul>
-                            <li data-translate="identify_strengths">Identify strengths and interests</li>
-                            <li data-translate="explore_options">Explore career options</li>
-                            <li data-translate="make_decisions">Make informed decisions</li>
-                            <li data-translate="plan_path">Plan academic path</li>
+                            <li>Stratégies personnalisées</li>
+                            <li>Interventions adaptées</li>
+                            <li>Démarche individualisée</li>
+                            <li>Résultats d'apprentissage optimisés</li>
                         </ul>
                     </div>
+                </div>
+
+                <div class="consulting-card">
+                    <div class="consulting-image">
+                        <img src="images/parent-1.jpg" alt="Conseils parentaux">
                     </div>
+                    <div class="consulting-content">
+                        <h3>Conseils parentaux</h3>
+                        <ul>
+                            <li>Améliorer la communication parent-enfant</li>
+                            <li>Renforcer les relations</li>
+                            <li>Créer un environnement de soutien</li>
+                            <li>Fournir des stratégies parentales efficaces</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="consulting-card">
+                    <div class="consulting-image">
+                        <img src="images/student-1.jpg" alt="Bien-être émotionnel">
+                    </div>
+                    <div class="consulting-content">
+                        <h3>Bien-être émotionnel</h3>
+                        <ul>
+                            <li>Gérer les défis émotionnels</li>
+                            <li>Favoriser la résilience</li>
+                            <li>Développer des stratégies d'adaptation</li>
+                            <li>Gérer le stress et l'anxiété</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="consulting-card">
+                    <div class="consulting-image">
+                        <img src="images/student.jpg" alt="Orientation professionnelle">
+                    </div>
+                    <div class="consulting-content">
+                        <h3>Orientation professionnelle</h3>
+                        <ul>
+                            <li>Identifier les forces et les intérêts</li>
+                            <li>Explorer les options de carrière</li>
+                            <li>Prendre des décisions éclairées</li>
+                            <li>Planifier le parcours académique</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="consulting-card">
                     <div class="consulting-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3 data-translate="holistic_development">Holistic Development</h3>
+                    <h3>Développement global</h3>
                     <ul>
-                        <li data-translate="academic_growth">Academic growth</li>
-                        <li data-translate="emotional_development">Emotional development</li>
-                        <li data-translate="social_skills">Social skills</li>
-                        <li data-translate="behavioral_improvement">Behavioral improvement</li>
+                        <li>Croissance académique</li>
+                        <li>Développement émotionnel</li>
+                        <li>Compétences sociales</li>
+                        <li>Amélioration du comportement</li>
                     </ul>
                 </div>
             </div>
@@ -1172,59 +1179,38 @@
 
         <section class="consulting-form-section">
             <div class="section-header">
-                <h2 data-translate="consulting_form_title">Consulting Contact Form</h2>
+                <h2>Formulaire de contact pour consultation</h2>
             </div>
             <div class="form-container">
                 <div class="form-instructions">
-                    <p data-translate="form_instructions">Please complete the form below so that our experts can contact you and coordinate with you for a consultation session.</p>
+                    <p>Veuillez remplir le formulaire ci-dessous afin que nos experts puissent vous contacter et organiser une séance de consultation.</p>
                 </div>
                 <form id="consultingForm">
                     <div class="form-row">
-                    <div class="form-group">
-                            <label for="organization" data-translate="organization_name">Organization Name *</label>
-                        <input type="text" id="organization" name="organization" required>
-                    </div>
-                    <div class="form-group">
-                            <label for="contactPerson" data-translate="contact_person">Contact Person *</label>
+                        <div class="form-group">
+                            <label for="organization">Nom de l'organisation *</label>
+                            <input type="text" id="organization" name="organization" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPerson">Personne à contacter *</label>
                             <input type="text" id="contactPerson" name="contactPerson" required>
-                    </div>
+                        </div>
                     </div>
                     <div class="form-row">
-                    <div class="form-group">
-                            <label for="email" data-translate="email_address">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                            <label for="phone" data-translate="phone_number">Phone Number *</label>
-                            <div class="phone-input-group">
-                                <select id="countryCode" name="countryCode" required>
-                                    <option value="+1" data-translate="canada_us">+1 (Canada/US)</option>
-                                    <option value="+33" data-translate="france">+33 (France)</option>
-                                    <option value="+44" data-translate="uk">+44 (UK)</option>
-                                    <option value="+49" data-translate="germany">+49 (Germany)</option>
-                                    <option value="+81" data-translate="japan">+81 (Japan)</option>
-                                    <option value="+86" data-translate="china">+86 (China)</option>
-                                    <option value="+91" data-translate="india">+91 (India)</option>
-                                </select>
-                        <input type="tel" id="phone" name="phone" required>
-                            </div>
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="serviceInterest" data-translate="service_interest">Service Interest *</label>
-                        <select id="serviceInterest" name="serviceInterest" required>
-                            <option value="" data-translate="select_service">Select a service</option>
-                            <option value="counseling" data-translate="student_counseling">Student Counseling</option>
-                            <option value="parental" data-translate="parental_guidance">Parental Guidance</option>
-                            <option value="career" data-translate="career_planning">Career Planning</option>
-                            <option value="other" data-translate="other">Other</option>
-                        </select>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="projectDetails" data-translate="project_details">Project Details *</label>
-                        <textarea id="projectDetails" name="projectDetails" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button" data-translate="submit">Submit</button>
+                    <button type="submit" class="submit-button">Envoyer la demande</button>
                 </form>
             </div>
         </section>
@@ -1233,48 +1219,48 @@
     <footer class="premium-footer">
         <div class="footer-content">
             <div class="footer-row">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                    <p>Montreal, H3S 1R4</p>
-                    <p>Quebec, Canada</p>
+                <div class="footer-section">
+                    <h3>Contactez-nous</h3>
+                    <p>Montréal, H3S 1R4</p>
+                    <p>Québec, Canada</p>
                     <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
                     <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
                 </div>
                 <div class="footer-section">
-                    <h3>Our Programs</h3>
+                    <h3>Nos Programmes</h3>
                     <ul>
-                        <li>Mathematics Enrichment</li>
-                        <li>Physics Excellence Program</li>
-                        <li>Chemistry Mastery Course</li>
-                        <li>STEM Foundation Program</li>
-                        <li>Advanced Research Program</li>
-                        <li>Exam Preparation</li>
-                        <li>One-on-One Tutoring</li>
+                        <li>Enrichissement en Mathématiques</li>
+                        <li>Programme d'Excellence en Physique</li>
+                        <li>Cours de Maîtrise en Chimie</li>
+                        <li>Programme Fondation STEM</li>
+                        <li>Programme de Recherche Avancée</li>
+                        <li>Préparation aux Examens</li>
+                        <li>Tutorat Individuel</li>
                     </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                        <li><a href="./about.html">Mathēmatiká at a Glance</a></li>
-                        <li><a href="./programs.html">Programs & Courses</a></li>
-                        <li><a href="./admission.html">Admission</a></li>
-                        <li><a href="./consulting.html">Consulting Services</a></li>
-                        <li><a href="./contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                    <h3>NEWSLETTER</h3>
-                <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email address">
-                    <button type="submit" class="cta-button">Subscribe</button>
-                </form>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="./about_fr.html">Mathēmatiká en Bref</a></li>
+                        <li><a href="./programs.html">Programmes & Cours</a></li>
+                        <li><a href="./admission_fr.html">Admission</a></li>
+                        <li><a href="./consulting_fr.html">Services de Consultation</a></li>
+                        <li><a href="./contact.html">Contactez-nous</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>BULLETIN D'INFORMATION</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Entrez votre adresse e-mail">
+                        <button type="submit" class="cta-button">S'abonner</button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca is not affiliated with, endorsed by, or in any way connected to Wolfram Research, Inc. or its Mathematica® software. For more details, please refer to our full disclaimer on the About page.</p>
-            <p>&copy; 2024 Mathēmatiká, All Rights Reserved.</p>
+            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca n'est pas affilié à, approuvé par ou connecté de quelque manière que ce soit à Wolfram Research, Inc. ou à son logiciel Mathematica®. Pour plus de détails, veuillez consulter notre avertissement complet sur la page À propos.</p>
+            <p>&copy; 2024 Mathēmatiká, Tous Droits Réservés.</p>
         </div>
     </footer>
 

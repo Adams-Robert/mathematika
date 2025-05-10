@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Mathēmatiká</title>
+    <title>Contactez-nous - Mathēmatiká</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -593,6 +593,13 @@
             display: block;
         }
 
+        .language-selector a[data-lang="fr"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            color: var(--text-primary);
+            background: none;
+        }
+
         .language-selector a.active {
             color: var(--accent-color);
             font-weight: 600;
@@ -846,10 +853,10 @@
 <body>
     <header class="premium-header">
         <nav>
-            <a href="index.html" class="logo-link">
-                <img src="images/lastlogo.png" alt="Mathēmatiká Logo" style="height: 60px; width: auto; display: block; margin: 0 auto;">
+            <a href="index_fr.html" class="logo-link">
+                <img src="images/lastlogo.png" alt="Logo Mathēmatiká" style="height: 60px; width: auto; display: block; margin: 0 auto;">
             </a>
-            <button class="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" role="button" tabindex="0">
+            <button class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false" role="button" tabindex="0">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <rect y="6" width="28" height="3" rx="1.5" fill="#1a365d"/>
                     <rect y="13" width="28" height="3" rx="1.5" fill="#1a365d"/>
@@ -858,16 +865,16 @@
             </button>
             <div class="nav-container">
                 <nav class="nav-links">
-                    <a href="./index.html">Welcome</a>
-                    <a href="./about.html">About</a>
-                    <a href="./programs.html">Programs</a>
-                    <a href="./admission.html">Admission</a>
-                    <a href="./consulting.html">Consulting</a>
-                    <a href="./contact.html" class="active">Contact</a>
+                    <a href="index_fr.html">Accueil</a>
+                    <a href="about_fr.html">À propos</a>
+                    <a href="programs_fr.html">Programmes</a>
+                    <a href="admission_fr.html">Admission</a>
+                    <a href="consulting_fr.html">Consultation</a>
+                    <a href="contact_fr.html" class="active">Contact</a>
                 </nav>
                 <div class="language-selector">
-                    <a href="contact.html" class="active" data-lang="en">English</a>
-                    <a href="contact_fr.html" data-lang="fr">Français</a>
+                    <a href="contact.html" data-lang="en">English</a>
+                    <a href="contact_fr.html" class="active" data-lang="fr">Français</a>
                 </div>
             </div>
         </nav>
@@ -878,15 +885,15 @@
         <div class="mobile-menu-container">
             <div class="mobile-menu-header">
                 <div class="logo">
-                    <a href="index.html">Mathēmatiká</a>
+                    <a href="index_fr.html">Mathēmatiká</a>
                     <div class="logo-equation">
                         <span class="math-symbol">MATH</span>
                         <span class="equals">=</span>
                         <span class="math-symbol">MATH</span>
                         <span class="plus">+</span>
-                        <span class="math-symbol">PHYSICS</span>
+                        <span class="math-symbol">PHYSIQUE</span>
                         <span class="plus">+</span>
-                        <span class="math-symbol">CHEMISTRY</span>
+                        <span class="math-symbol">CHIMIE</span>
                     </div>
                 </div>
                 <div class="mobile-menu-close">
@@ -895,15 +902,15 @@
             </div>
             <nav class="mobile-nav">
                 <ul>
-                    <li><a href="./index.html" class="mobile-nav-link">Welcome</a></li>
-                    <li><a href="./about.html" class="mobile-nav-link">About</a></li>
-                    <li><a href="./programs.html" class="mobile-nav-link">Programs</a></li>
-                    <li><a href="./admission.html" class="mobile-nav-link">Admission</a></li>
-                    <li><a href="./consulting.html" class="mobile-nav-link">Consulting</a></li>
-                    <li><a href="./contact.html" class="mobile-nav-link active">Contact</a></li>
+                    <li><a href="index_fr.html" class="mobile-nav-link">Accueil</a></li>
+                    <li><a href="about_fr.html" class="mobile-nav-link">À propos</a></li>
+                    <li><a href="programs_fr.html" class="mobile-nav-link">Programmes</a></li>
+                    <li><a href="admission_fr.html" class="mobile-nav-link">Admission</a></li>
+                    <li><a href="consulting_fr.html" class="mobile-nav-link">Consultation</a></li>
+                    <li><a href="contact_fr.html" class="mobile-nav-link active">Contact</a></li>
                     <li class="language-selector">
-                        <a href="contact.html" class="active" data-lang="en">English</a>
-                        <a href="contact_fr.html" data-lang="fr">Français</a>
+                        <a href="contact.html" data-lang="en">English</a>
+                        <a href="contact_fr.html" class="active" data-lang="fr">Français</a>
                     </li>
                 </ul>
             </nav>
@@ -913,50 +920,50 @@
     <main>
         <section class="contact-hero">
             <div class="hero-content">
-                <h1>Contact Us</h1>
-                <p>Get in touch with our team of experts</p>
+                <h1>Contactez-nous</h1>
+                <p>Contactez notre équipe d'experts</p>
 
                 <div class="hero-nav">
                     <div class="nav-grid">
-                        <a href="index.html" class="nav-link">
+                        <a href="index_fr.html" class="nav-link">
                             <i class="fas fa-home"></i>
-                            <span>Home</span>
-                            <small>Welcome</small>
+                            <span>Accueil</span>
+                            <small>Bienvenue</small>
                         </a>
-                        <a href="programs.html" class="nav-link">
+                        <a href="programs_fr.html" class="nav-link">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>Programs</span>
-                            <small>Our Courses</small>
+                            <span>Programmes</span>
+                            <small>Nos cours</small>
                         </a>
-                        <a href="about.html" class="nav-link">
+                        <a href="about_fr.html" class="nav-link">
                             <i class="fas fa-users"></i>
-                            <span>About Us</span>
-                            <small>Our Story</small>
+                            <span>À propos</span>
+                            <small>Notre histoire</small>
                         </a>
-                        <a href="admission.html" class="nav-link">
+                        <a href="admission_fr.html" class="nav-link">
                             <i class="fas fa-user-plus"></i>
                             <span>Admission</span>
-                            <small>Join Us</small>
+                            <small>Rejoignez-nous</small>
                         </a>
-                        <a href="consulting.html" class="nav-link">
+                        <a href="consulting_fr.html" class="nav-link">
                             <i class="fas fa-chalkboard-teacher"></i>
-                            <span>Consulting</span>
-                            <small>Expert Advice</small>
+                            <span>Consultation</span>
+                            <small>Conseils d'experts</small>
                         </a>
-                        <a href="index.html#blog-preview" class="nav-link">
+                        <a href="index_fr.html#blog-preview" class="nav-link">
                             <i class="fas fa-blog"></i>
                             <span>Blog</span>
-                            <small>Latest Updates</small>
+                            <small>Dernières nouvelles</small>
                         </a>
-                        <a href="admission.html" class="nav-link">
+                        <a href="admission_fr.html" class="nav-link">
                             <i class="fas fa-calendar-check"></i>
-                            <span>Book Trial</span>
-                            <small>Free Session</small>
+                            <span>Réserver un essai</span>
+                            <small>Séance gratuite</small>
                         </a>
-                        <a href="contact.html" class="nav-link active">
+                        <a href="contact_fr.html" class="nav-link active">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
-                            <small>Get in Touch</small>
+                            <small>Nous joindre</small>
                         </a>
                     </div>
                 </div>
@@ -967,13 +974,13 @@
             <div class="contact-info-grid">
                 <div class="contact-info-card">
                     <i class="fas fa-map-marker-alt contact-icon"></i>
-                    <h3>📍 Location</h3>
-                    <p>Montreal, H3S 1R4</p>
-                    <p>Quebec, Canada</p>
+                    <h3>📍 Adresse</h3>
+                    <p>Montréal, H3S 1R4</p>
+                    <p>Québec, Canada</p>
                 </div>
                 <div class="contact-info-card">
                     <i class="fas fa-phone contact-icon"></i>
-                    <h3>📞 Phone</h3>
+                    <h3>📞 Téléphone</h3>
                     <p>+1 514 977 0459</p>
                     <p>+1 514 475 5210</p>
                 </div>
@@ -985,10 +992,10 @@
                 </div>
                 <div class="contact-info-card">
                     <i class="fas fa-clock contact-icon"></i>
-                    <h3>⏰ Hours</h3>
-                    <p>Monday - Friday: 9am - 7pm</p>
-                    <p>Saturday: 10am - 4pm</p>
-                    <p>Sunday: 10am - 4pm</p>
+                    <h3>⏰ Horaires</h3>
+                    <p>Lundi - Vendredi : 9h - 19h</p>
+                    <p>Samedi : 10h - 16h</p>
+                    <p>Dimanche : 10h - 16h</p>
                 </div>
             </div>
         </section>
@@ -996,36 +1003,36 @@
         <section class="tutoring-options-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Flexible Learning Options</h2>
-                    <p>Choose the learning format that best suits your needs and schedule</p>
+                    <h2>Options d'apprentissage flexibles</h2>
+                    <p>Choisissez le format d'apprentissage qui correspond le mieux à vos besoins et à votre emploi du temps</p>
                 </div>
                 <div class="tutoring-options-grid">
                     <div class="tutoring-option-card">
                         <div class="option-icon">
                             <i class="fas fa-laptop"></i>
                         </div>
-                        <h3>Online Tutoring</h3>
-                        <p>Experience high-quality tutoring from the comfort of your home. Our online sessions offer:</p>
+                        <h3>Tutorat en ligne</h3>
+                        <p>Bénéficiez d'un tutorat de qualité depuis chez vous. Nos séances en ligne offrent :</p>
                         <ul>
-                            <li>Interactive virtual whiteboard</li>
-                            <li>Screen sharing capabilities</li>
-                            <li>Flexible scheduling</li>
-                            <li>Recorded sessions for review</li>
-                            <li>Access to digital resources</li>
+                            <li>Tableau blanc virtuel interactif</li>
+                            <li>Partage d'écran</li>
+                            <li>Horaires flexibles</li>
+                            <li>Séances enregistrées pour révision</li>
+                            <li>Accès aux ressources numériques</li>
                         </ul>
                     </div>
                     <div class="tutoring-option-card">
                         <div class="option-icon">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
-                        <h3>In-Person Classes</h3>
-                        <p>Join our physical classroom for a traditional learning experience:</p>
+                        <h3>Cours en présentiel</h3>
+                        <p>Rejoignez notre salle de classe pour une expérience d'apprentissage traditionnelle :</p>
                         <ul>
-                            <li>Face-to-face interaction</li>
-                            <li>Hands-on learning materials</li>
-                            <li>Group study opportunities</li>
-                            <li>Access to physical resources</li>
-                            <li>Immediate feedback and support</li>
+                            <li>Interaction en face à face</li>
+                            <li>Matériel pédagogique pratique</li>
+                            <li>Opportunités d'étude en groupe</li>
+                            <li>Accès aux ressources physiques</li>
+                            <li>Retour et soutien immédiats</li>
                         </ul>
                     </div>
                 </div>
@@ -1034,38 +1041,38 @@
 
         <section class="contact-form-section">
             <div class="section-header">
-                <h2>Send us a Message</h2>
-                <p>We'd love to hear from you!</p>
+                <h2>Envoyez-nous un message</h2>
+                <p>Nous serions ravis de vous lire !</p>
             </div>
             <div class="contact-form">
                 <form>
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name">Nom complet</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">Adresse e-mail</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
+                        <label for="phone">Numéro de téléphone</label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Subject</label>
+                        <label for="subject">Sujet</label>
                         <select id="subject" name="subject" required>
-                            <option value="">Select a subject</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="programs">Programs Information</option>
-                            <option value="admission">Admission Questions</option>
-                            <option value="consulting">Consulting Services</option>
+                            <option value="">Sélectionnez un sujet</option>
+                            <option value="general">Demande générale</option>
+                            <option value="programs">Informations sur les programmes</option>
+                            <option value="admission">Questions sur l'admission</option>
+                            <option value="consulting">Services de consultation</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button submit-button">Send Message</button>
+                    <button type="submit" class="cta-button submit-button">Envoyer le message</button>
                 </form>
             </div>
         </section>
@@ -1075,47 +1082,47 @@
         <div class="footer-content">
             <div class="footer-row">
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Montreal, H3S 1R4</p>
-                    <p>Quebec, Canada</p>
+                    <h3>Contact</h3>
+                    <p>Montréal, H3S 1R4</p>
+                    <p>Québec, Canada</p>
                     <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
                     <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@mathematika.ca">info@mathematika.ca</a></p>
                 </div>
                 <div class="footer-section">
-                    <h3>Our Programs</h3>
+                    <h3>Nos Programmes</h3>
                     <ul>
-                        <li>Mathematics Enrichment</li>
-                        <li>Physics Excellence Program</li>
-                        <li>Chemistry Mastery Course</li>
-                        <li>STEM Foundation Program</li>
-                        <li>Advanced Research Program</li>
-                        <li>Exam Preparation</li>
-                        <li>One-on-One Tutoring</li>
+                        <li>Enrichissement en mathématiques</li>
+                        <li>Programme d'excellence en physique</li>
+                        <li>Cours de maîtrise en chimie</li>
+                        <li>Programme de base STEM</li>
+                        <li>Programme de recherche avancée</li>
+                        <li>Préparation aux examens</li>
+                        <li>Tutorat individuel</li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>Liens rapides</h3>
                     <ul>
-                        <li><a href="./about.html">Mathēmatiká at a Glance</a></li>
-                        <li><a href="./programs.html">Programs & Courses</a></li>
-                        <li><a href="./admission.html">Admission</a></li>
-                        <li><a href="./consulting.html">Consulting Services</a></li>
-                        <li><a href="./contact.html">Contact Us</a></li>
+                        <li><a href="about_fr.html">Mathēmatiká en Bref</a></li>
+                        <li><a href="programs_fr.html">Programmes & Cours</a></li>
+                        <li><a href="admission_fr.html">Admission</a></li>
+                        <li><a href="consulting_fr.html">Services de consultation</a></li>
+                        <li><a href="contact_fr.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>NEWSLETTER</h3>
+                    <h3>INFOLETTRE</h3>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email address">
-                        <button type="submit" class="cta-button">Subscribe</button>
+                        <input type="email" placeholder="Entrez votre adresse e-mail">
+                        <button type="submit" class="cta-button">S'abonner</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca is not affiliated with, endorsed by, or in any way connected to Wolfram Research, Inc. or its Mathematica® software. For more details, please refer to our full disclaimer on the About page.</p>
-            <p>&copy; 2024 Mathēmatiká, All Rights Reserved.</p>
+            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca n'est pas affilié, approuvé ou en aucune façon lié à Wolfram Research, Inc. ou à son logiciel Mathematica®. Pour plus de détails, veuillez consulter notre avis complet sur la page À propos.</p>
+            <p>&copy; 2024 Mathēmatiká, Tous droits réservés.</p>
         </div>
     </footer>
     <script src="language.js"></script>
