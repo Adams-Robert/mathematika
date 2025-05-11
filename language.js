@@ -268,6 +268,10 @@ function getLanguagePage(currentPage, targetLang) {
         if (currentPage === 'index.html' || currentPage === '') {
             return 'index_fr.html';
         }
+        // Prevent double _fr in filename
+        if (currentPage.endsWith('_fr.html')) {
+            return currentPage;
+        }
         return currentPage.replace('.html', '_fr.html');
     } else {
         if (currentPage === 'index_fr.html') {
