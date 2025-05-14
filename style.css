@@ -382,8 +382,10 @@ nav a:hover, nav a.active {
     color: var(--primary-color);
 }
 
-.header-burger {
-  display : none;
+@media (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
 }
 
 /* Hero Section */
