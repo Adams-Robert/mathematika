@@ -488,6 +488,7 @@
 
         /* Mobile Menu Styles */
         .mobile-menu-overlay {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -508,7 +509,7 @@
 
         .mobile-menu-overlay.active {
             transform: translateX(0);
-            display: block !important;
+            display: none !important;
             visibility: visible !important;
             opacity: 1 !important;
             pointer-events: auto !important;
@@ -618,13 +619,14 @@
             -webkit-tap-highlight-color: transparent;
         }
         .mobile-menu-btn:focus {
+            dispaly: none;
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
 
         @media (max-width: 768px) {
             .mobile-menu-btn {
-                display: flex;
+                display: none;
             }
 
             .nav-container {
