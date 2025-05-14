@@ -240,7 +240,7 @@
             }
 
             .mobile-menu-btn {
-                display: block;
+                display: none;
             }
 
             .hero-buttons {
@@ -515,7 +515,7 @@
 
         .mobile-menu-overlay.active {
             transform: translateX(0);
-            display: block !important;
+            display: none !important;
             visibility: visible !important;
             opacity: 1 !important;
             pointer-events: auto !important;
@@ -525,20 +525,21 @@
         .mobile-menu-container {
             min-height: 100%;
             padding: 2rem;
-            display: flex;
+            display: none;
             flex-direction: column;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
 
         .mobile-menu-header {
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
         }
 
         .mobile-menu-close {
+            display: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary-color);
@@ -625,13 +626,14 @@
             -webkit-tap-highlight-color: transparent;
         }
         .mobile-menu-btn:focus {
+            display: none;
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
 
         @media (max-width: 768px) {
             .mobile-menu-btn {
-                display: flex;
+                display: none;
             }
 
             .nav-container {
@@ -656,10 +658,12 @@
         /* iOS-specific fixes */
         @supports (-webkit-touch-callout: none) {
             .mobile-menu-overlay {
+                display: none;
                 height: -webkit-fill-available;
             }
             
             .mobile-menu-container {
+                display: none;
                 height: -webkit-fill-available;
             }
             
