@@ -800,7 +800,6 @@
         }
 
         .language-selector a {
-            color: #c59d5f;
             text-decoration: none;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
@@ -808,13 +807,14 @@
             display: block;
         }
 
-        .language-selector a.active {
+        .language-selector a[data-lang="en"] {
             color: var(--accent-color);
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
-            color: var(--accent-color);
+        .language-selector a[data-lang="fr"] {
+            color: var(--text-primary);
+            font-weight: 400;
         }
 
         .email-signature {

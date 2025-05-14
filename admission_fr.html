@@ -800,27 +800,21 @@
         }
 
         .language-selector a {
-            color: #c59d5f;
             text-decoration: none;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
             text-align: center;
             display: block;
+            color: var(--text-primary);
+            font-weight: 400;
         }
 
-        .language-selector a[data-lang="en"] {
-            opacity: 0.5;
-            cursor: not-allowed;
-            color: var(--text-primary);
-            background: none;
+        .language-selector a[data-lang="fr"] {
+            color: var(--accent-color);
+            font-weight: 700;
         }
 
         .language-selector a.active {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .language-selector a:not([data-lang="en"]):hover {
             color: var(--accent-color);
         }
 

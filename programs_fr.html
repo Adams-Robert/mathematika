@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mathēmatiká - Tutorats et éducation en mathématiques de haut niveau. Rejoignez notre communauté d'excellence à Montréal.">
-    <title>Programmes - Mathēmatiká</title>
+    <meta name="description" content="Mathēmatiká - Expert mathematics tutoring and education. Join our community of excellence in Montreal.">
+    <title>Programs - Mathēmatiká</title>
+    
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Copied styles from programs.html */
         /* Preloader */
         .preloader {
             position: fixed;
@@ -793,7 +793,6 @@
         }
 
         .language-selector a {
-            color: #c59d5f;
             text-decoration: none;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
@@ -801,13 +800,14 @@
             display: block;
         }
 
-        .language-selector a.active {
-            color: var(--accent-color);
-            font-weight: 600;
+        .language-selector a[data-lang="en"] {
+            color: var(--text-primary);
+            font-weight: 400;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
+        .language-selector a[data-lang="fr"] {
             color: var(--accent-color);
+            font-weight: 700;
         }
 
         .email-signature {
@@ -1497,6 +1497,23 @@
         .read-more-btn:focus {
             outline: 2px solid var(--accent-color);
         }
+
+        /* Hide Read More buttons */
+        .read-more-btn {
+            display: none !important;
+        }
+
+        /* Hide Learn More link in Advanced Mathematics card */
+        .program-card:first-of-type .learn-more {
+            display: none !important;
+        }
+
+        /* Hide Learn More link in program actions */
+        .program-actions .learn-more {
+            display: none !important;
+        }
+
+        /* Typography Refinements */
     </style>
 </head>
 <body>
@@ -1563,7 +1580,7 @@
         <section class="hero-programs">
             <div class="hero-content">
                 <h1>Nos Programmes Académiques</h1>
-                <p>Découvrez une éducation complète en mathématiques et sciences adaptée à votre parcours d'apprentissage</p>
+                <p>Découvrez une éducation complète en mathématiques et en sciences adaptée à votre parcours d'apprentissage</p>
                 
                 <div class="hero-nav">
                     <div class="nav-grid">
@@ -1590,22 +1607,22 @@
                         <a href="consulting_fr.html" class="nav-link">
                             <i class="fas fa-chalkboard-teacher"></i>
                             <span>Consultation</span>
-                            <small>Conseils d'experts</small>
+                            <small>Conseils d'Expert</small>
                         </a>
                         <a href="index_fr.html#blog-preview" class="nav-link">
                             <i class="fas fa-blog"></i>
                             <span>Blog</span>
-                            <small>Dernières nouvelles</small>
+                            <small>Actualités</small>
                         </a>
                         <a href="admission_fr.html" class="nav-link">
                             <i class="fas fa-calendar-check"></i>
-                            <span>Réserver un essai</span>
-                            <small>Séance gratuite</small>
+                            <span>Essai Gratuit</span>
+                            <small>Séance Gratuite</small>
                         </a>
                         <a href="contact_fr.html" class="nav-link">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
-                            <small>Nous joindre</small>
+                            <small>Contactez-nous</small>
                         </a>
                     </div>
                 </div>
@@ -1615,7 +1632,7 @@
         <section class="programs-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Programmes en vedette</h2>
+                    <h2>Programmes Vedettes</h2>
                     <p>Choisissez parmi nos programmes soigneusement conçus pour atteindre l'excellence académique</p>
                 </div>
                 <div class="programs-grid">
@@ -1625,35 +1642,16 @@
                             <img src="images/Math2.jpg" alt="Mathématiques Avancées">
                         </div>
                         <div class="program-content">
-                            <span class="program-level">Tous niveaux</span>
+                            <span class="program-level">Tous les niveaux</span>
                             <h3>Mathématiques Avancées</h3>
-                            <div class="program-preview">
-                                Maîtrisez des concepts mathématiques complexes grâce à notre programme complet.
+                            <p>Maîtrisez des concepts mathématiques complexes grâce à notre programme complet.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-square-root-alt"></i> Sujets Avancés</span>
+                                <span><i class="fas fa-user-graduate"></i> Expertise</span>
+                                <span><i class="fas fa-chart-line"></i> Suivi des Progrès</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Maîtrisez des concepts mathématiques complexes grâce à notre programme complet, de l'algèbre au calcul différentiel.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-square-root-alt"></i> Sujets avancés</span>
-                                    <span><i class="fas fa-user-graduate"></i> Encadrement expert</span>
-                                    <span><i class="fas fa-chart-line"></i> Suivi des progrès</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Points clés :</h4>
-                                    <ul>
-                                        <li>Parcours d'apprentissage personnalisé</li>
-                                        <li>Évaluations hebdomadaires</li>
-                                        <li>Tutorat individuel</li>
-                                        <li>Ateliers de résolution de problèmes</li>
-                                        <li>Couverture de sujets avancés</li>
-                                        <li>Matériel d'entraînement</li>
-                                        <li>Suivi des progrès</li>
-                                    </ul>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/advanced-mathematics_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -1665,33 +1663,14 @@
                         <div class="program-content">
                             <span class="program-level">Intermédiaire à Avancé</span>
                             <h3>Excellence en Physique</h3>
-                            <div class="program-preview">
-                                Développez une solide compréhension des principes de la physique à travers des expériences pratiques et des études théoriques.
+                            <p>Développez une compréhension approfondie des principes de physique à travers des expériences pratiques et l'étude théorique.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-atom"></i> Labs Pratiques</span>
+                                <span><i class="fas fa-microscope"></i> Expériences</span>
+                                <span><i class="fas fa-brain"></i> Théorie & Pratique</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Développez une solide compréhension des principes de la physique à travers des expériences pratiques et des études théoriques.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-atom"></i> Laboratoires pratiques</span>
-                                    <span><i class="fas fa-microscope"></i> Expériences</span>
-                                    <span><i class="fas fa-brain"></i> Théorie & Pratique</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Points forts du programme :</h4>
-                                    <ul>
-                                        <li>Expériences pratiques</li>
-                                        <li>Résolution de problèmes</li>
-                                        <li>Séances de laboratoire</li>
-                                        <li>Fondements théoriques</li>
-                                        <li>Applications réelles</li>
-                                        <li>Utilisation d'équipements avancés</li>
-                                        <li>Projets de recherche</li>
-                                    </ul>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/physics-excellence_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -1703,71 +1682,33 @@
                         <div class="program-content">
                             <span class="program-level">Débutant à Avancé</span>
                             <h3>Maîtrise de la Chimie</h3>
-                            <div class="program-preview">
-                                Explorez le monde fascinant de la chimie grâce à un apprentissage interactif et des applications pratiques.
+                            <p>Explorez le monde fascinant de la chimie à travers un apprentissage interactif et des applications pratiques.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-flask"></i> Travaux Pratiques</span>
+                                <span><i class="fas fa-atom"></i> Études Moléculaires</span>
+                                <span><i class="fas fa-vial"></i> Expériences</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Explorez le monde fascinant de la chimie grâce à un apprentissage interactif et des applications pratiques.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-flask"></i> Travaux pratiques</span>
-                                    <span><i class="fas fa-atom"></i> Études moléculaires</span>
-                                    <span><i class="fas fa-vial"></i> Expériences</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Composantes du cours :</h4>
-                                    <ul>
-                                        <li>Travaux de laboratoire</li>
-                                        <li>Études moléculaires</li>
-                                        <li>Projets de recherche</li>
-                                        <li>Analyses chimiques</li>
-                                        <li>Protocoles de sécurité</li>
-                                        <li>Applications pratiques</li>
-                                        <li>Techniques avancées</li>
-                                    </ul>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/chemistry-mastery_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
                     <!-- STEM Foundation -->
                     <div class="program-card">
                         <div class="program-image">
-                            <img src="images/students-future.jpg" alt="Fondation STEM">
+                            <img src="images/students-future.jpg" alt="Formation STIM">
                         </div>
                         <div class="program-content">
                             <span class="program-level">Débutant</span>
-                            <h3>Fondation STEM</h3>
-                            <div class="program-preview">
-                                Bâtissez une base solide en sciences, technologie, ingénierie et mathématiques grâce à un apprentissage intégré et des projets pratiques.
+                            <h3>Formation STIM</h3>
+                            <p>Construisez une base solide en Sciences, Technologies, Ingénierie et Mathématiques à travers un apprentissage intégré.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-atom"></i> Sciences</span>
+                                <span><i class="fas fa-microchip"></i> Technologies</span>
+                                <span><i class="fas fa-cogs"></i> Ingénierie</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Bâtissez une base solide en sciences, technologie, ingénierie et mathématiques grâce à un apprentissage intégré et des projets pratiques.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-atom"></i> Sciences</span>
-                                    <span><i class="fas fa-microchip"></i> Technologie</span>
-                                    <span><i class="fas fa-cogs"></i> Ingénierie</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Composantes principales :</h4>
-                                    <ul>
-                                        <li>Programme intégré</li>
-                                        <li>Apprentissage par projet</li>
-                                        <li>Expériences pratiques</li>
-                                        <li>Développement de la pensée critique</li>
-                                        <li>Pratique de la résolution de problèmes</li>
-                                        <li>Collaboration en équipe</li>
-                                        <li>Applications réelles</li>
-                                    </ul>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/stem-foundation_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -1777,80 +1718,35 @@
                             <img src="images/young-man-writing-notebook-study-7_600x341.jpg" alt="Préparation aux Examens">
                         </div>
                         <div class="program-content">
-                            <span class="program-level">Tous niveaux</span>
+                            <span class="program-level">Tous les niveaux</span>
                             <h3>Préparation aux Examens</h3>
-                            <div class="program-preview">
-                                Préparation complète aux examens standardisés et compétitifs en mathématiques et sciences.
+                            <p>Préparation complète pour les tests standardisés et les examens compétitifs.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-tasks"></i> Préparation Stratégique</span>
+                                <span><i class="fas fa-chart-line"></i> Suivi des Progrès</span>
+                                <span><i class="fas fa-trophy"></i> Focus sur la Réussite</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Préparation complète aux examens standardisés et compétitifs en mathématiques et sciences. Maîtrisez les stratégies d'examen et gagnez en confiance.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-tasks"></i> Préparation stratégique</span>
-                                    <span><i class="fas fa-chart-line"></i> Suivi des progrès</span>
-                                    <span><i class="fas fa-trophy"></i> Objectif réussite</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Caractéristiques du programme :</h4>
-                                    <ul>
-                                        <li>Plans d'étude personnalisés</li>
-                                        <li>Tests pratiques & analyse</li>
-                                        <li>Gestion du temps</li>
-                                        <li>Maîtrise des types de questions</li>
-                                        <li>Analyse de performance</li>
-                                        <li>Examens blancs</li>
-                                        <li>Conseils de gestion du stress</li>
-                                    </ul>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/exam-preparation_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
                     <!-- Math Contest Preparation -->
-                    <div class="program-card animate-on-scroll">
+                    <div class="program-card">
                         <div class="program-image">
-                            <img src="images/mathcontest.jpg" alt="Préparation aux Concours Mathématiques">
+                            <img src="images/mathcontest.jpg" alt="Préparation aux Concours de Mathématiques">
                         </div>
                         <div class="program-content">
                             <span class="program-level">Avancé</span>
-                            <h3>Préparation aux Concours Mathématiques</h3>
-                            <div class="program-preview">
-                                Maîtrisez l'art des mathématiques de compétition avec notre programme spécialisé pour les concours canadiens et internationaux.
+                            <h3>Préparation aux Concours de Mathématiques</h3>
+                            <p>Maîtrisez l'art des mathématiques compétitives avec notre programme spécialisé.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-trophy"></i> Canadien & International</span>
+                                <span><i class="fas fa-clock"></i> Horaires Flexibles</span>
+                                <span><i class="fas fa-users"></i> Petits Groupes</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Maîtrisez l'art des mathématiques de compétition avec notre programme spécialisé pour les concours canadiens et internationaux. Développez des compétences avancées en résolution de problèmes et une pensée stratégique sous la direction de coachs expérimentés.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-trophy"></i> Canada & International</span>
-                                    <span><i class="fas fa-clock"></i> Horaire flexible</span>
-                                    <span><i class="fas fa-users"></i> Petits groupes</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Points forts du programme</h4>
-                                    <ul>
-                                        <li>Préparation au Concours Canadien de Mathématiques (CMC)</li>
-                                        <li>Entraînement à l'Olympiade Internationale de Mathématiques (OIM)</li>
-                                        <li>Stratégies & techniques de résolution de problèmes</li>
-                                        <li>Simulations de concours & analyse de performance</li>
-                                        <li>Concepts mathématiques avancés</li>
-                                        <li>Gestion du temps & techniques d'examen</li>
-                                    </ul>
-                                </div>
-                                <div class="tech-highlights">
-                                    <h4>Focus concours</h4>
-                                    <p><i class="fas fa-check-circle"></i>Concours Canadien de Mathématiques (CMC)</p>
-                                    <p><i class="fas fa-check-circle"></i>Olympiade Internationale de Mathématiques (OIM)</p>
-                                    <p><i class="fas fa-check-circle"></i>Défi Ouvert Canadien de Mathématiques (COMC)</p>
-                                    <p><i class="fas fa-check-circle"></i>Olympiade Canadienne de Mathématiques (OCM)</p>
-                                    <p><i class="fas fa-check-circle"></i>Olympiade Internationale de Mathématiques (OIM)</p>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/math-contest_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -1860,35 +1756,16 @@
                             <img src="images/medit.jpg" alt="Étude Méditative">
                         </div>
                         <div class="program-content">
-                            <span class="program-level">Tous niveaux</span>
-                            <h3>Étude Méditative – Le langage intérieur de l'univers</h3>
-                            <div class="program-preview">
-                                Transformez votre expérience d'apprentissage grâce à la pleine conscience et à la concentration profonde.
+                            <span class="program-level">Tous les niveaux</span>
+                            <h3>Méditation : La Clé Manquante du Succès Académique</h3>
+                            <p>Transformez votre expérience d'apprentissage avec une concentration profonde et une conscience attentive.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-brain"></i> Développement Mental</span>
+                                <span><i class="fas fa-clock"></i> À Votre Rythme</span>
+                                <span><i class="fas fa-infinity"></i> Compétences Durables</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Transformez votre expérience d'apprentissage pour toujours. Découvrez une approche révolutionnaire qui combine concentration profonde, pleine conscience et compréhension intuitive pour libérer votre véritable potentiel d'apprentissage.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-brain"></i> Expansion de l'esprit</span>
-                                    <span><i class="fas fa-clock"></i> À votre rythme</span>
-                                    <span><i class="fas fa-infinity"></i> Compétences durables</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Expérience incluse :</h4>
-                                    <ul>
-                                        <li>Techniques d'apprentissage révolutionnaires</li>
-                                        <li>Concentration & attention accrues</li>
-                                        <li>Compréhension approfondie</li>
-                                        <li>Mémoire & rétention améliorées</li>
-                                        <li>Méthodes de réduction du stress</li>
-                                        <li>Résolution de problèmes en pleine conscience</li>
-                                        <li>Transformation durable de l'apprentissage</li>
-                                    </ul>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/meditative-study_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -1898,35 +1775,16 @@
                             <img src="images/tech.jpg" alt="TechnoLearn VR">
                         </div>
                         <div class="program-content">
-                            <span class="program-level">Tous niveaux</span>
-                            <h3>TechnoLearn VR – L'avenir de l'apprentissage</h3>
-                            <div class="program-preview">
-                                Plongez dans le futur de l'éducation avec la technologie VR/AR de pointe.
+                            <span class="program-level">Tous les niveaux</span>
+                            <h3>TechnoLearn VR – L'Avenir de l'Apprentissage</h3>
+                            <p>Entrez dans le futur de l'éducation avec la technologie VR/AR de pointe.</p>
+                            <div class="program-features">
+                                <span><i class="fas fa-vr-cardboard"></i> VR/AR Activé</span>
+                                <span><i class="fas fa-atom"></i> Visualisation 3D</span>
+                                <span><i class="fas fa-hand-pointer"></i> Interactif</span>
                             </div>
-                            <button class="read-more-btn">Lire plus <i class="fas fa-chevron-down"></i></button>
-                            <div class="program-details" style="display:none;">
-                                <p>Plongez dans le futur de l'éducation avec la technologie VR/AR de pointe. Écrivez des formules dans les airs, disséquez des structures moléculaires 3D et explorez les concepts mathématiques dans un espace virtuel immersif.</p>
-                                <div class="program-features">
-                                    <span><i class="fas fa-vr-cardboard"></i> VR/AR intégrée</span>
-                                    <span><i class="fas fa-atom"></i> Visualisation 3D</span>
-                                    <span><i class="fas fa-hand-pointer"></i> Interactif</span>
-                                </div>
-                                <div class="program-modules">
-                                    <h4>Fonctionnalités révolutionnaires :</h4>
-                                    <ul>
-                                        <li>Écriture et manipulation de formules virtuelles</li>
-                                        <li>Exploration de structures moléculaires 3D</li>
-                                        <li>Visualisations mathématiques interactives</li>
-                                        <li>Expériences de laboratoire de chimie virtuels</li>
-                                        <li>Simulations physiques en temps réel</li>
-                                        <li>Espace de travail virtuel collaboratif</li>
-                                        <li>Assistant d'apprentissage alimenté par l'IA</li>
-                                    </ul>
-                                </div>
-                                <div class="program-actions">
-                                    <a href="programs/technolearn-vr_fr.html" class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                                    <a href="admission_fr.html" class="program-cta">S'inscrire</a>
-                                </div>
+                            <div class="program-actions">
+                                <a href="admission_fr.html" class="program-cta">S'inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -1937,42 +1795,42 @@
         <section class="program-benefits">
             <div class="container">
                 <div class="section-header">
-                    <h2>Pourquoi choisir nos programmes</h2>
+                    <h2>Pourquoi Choisir Nos Programmes</h2>
                     <p>Découvrez la différence Mathēmatiká dans votre parcours académique</p>
-                        </div>
+                </div>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <i class="fas fa-user-graduate"></i>
-                        <h3>Enseignants experts</h3>
-                        <p>Apprenez auprès d'éducateurs expérimentés avec des antécédents éprouvés en mathématiques et sciences.</p>
-                                </div>
+                        <h3>Instructeurs Experts</h3>
+                        <p>Apprenez avec des éducateurs expérimentés ayant fait leurs preuves en mathématiques et en sciences.</p>
+                    </div>
                     <div class="benefit-item">
                         <i class="fas fa-users"></i>
-                        <h3>Petits groupes</h3>
-                        <p>Bénéficiez d'une attention personnalisée grâce à nos séances en petits groupes et tutorat individuel.</p>
-                                </div>
+                        <h3>Petits Groupes</h3>
+                        <p>Profitez d'une attention personnalisée avec nos sessions en petits groupes et tutorat individuel.</p>
+                    </div>
                     <div class="benefit-item">
                         <i class="fas fa-chart-line"></i>
-                        <h3>Suivi des progrès</h3>
-                        <p>Suivez votre progression avec des évaluations régulières et des rapports détaillés.</p>
-                                </div>
+                        <h3>Suivi des Progrès</h3>
+                        <p>Suivez votre progression grâce à des évaluations régulières et des rapports détaillés.</p>
+                    </div>
                     <div class="benefit-item">
                         <i class="fas fa-laptop-code"></i>
-                        <h3>Outils d'apprentissage modernes</h3>
-                        <p>Accédez à des technologies éducatives de pointe et à des ressources interactives.</p>
-                            </div>
-                        </div>
+                        <h3>Outils Modernes</h3>
+                        <p>Accédez à des technologies éducatives de pointe et des ressources d'apprentissage interactives.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Prêt à exceller en mathématiques et sciences ?</h2>
+                    <h2>Prêt à Exceller en Mathématiques et en Sciences ?</h2>
                     <p>Rejoignez nos programmes et faites le premier pas vers l'excellence académique</p>
                     <div class="cta-buttons">
-                        <a href="./admission_fr.html" class="cta-button primary">Postuler</a>
-                        <a href="./contact_fr.html" class="cta-button secondary">Nous contacter</a>
+                        <a href="./admission_fr.html" class="cta-button primary">S'inscrire</a>
+                        <a href="./contact_fr.html" class="cta-button secondary">Nous Contacter</a>
                     </div>
                 </div>
             </div>
@@ -1982,38 +1840,38 @@
     <footer class="premium-footer">
         <div class="footer-content">
             <div class="footer-row">
-            <div class="footer-section">
-                    <h3>Contactez-nous</h3>
-                    <p>Montréal, H3S 1R4</p>
-                    <p>Québec, Canada</p>
-                    <p><i class="fas fa-phone"></i> +1 514 977 0459</p>
-                    <p><i class="fas fa-phone"></i> +1 514 475 5210</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@mathematika.ca">contact@mathematika.ca</a></p>
+                <div class="footer-section">
+                    <h3>À propos de Mathēmatiká</h3>
+                    <p>Nous sommes dédiés à l'excellence en éducation mathématique, offrant des programmes personnalisés pour tous les niveaux.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Nos Programmes</h3>
+                    <h3>Liens Rapides</h3>
                     <ul>
-                        <li>Enrichissement Mathématique</li>
-                        <li>Programme d'Excellence en Physique</li>
-                        <li>Cours de Maîtrise de la Chimie</li>
-                        <li>Programme Fondation STEM</li>
-                        <li>Programme de Recherche Avancée</li>
-                        <li>Préparation aux Examens</li>
-                        <li>Tutorat Individuel</li>
+                        <li><a href="index_fr.html">Accueil</a></li>
+                        <li><a href="about_fr.html">À propos</a></li>
+                        <li><a href="programs_fr.html">Programmes</a></li>
+                        <li><a href="admission_fr.html">Admission</a></li>
+                        <li><a href="consulting_fr.html">Consultation</a></li>
+                        <li><a href="contact_fr.html">Contact</a></li>
                     </ul>
-            </div>
-            <div class="footer-section">
-                    <h3>BULLETIN</h3>
-                <form class="newsletter-form">
-                        <input type="email" placeholder="Entrez votre adresse e-mail">
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@mathematika.ca</p>
+                    <p>Téléphone: (514) 555-0123</p>
+                    <p>Adresse: Montréal, QC, Canada</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Infolettre</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre adresse email" required>
                         <button type="submit" class="cta-button">S'abonner</button>
-                </form>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p style="margin-bottom: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">Mathematika.ca n'est pas affilié, soutenu ou en aucune façon lié à Wolfram Research, Inc. ou à son logiciel Mathematica®. Pour plus de détails, veuillez consulter notre avis de non-responsabilité complet sur la page À propos.</p>
-            <p>&copy; 2024 Mathēmatiká, Tous droits réservés.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mathēmatiká. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 
@@ -2026,9 +1884,9 @@
     <div class="fab">
         <i class="fas fa-plus"></i>
         <div class="fab-menu">
-            <a href="contact_fr.html" class="fab-item"><i class="fas fa-phone"></i> Appeler</a>
-            <a href="programs_fr.html" class="fab-item"><i class="fas fa-calendar"></i> Réserver une séance</a>
-            <a href="contact_fr.html" class="fab-item"><i class="fas fa-message"></i> Chat rapide</a>
+            <a href="contact.html" class="fab-item"><i class="fas fa-phone"></i> Call Now</a>
+            <a href="programs.html" class="fab-item"><i class="fas fa-calendar"></i> Book Session</a>
+            <a href="contact.html" class="fab-item"><i class="fas fa-message"></i> Quick Chat</a>
         </div>
     </div>
 

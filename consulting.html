@@ -684,12 +684,18 @@
         }
 
         .language-selector a {
-            color: #c59d5f;
             text-decoration: none;
             padding: 0.5rem 1rem;
             transition: all 0.3s ease;
             text-align: center;
             display: block;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .language-selector a[data-lang="fr"] {
+            color: var(--text-primary);
+            font-weight: 400;
         }
 
         .language-selector a.active {
