@@ -494,7 +494,7 @@
 
         .mobile-menu-overlay.active {
             transform: translateX(0);
-            display: block !important;
+            display: none !important;
             visibility: visible !important;
             opacity: 1 !important;
             pointer-events: auto !important;
@@ -504,20 +504,21 @@
         .mobile-menu-container {
             min-height: 100%;
             padding: 2rem;
-            display: flex;
+            display: none;
             flex-direction: column;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
 
         .mobile-menu-header {
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
         }
 
         .mobile-menu-close {
+            display: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary-color);
@@ -604,13 +605,14 @@
             -webkit-tap-highlight-color: transparent;
         }
         .mobile-menu-btn:focus {
+            display: none;
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
 
         @media (max-width: 768px) {
             .mobile-menu-btn {
-                display: flex;
+                display: none;
             }
 
             .nav-container {
@@ -635,10 +637,12 @@
         /* iOS-specific fixes */
         @supports (-webkit-touch-callout: none) {
             .mobile-menu-overlay {
+                display: none;
                 height: -webkit-fill-available;
             }
             
             .mobile-menu-container {
+                display: none;
                 height: -webkit-fill-available;
             }
             
@@ -666,10 +670,10 @@
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
             padding: 0.5rem 1rem;
-            position: relative;
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover,
@@ -677,34 +681,28 @@
             color: var(--accent-color);
         }
 
-        .language-selector {
+        .language-switcher {
             display: flex;
-            gap: 1rem;
-            padding: 0.5rem;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
         }
 
-        .language-selector a {
+        .language-switcher a {
+            color: var(--text-primary);
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            display: block;
-            color: var(--text-primary);
-            font-weight: 400;
-        }
-
-        .language-selector a[data-lang="fr"] {
-            color: var(--text-primary);
-            font-weight: 400;
-        }
-
-        .language-selector a.active {
-            color: var(--accent-color);
             font-weight: 600;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
+        .language-switcher a.active {
             color: var(--accent-color);
+        }
+
+        .language-switcher .separator {
+            color: var(--text-secondary);
+            opacity: 0.5;
         }
 
         /* Header Styles */
@@ -975,16 +973,17 @@
             </button>
             <div class="nav-container">
                 <nav class="nav-links">
-                    <a href="./index.html">Welcome</a>
+                    <a href="./index.html">Home</a>
                     <a href="./about.html">About</a>
                     <a href="./programs.html">Programs</a>
                     <a href="./admission.html">Admission</a>
                     <a href="./consulting.html" class="active">Consulting</a>
                     <a href="./contact.html">Contact</a>
                 </nav>
-                <div class="language-selector">
-                    <a href="consulting.html" class="active" data-lang="en">English</a>
-                    <a href="consulting_fr.html" data-lang="fr">Français</a>
+                <div class="language-switcher">
+                    <a href="consulting.html" class="active">EN</a>
+                    <span class="separator">|</span>
+                    <a href="consulting_fr.html">FR</a>
                 </div>
             </div>
         </nav>
