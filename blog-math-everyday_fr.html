@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathematics in Everyday Life - MathMaster</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -119,9 +120,10 @@
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
             padding: 0.5rem 1rem;
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover,
@@ -129,35 +131,28 @@
             color: var(--accent-color);
         }
 
-        .language-selector {
+        .language-switcher {
             display: flex;
-            gap: 1rem;
-            padding: 0.5rem;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
         }
 
-        .language-selector a {
-            color: var(--accent-color);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            display: block;
-        }
-
-        .language-selector a[data-lang="fr"] {
-            opacity: 0.5;
-            cursor: not-allowed;
+        .language-switcher a {
             color: var(--text-primary);
-            background: none;
-        }
-
-        .language-selector a.active {
-            color: var(--accent-color);
+            text-decoration: none;
             font-weight: 600;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
+        .language-switcher a.active {
             color: var(--accent-color);
+        }
+
+        .language-switcher .separator {
+            color: var(--text-secondary);
+            opacity: 0.5;
         }
 
         /* Mobile Menu Styles */
@@ -546,8 +541,8 @@
             <div class="nav-container">
                 <nav class="nav-links">
                     <a href="./index_fr.html">Accueil</a>
+                    <a href="./about_fr.html">Propos</a>
                     <a href="./programs_fr.html">Programmes</a>
-                    <a href="./about_fr.html">À Propos</a>
                     <a href="./admission_fr.html">Admission</a>
                     <a href="./consulting_fr.html">Consultation</a>
                     <a href="./contact_fr.html">Contact</a>
