@@ -361,20 +361,21 @@
         .mobile-menu-container {
             min-height: 100%;
             padding: 2rem;
-            display: flex;
+            display: none;
             flex-direction: column;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
 
         .mobile-menu-header {
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
         }
 
         .mobile-menu-close {
+            display: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary-color);
@@ -461,13 +462,14 @@
             -webkit-tap-highlight-color: transparent;
         }
         .mobile-menu-btn:focus {
+            display: none;
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
 
         @media (max-width: 768px) {
             .mobile-menu-btn {
-                display: flex;
+                display: none;
             }
 
             .nav-container {
@@ -492,10 +494,12 @@
         /* iOS-specific fixes */
         @supports (-webkit-touch-callout: none) {
             .mobile-menu-overlay {
+                display: none;
                 height: -webkit-fill-available;
             }
             
             .mobile-menu-container {
+                display: none;
                 height: -webkit-fill-available;
             }
             
@@ -568,9 +572,10 @@
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
             padding: 0.5rem 1rem;
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover,
@@ -578,25 +583,28 @@
             color: var(--accent-color);
         }
 
-        .language-selector {
+        .language-switcher {
             display: flex;
-            gap: 1rem;
-            padding: 0.5rem;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
         }
 
-        .language-selector a {
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            display: block;
+        .language-switcher a {
             color: var(--text-primary);
-            font-weight: 400;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        .language-selector a[data-lang="fr"] {
+        .language-switcher a.active {
             color: var(--accent-color);
-            font-weight: 700;
+        }
+
+        .language-switcher .separator {
+            color: var(--text-secondary);
+            opacity: 0.5;
         }
 
         .tutoring-options-section {
@@ -856,15 +864,16 @@
             <div class="nav-container">
                 <nav class="nav-links">
                     <a href="index_fr.html">Accueil</a>
-                    <a href="about_fr.html">À&nbsp;propos</a>
+                    <a href="about_fr.html">Propos</a>
                     <a href="programs_fr.html">Programmes</a>
                     <a href="admission_fr.html">Admission</a>
                     <a href="consulting_fr.html">Consultation</a>
                     <a href="contact_fr.html" class="active">Contact</a>
                 </nav>
-                <div class="language-selector">
-                    <a href="contact.html" data-lang="en">English</a>
-                    <a href="contact_fr.html" class="active" data-lang="fr">Français</a>
+                <div class="language-switcher">
+                    <a href="contact.html">EN</a>
+                    <span class="separator">|</span>
+                    <a href="contact_fr.html" class="active">FR</a>
                 </div>
             </div>
         </nav>
