@@ -9,62 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .hero {
+        .contact-hero {
             position: relative;
-            min-height: 80vh;
-            margin-top: 74px;
+            height: 60vh;
+            background: linear-gradient(145deg, rgba(26, 54, 93, 0.95), rgba(26, 54, 93, 0.9)), url('images/math-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            background-color: var(--primary-color);
-            overflow: hidden;
+            color: #ffffff;
+            margin-top: 74px;
         }
 
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Hero Navigation Styles */
+        .hero-nav {
+            margin: 2.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-            z-index: 0;
         }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.95));
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            max-width: 900px;
-            padding: 2rem;
-            z-index: 2;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content p {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
 
         .nav-grid {
             display: grid;
