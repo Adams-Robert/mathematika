@@ -120,9 +120,10 @@
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
             padding: 0.5rem 1rem;
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover,
@@ -130,35 +131,28 @@
             color: var(--accent-color);
         }
 
-        .language-selector {
+        .language-switcher {
             display: flex;
-            gap: 1rem;
-            padding: 0.5rem;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
         }
 
-        .language-selector a {
-            color: var(--accent-color);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            display: block;
-        }
-
-        .language-selector a[data-lang="fr"] {
-            opacity: 0.5;
-            cursor: not-allowed;
+        .language-switcher a {
             color: var(--text-primary);
-            background: none;
-        }
-
-        .language-selector a.active {
-            color: var(--accent-color);
+            text-decoration: none;
             font-weight: 600;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        .language-selector a:not([data-lang="fr"]):hover {
+        .language-switcher a.active {
             color: var(--accent-color);
+        }
+
+        .language-switcher .separator {
+            color: var(--text-secondary);
+            opacity: 0.5;
         }
 
         /* Mobile Menu Styles */
@@ -672,9 +666,9 @@
             </button>
             <div class="nav-container">
                 <nav class="nav-links">
-                    <a href="./index.html">Welcome</a>
-                    <a href="./programs.html">Programs</a>
+                    <a href="./index.html">Home</a>
                     <a href="./about.html">About</a>
+                    <a href="./programs.html">Programs</a>
                     <a href="./admission.html">Admission</a>
                     <a href="./consulting.html">Consulting</a>
                     <a href="./contact.html">Contact</a>
