@@ -786,11 +786,32 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>NEWSLETTER</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email address">
-                        <button type="submit" class="cta-button">Subscribe</button>
-                    </form>
+            <h3>NEWSLETTER</h3>
+                <form 
+                      action="https://formsubmit.co/sailentia.sol@gmail.com" 
+                        method="POST" 
+                      class="newsletter-form"
+                    >
+                    <!-- Hidden: redirect to thank you page -->
+                    <input type="hidden" name="_next" value="https://mathematika.ca/thankyou.html">
+  
+                    <!-- Hidden: disable CAPTCHA -->
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <!-- Hidden: spam protection -->
+                    <input type="text" name="_honey" style="display:none">
+
+                    <!-- Visible email field -->
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Enter your email address" 
+                        required
+                    >
+
+                  <button type="submit" class="cta-button">Subscribe</button>
+            </form>
+
                 </div>
                 </div>
             </div>
