@@ -1194,15 +1194,38 @@
                             <label for="email">E-mail *</label>
                         <input type="email" id="email" name="email" required>
                     </div>
+
                     <div class="form-group">
-                            <label for="phone">Téléphone</label>
+                            <label for="phone" data-translate="phone_number">Téléphone</label>
+                            <div class="phone-input-group">
+                                <select id="countryCode" name="countryCode" required>
+                                    <option value="+1" data-translate="canada_us">+1 (Canada/US)</option>
+                                    <option value="+33" data-translate="france">+33 (France)</option>
+                                    <option value="+44" data-translate="uk">+44 (UK)</option>
+                                    <option value="+49" data-translate="germany">+49 (Germany)</option>
+                                    <option value="+81" data-translate="japan">+81 (Japan)</option>
+                                    <option value="+86" data-translate="china">+86 (China)</option>
+                                    <option value="+91" data-translate="india">+91 (India)</option>
+                                </select>
                         <input type="tel" id="phone" name="phone">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
+                        <label for="serviceInterest" data-translate="service_interest">Intérêt pour le service *</label>
+                        <select id="serviceInterest" name="serviceInterest" required>
+                            <option value="" data-translate="select_service">Sélectionnez un service</option>
+                            <option value="counseling" data-translate="student_counseling">Conseil aux étudiants</option>
+                            <option value="parental" data-translate="parental_guidance">Orientation parentale</option>
+                            <option value="career" data-translate="career_planning">Planification de carrière</option>
+                            <option value="other" data-translate="other">Autre</option>
+                        </select>
                     </div>
+                    <div class="form-group">
+                        <label for="projectDetails" data-translate="project_details">Détails du projet *</label>
+                        <textarea id="projectDetails" name="projectDetails" required></textarea>
+                    </div>
+
                     <button type="submit" class="submit-button">Envoyer la demande</button>
                 </form>
             </div>
