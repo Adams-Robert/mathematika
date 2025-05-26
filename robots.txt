@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mathematika.ca/sitemap.xml 
