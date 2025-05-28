@@ -37,46 +37,76 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://mathematika.ca/support.html</loc>
+        <loc>https://mathematika.ca/blog-math-study-tips.html</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mathematika.ca/blog-exam-prep.html</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mathematika.ca/blog-math-everyday.html</loc>
         <lastmod>2025-05-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <!-- French versions -->
     <url>
-        <loc>https://mathematika.ca/fr/index_fr.html</loc>
+        <loc>https://mathematika.ca/index_fr.html</loc>
         <lastmod>2025-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://mathematika.ca/fr/about_fr.html</loc>
+        <loc>https://mathematika.ca/about_fr.html</loc>
         <lastmod>2025-05-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mathematika.ca/fr/programs_fr.html</loc>
+        <loc>https://mathematika.ca/programs_fr.html</loc>
         <lastmod>2025-05-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mathematika.ca/fr/admission_fr.html</loc>
+        <loc>https://mathematika.ca/admission_fr.html</loc>
         <lastmod>2025-05-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mathematika.ca/fr/consulting_fr.html</loc>
+        <loc>https://mathematika.ca/consulting_fr.html</loc>
         <lastmod>2025-05-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mathematika.ca/fr/contact_fr.html</loc>
+        <loc>https://mathematika.ca/contact_fr.html</loc>
         <lastmod>2025-05-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://mathematika.ca/blog-math-study-tips_fr.html</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mathematika.ca/blog-exam-prep_fr.html</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mathematika.ca/blog-math-everyday_fr.html</loc>
+        <lastmod>2025-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset> 
