@@ -135,6 +135,12 @@
         .nav-links a.active {
             color: var(--accent-color);
         }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+             display: none;
+           }
+        }
 
         .language-switcher {
             display: flex;
@@ -214,7 +220,13 @@
         .mobile-menu-btn:focus {
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
-        }        
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-overlay {
+             display: none;
+           }
+        }
 
         /* Blog Post Styles */
         .blog-post {
