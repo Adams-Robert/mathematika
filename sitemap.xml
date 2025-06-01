@@ -54,6 +54,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://mathematika.ca/blog-proofs-without-words.html</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     <!-- French versions -->
     <url>
         <loc>https://mathematika.ca/index_fr.html</loc>
@@ -106,6 +112,12 @@
     <url>
         <loc>https://mathematika.ca/blog-math-everyday_fr.html</loc>
         <lastmod>2025-05-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mathematika.ca/blog-proofs-without-words_fr.html</loc>
+        <lastmod>2025-06-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
