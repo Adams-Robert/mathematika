@@ -24,11 +24,7 @@
             text-align: center;
             color: var(--white);
             margin-top: 74px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 2rem;
+            z-index: 1;
         }
 
         .hero-content h1 {
@@ -37,9 +33,27 @@
             font-weight: 700;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        @media (max-width: 768px) {
+            .hero-consulting {
+                background-attachment: scroll;
+                height: auto; /* Let it expand naturally */
+                padding: 4rem 0; /* Ensure content fits well */
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+             font-size: 1rem;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
         }
 
         .consulting-section {
